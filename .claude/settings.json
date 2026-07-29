@@ -14,7 +14,14 @@
       "PowerShell(winget install --id GitHub.cli --accept-source-agreements --accept-package-agreements --silent)",
       "PowerShell(git config --global user.name; git config --global user.email; Get-ChildItem \"c:\\\\Users\\\\abdul\\\\Downloads\\\\Madrasah-Site\" -Recurse -File | Sort-Object Length -Descending | Select-Object -First 5 | ForEach-Object { \"{0:N1} MB  {1}\" -f \\($_.Length/1MB\\), $_.FullName.Replace\\('c:\\\\Users\\\\abdul\\\\Downloads\\\\Madrasah-Site\\\\',''\\) })",
       "PowerShell(git init 2>&1)",
-      "PowerShell(git config user.name \"Kenneth Andrews\")"
+      "PowerShell(git config user.name \"Kenneth Andrews\")",
+      "PowerShell(git config user.email \"kenneth.andrews02@gmail.com\")",
+      "PowerShell(git add -A)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" --version 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status 2>&1)",
+      "PowerShell(Get-Process -Name msiexec -ErrorAction SilentlyContinue | Select-Object -First 1 Id; $paths = @\\(\"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\gh.exe\", \"C:\\\\Program Files\\\\GitHub CLI\\\\bin\\\\gh.exe\", \"C:\\\\Program Files \\(x86\\)\\\\GitHub CLI\\\\gh.exe\"\\); foreach \\($p in $paths\\) { if \\(Test-Path $p\\) { \"FOUND: $p\" } })",
+      "PowerShell($gh = Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\",\"C:\\\\Program Files \\(x86\\)\\\\GitHub CLI\",\"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\" -Filter gh.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName; if \\($gh\\) { \"GH: $gh\" } else { \"NOT INSTALLED YET\"; Get-Process msiexec -ErrorAction SilentlyContinue | Select-Object Id | Out-String })",
+      "PowerShell($sp = \"C:\\\\Users\\\\abdul\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-abdul-Downloads-Madrasah-Site\\\\eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096\\\\scratchpad\"; Invoke-WebRequest -Uri \"https://github.com/cli/cli/releases/download/v2.96.0/gh_2.96.0_windows_amd64.zip\" -OutFile \"$sp\\\\gh.zip\" -UseBasicParsing; Expand-Archive \"$sp\\\\gh.zip\" -DestinationPath \"$sp\\\\ghcli\" -Force; & \"$sp\\\\ghcli\\\\bin\\\\gh.exe\" --version)"
     ]
   }
 }
