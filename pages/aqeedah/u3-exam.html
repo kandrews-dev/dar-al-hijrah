@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Exam — أركان الإيمان | Aqeedah | دار الهجرة</title>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>">
+<script>document.documentElement.dataset.theme=localStorage.getItem('mdrs_theme')||'lilac';</script>
+<style>
+  .exam-hero{background:linear-gradient(135deg,var(--tab-aqeedah),#4a1a1a);color:white;padding:var(--space-xl) var(--space-2xl);border-radius:var(--radius-xl) var(--radius-xl) 0 0;position:relative;overflow:hidden}
+  .exam-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border:1px solid rgba(201,151,42,.15);border-radius:50%;pointer-events:none}
+  .exam-timer{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 16px;font-size:.85rem;font-weight:600;letter-spacing:.04em;margin-bottom:var(--space-lg)}
+  .exam-timer .timer-dot{width:8px;height:8px;background:#4caf50;border-radius:50%;animation:pulse 1.5s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .exam-timer.warn{border-color:rgba(255,200,0,.5)}.exam-timer.warn .timer-dot{background:#ffcc00}
+  .exam-timer.danger{border-color:rgba(255,80,80,.5)}.exam-timer.danger .timer-dot{background:#ff5050}
+  .exam-section-label{display:flex;align-items:center;gap:var(--space-md);margin:var(--space-xl) 0 var(--space-lg)}
+  .exam-section-label .esec-num{background:var(--tab-aqeedah);color:white;border-radius:var(--radius-md);padding:5px 14px;font-size:.72rem;font-weight:700;letter-spacing:.08em;white-space:nowrap}
+  .exam-section-label .esec-title{font-size:1rem;font-weight:600;color:var(--ink)}
+  .esec-marks{margin-left:auto;font-size:.78rem;color:var(--ink-faint);font-weight:500}
+  .exam-q{background:white;border:1px solid var(--ivory-dark);border-radius:var(--radius-lg);padding:var(--space-lg) var(--space-xl);margin-bottom:var(--space-md);transition:border-color .2s}
+  .exam-q:focus-within{border-color:var(--teal-mid)}
+  .exam-q-num{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:var(--space-sm)}
+  .exam-q-text{font-size:.95rem;color:var(--ink);line-height:1.8;margin-bottom:var(--space-md)}
+  .exam-q-ar{font-family:var(--font-arabic);font-size:1.05rem;color:var(--teal-deep);direction:rtl;display:block;margin-bottom:var(--space-xs);line-height:1.7}
+  .exam-mcq-options{display:flex;flex-direction:column;gap:var(--space-sm)}
+  .exam-mcq-opt{display:flex;align-items:flex-start;gap:var(--space-md);padding:var(--space-sm) var(--space-md);border:1.5px solid var(--ivory-dark);border-radius:var(--radius-md);cursor:pointer;font-size:.9rem;color:var(--ink-mid);background:var(--ivory);transition:all .15s;text-align:left;font-family:var(--font-english);line-height:1.5}
+  .exam-mcq-opt:hover{border-color:var(--teal-mid);background:#f0f8f8}
+  .exam-mcq-opt.selected{border-color:var(--teal-mid);background:#e8f4f4}
+  .exam-mcq-opt .opt-letter{font-weight:700;color:var(--teal-deep);min-width:18px;font-size:.8rem;padding-top:2px}
+  .exam-tf-btns{display:flex;gap:var(--space-md)}
+  .exam-tf-btn{flex:1;padding:var(--space-sm) var(--space-md);border:1.5px solid var(--ivory-dark);border-radius:var(--radius-md);cursor:pointer;font-size:.88rem;font-weight:600;background:var(--ivory);color:var(--ink-mid);transition:all .15s;font-family:var(--font-english)}
+  .exam-tf-btn:hover{border-color:var(--teal-mid);background:#f0f8f8}
+  .exam-tf-btn.selected-t{border-color:#2a7a4b;background:#e8f4ee;color:#2a7a4b}
+  .exam-tf-btn.selected-f{border-color:#8c3a3a;background:#f8eaea;color:#8c3a3a}
+  .exam-fitb{width:100%;border:1.5px solid var(--ivory-dark);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-family:var(--font-english);font-size:.9rem;color:var(--ink);background:var(--ivory);outline:none;transition:border-color .15s}
+  .exam-fitb:focus{border-color:var(--teal-mid);background:white}
+  .exam-q.correct{border-color:#2a7a4b;background:#f4fbf6}
+  .exam-q.incorrect{border-color:#c0392b;background:#fdf4f4}
+  .exam-q.partial{border-color:var(--gold-warm);background:#fffbf0}
+  .mark-badge{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;font-weight:700;border-radius:999px;padding:2px 10px;margin-top:var(--space-sm)}
+  .mark-badge.correct{background:#2a7a4b;color:white}
+  .mark-badge.incorrect{background:#c0392b;color:white}
+  .mark-badge.partial{background:var(--gold-warm);color:white}
+  .mark-explanation{font-size:.82rem;color:var(--ink-mid);line-height:1.7;margin-top:var(--space-sm);padding:var(--space-sm) var(--space-md);background:rgba(0,0,0,.03);border-radius:var(--radius-sm);display:none}
+  .mark-explanation.show{display:block}
+  #results-panel{display:none;background:white;border:2px solid var(--tab-aqeedah);border-radius:var(--radius-xl);padding:var(--space-2xl);text-align:center;margin-top:var(--space-xl)}
+  #results-panel.show{display:block}
+  .result-score-circle{width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto var(--space-lg);border:4px solid}
+  .result-score-circle .score-num{font-size:2rem;font-weight:700;line-height:1}
+  .result-score-circle .score-total{font-size:.75rem;color:inherit;opacity:.7}
+  .grade-A{border-color:#2a7a4b;color:#2a7a4b}.grade-B{border-color:var(--teal-deep);color:var(--teal-deep)}
+  .grade-C{border-color:var(--gold-warm);color:var(--gold-warm)}.grade-D{border-color:#c0392b;color:#c0392b}
+  .exam-submit-bar{position:sticky;bottom:0;background:white;border-top:1px solid var(--ivory-dark);padding:var(--space-md) var(--space-xl);display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);z-index:10;box-shadow:0 -4px 20px rgba(0,0,0,.06)}
+  .answer-tracker{font-size:.82rem;color:var(--ink-faint)}
+  .answer-tracker strong{color:var(--teal-deep)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="site-logo">
+      <span class="logo-ar">دار الهجرة</span>
+      <span class="logo-en">Salafi Foundational School</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li class="nav-item"><a href="../islam101/index.html"><span class="nav-ar">أساسيات</span><span class="nav-en">Islam 101</span></a></li>
+        <li class="nav-item"><a href="../quran/index.html"><span class="nav-ar">القرآن</span><span class="nav-en">Quran</span></a></li>
+        <li class="nav-item"><a href="../hadeeth/index.html"><span class="nav-ar">الحديث</span><span class="nav-en">Hadeeth</span></a></li>
+        <li class="nav-item"><a href="../seerah/index.html"><span class="nav-ar">السيرة</span><span class="nav-en">Seerah</span></a></li>
+        <li class="nav-item"><a href="../fiqh/index.html"><span class="nav-ar">الفقه</span><span class="nav-en">Fiqh</span></a></li>
+        <li class="nav-item active"><a href="index.html"><span class="nav-ar">العقيدة</span><span class="nav-en">Aqeedah</span></a></li>
+        <li class="nav-item"><a href="../arabic/index.html"><span class="nav-ar">العربية</span><span class="nav-en">Arabic</span></a></li>
+        <li class="nav-item"><a href="../resources/index.html"><span class="nav-ar">الموارد</span><span class="nav-en">Resources</span></a></li>
+      </ul>
+    </nav>
+    <div class="year-selector" role="group" aria-label="Select year level">
+      <select class="year-select" aria-label="Choose your year level"><option value="1">Year 1+</option><option value="2">Year 2+</option><option value="3">Year 3+</option><option value="4">Year 4+</option><option value="5">Year 5</option></select>
+    </div>
+  </div>
+</header>
+
+<div style="max-width:860px;margin:0 auto;padding:var(--space-xl) var(--space-lg) 100px">
+
+  <div class="exam-hero">
+    <div class="exam-timer" id="timer-display">
+      <span class="timer-dot"></span>
+      <span id="timer-text">35:00</span>
+      <span style="opacity:.6;font-size:.75rem">remaining</span>
+    </div>
+    <p style="font-family:var(--font-arabic);font-size:2rem;direction:rtl;font-weight:700;margin-bottom:4px">اختبار الوحدة الثالثة</p>
+    <p style="font-size:1.1rem;font-weight:600;opacity:.9;margin-bottom:var(--space-sm)">Unit 3 Examination — أركان الإيمان الستة</p>
+    <p style="font-size:.88rem;opacity:.7;line-height:1.7">The Six Articles of Faith · Lessons 0–4 · 35 marks · 35 minutes</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);margin-top:var(--space-lg)">
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section A</strong> — True / False · 10 marks</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section B</strong> — Multiple Choice · 10 marks</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section C</strong> — Source Matching · 5 marks</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section D</strong> — Match &amp; Order · 5 marks</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section E</strong> — Short Answer · 5 marks</div>
+    </div>
+  </div>
+
+  <div style="background:var(--ivory);border:1px solid var(--ivory-dark);border-radius:0 0 var(--radius-xl) var(--radius-xl);padding:var(--space-md) var(--space-xl);margin-bottom:var(--space-xl)">
+    <p style="font-size:.82rem;color:var(--ink-mid);line-height:1.7"><strong>Instructions:</strong> Answer all questions. This exam covers all of Unit 3 — the six articles of faith (Lessons 0–4). Bismillāh.</p>
+  </div>
+
+  <form id="exam-form" novalidate>
+
+    <!-- SECTION A: TRUE / FALSE -->
+    <div class="exam-section-label"><span class="esec-num">SECTION A</span><span class="esec-title">True or False — صحيح أم خاطئ</span><span class="esec-marks">10 marks · 1 each</span></div>
+
+    <div class="exam-q" id="eq1" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 1</p><p class="exam-q-text"><span class="exam-q-ar">الإيمان قول وعمل واعتقاد، يزيد بالطاعة وينقص بالمعصية.</span> Īmān is statement, action, and belief; it increases with obedience and decreases with sin.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="1" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="1" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq2" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 2</p><p class="exam-q-text"><span class="exam-q-ar">أركان الإيمان ستة، ذُكرت في حديث جبريل.</span> The pillars of īmān are six, listed in the Ḥadīth of Jibrīl.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="2" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="2" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq3" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 3</p><p class="exam-q-text"><span class="exam-q-ar">خُلقت الملائكة من نور ولا يعصون الله.</span> The angels were created from light and do not disobey Allah.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="3" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="3" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq4" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 4</p><p class="exam-q-text"><span class="exam-q-ar">التوراة والإنجيل الموجودان اليوم سالمان من التحريف.</span> The Tawrāt and Injīl as they exist today are free from any distortion.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="4" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="4" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq5" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 5</p><p class="exam-q-text"><span class="exam-q-ar">كل رسول نبي، وليس كل نبي رسولاً.</span> Every messenger (rasūl) is a prophet (nabī), but not every prophet is a messenger.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="5" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="5" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq6" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 6</p><p class="exam-q-text"><span class="exam-q-ar">يُسأل الميت في قبره عن ربه ودينه ونبيه.</span> The deceased is questioned in the grave about his Lord, his religion, and his prophet.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="6" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="6" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq7" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 7</p><p class="exam-q-text"><span class="exam-q-ar">الجنة والنار لم تُخلقا بعد، وستُخلقان يوم القيامة.</span> Paradise and Hell have not been created yet and will only be created on the Day of Judgement.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="7" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="7" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq8" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 8</p><p class="exam-q-text"><span class="exam-q-ar">يجوز الاحتجاج بالقدر على فعل المعاصي.</span> It is valid to use qadar as an excuse for committing sins.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="8" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="8" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq9" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 9</p><p class="exam-q-text"><span class="exam-q-ar">الأخذ بالأسباب والدعاء جزء من القدر لا ينافيه.</span> Taking the means and making duʿāʾ is part of qadar and does not contradict it.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="9" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="9" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq10" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 10</p><p class="exam-q-text"><span class="exam-q-ar">الإحسان أعلى من الإيمان، وكل محسن مؤمن.</span> Iḥsān is higher than īmān, and every muḥsin is a muʾmin.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="10" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="10" data-v="false">False ✗</button></div></div>
+
+    <!-- SECTION B: MCQ -->
+    <div class="exam-section-label"><span class="esec-num">SECTION B</span><span class="esec-title">Multiple Choice — اختر الإجابة الصحيحة</span><span class="esec-marks">10 marks · 1 each</span></div>
+
+    <div class="exam-q" id="eq11" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 11</p><p class="exam-q-text"><span class="exam-q-ar">كم عدد أركان الإيمان؟</span> How many pillars of īmān are there?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="11" data-v="0"><span class="opt-letter">a</span> Three</button><button type="button" class="exam-mcq-opt" data-q="11" data-v="1"><span class="opt-letter">b</span> Five</button><button type="button" class="exam-mcq-opt" data-q="11" data-v="2"><span class="opt-letter">c</span> Six</button><button type="button" class="exam-mcq-opt" data-q="11" data-v="3"><span class="opt-letter">d</span> Seven</button></div></div>
+
+    <div class="exam-q" id="eq12" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 12</p><p class="exam-q-text"><span class="exam-q-ar">من أي شيء خُلقت الملائكة؟</span> From what were the angels created?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="12" data-v="0"><span class="opt-letter">a</span> From clay</button><button type="button" class="exam-mcq-opt" data-q="12" data-v="1"><span class="opt-letter">b</span> From light (nūr)</button><button type="button" class="exam-mcq-opt" data-q="12" data-v="2"><span class="opt-letter">c</span> From smokeless fire</button><button type="button" class="exam-mcq-opt" data-q="12" data-v="3"><span class="opt-letter">d</span> From water</button></div></div>
+
+    <div class="exam-q" id="eq13" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 13</p><p class="exam-q-text"><span class="exam-q-ar">أي ملك موكّل بالوحي؟</span> Which angel is entrusted with revelation (waḥy)?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="13" data-v="0"><span class="opt-letter">a</span> Mīkāʾīl</button><button type="button" class="exam-mcq-opt" data-q="13" data-v="1"><span class="opt-letter">b</span> Isrāfīl</button><button type="button" class="exam-mcq-opt" data-q="13" data-v="2"><span class="opt-letter">c</span> Mālik</button><button type="button" class="exam-mcq-opt" data-q="13" data-v="3"><span class="opt-letter">d</span> Jibrīl</button></div></div>
+
+    <div class="exam-q" id="eq14" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 14</p><p class="exam-q-text"><span class="exam-q-ar">أي كتاب أُنزل على موسى عليه السلام؟</span> Which Book was revealed to Mūsā (Moses) ﷺ?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="14" data-v="0"><span class="opt-letter">a</span> The Tawrāt</button><button type="button" class="exam-mcq-opt" data-q="14" data-v="1"><span class="opt-letter">b</span> The Zabūr</button><button type="button" class="exam-mcq-opt" data-q="14" data-v="2"><span class="opt-letter">c</span> The Injīl</button><button type="button" class="exam-mcq-opt" data-q="14" data-v="3"><span class="opt-letter">d</span> The Qurʾān</button></div></div>
+
+    <div class="exam-q" id="eq15" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 15</p><p class="exam-q-text"><span class="exam-q-ar">من هم أولو العزم من الرسل؟</span> Who are the Ulū al-ʿAzm (messengers of firm resolve)?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="15" data-v="0"><span class="opt-letter">a</span> Ādam, Idrīs, Shīth, Hūd, Ṣāliḥ</button><button type="button" class="exam-mcq-opt" data-q="15" data-v="1"><span class="opt-letter">b</span> The four rightly-guided caliphs and Ḥamzah</button><button type="button" class="exam-mcq-opt" data-q="15" data-v="2"><span class="opt-letter">c</span> Nūḥ, Ibrāhīm, Mūsā, ʿĪsā, Muhammad ﷺ</button><button type="button" class="exam-mcq-opt" data-q="15" data-v="3"><span class="opt-letter">d</span> Yūsuf, Yaʿqūb, Dāwūd, Sulaymān, Zakariyyā</button></div></div>
+
+    <div class="exam-q" id="eq16" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 16</p><p class="exam-q-text"><span class="exam-q-ar">ما المرحلة التي تلي البعث مباشرة؟</span> Which stage comes immediately after the resurrection (al-baʿth)?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="16" data-v="0"><span class="opt-letter">a</span> The blowing of the Trumpet</button><button type="button" class="exam-mcq-opt" data-q="16" data-v="1"><span class="opt-letter">b</span> The Gathering (al-ḥashr)</button><button type="button" class="exam-mcq-opt" data-q="16" data-v="2"><span class="opt-letter">c</span> Entering Paradise</button><button type="button" class="exam-mcq-opt" data-q="16" data-v="3"><span class="opt-letter">d</span> The life of the grave</button></div></div>
+
+    <div class="exam-q" id="eq17" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 17</p><p class="exam-q-text"><span class="exam-q-ar">ما المراتب الأربع للقدر بالترتيب؟</span> What are the four levels of qadar, in order?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="17" data-v="0"><span class="opt-letter">a</span> Will, creation, knowledge, writing</button><button type="button" class="exam-mcq-opt" data-q="17" data-v="1"><span class="opt-letter">b</span> Writing, knowledge, creation, will</button><button type="button" class="exam-mcq-opt" data-q="17" data-v="2"><span class="opt-letter">c</span> Creation, will, writing, knowledge</button><button type="button" class="exam-mcq-opt" data-q="17" data-v="3"><span class="opt-letter">d</span> Knowledge, writing, will, creation</button></div></div>
+
+    <div class="exam-q" id="eq18" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 18</p><p class="exam-q-text"><span class="exam-q-ar">حين سُئل النبي ﷺ: «أفلا نتكل على ما كُتب؟» ماذا قال؟</span> When asked "Should we not rely on what is written?", what did the Prophet ﷺ say?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="18" data-v="0"><span class="opt-letter">a</span> "Act, for everyone is made easy toward what he was created for"</button><button type="button" class="exam-mcq-opt" data-q="18" data-v="1"><span class="opt-letter">b</span> "Yes, abandon all effort"</button><button type="button" class="exam-mcq-opt" data-q="18" data-v="2"><span class="opt-letter">c</span> "Only pray and wait"</button><button type="button" class="exam-mcq-opt" data-q="18" data-v="3"><span class="opt-letter">d</span> "Ask a scholar to decide"</button></div></div>
+
+    <div class="exam-q" id="eq19" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 19</p><p class="exam-q-text"><span class="exam-q-ar">ما المراتب الثلاث في الدين بالترتيب الصاعد؟</span> What are the three levels of the religion, in ascending order?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="19" data-v="0"><span class="opt-letter">a</span> Iḥsān, then Īmān, then Islām</button><button type="button" class="exam-mcq-opt" data-q="19" data-v="1"><span class="opt-letter">b</span> Īmān, then Islām, then Iḥsān</button><button type="button" class="exam-mcq-opt" data-q="19" data-v="2"><span class="opt-letter">c</span> Islām, then Īmān, then Iḥsān</button><button type="button" class="exam-mcq-opt" data-q="19" data-v="3"><span class="opt-letter">d</span> They are all the same level</button></div></div>
+
+    <div class="exam-q" id="eq20" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 20</p><p class="exam-q-text"><span class="exam-q-ar">من هو خاتم النبيين؟</span> Who is the Seal of the Prophets (Khātam al-Nabiyyīn)?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="20" data-v="0"><span class="opt-letter">a</span> ʿĪsā (Jesus) ﷺ</button><button type="button" class="exam-mcq-opt" data-q="20" data-v="1"><span class="opt-letter">b</span> Muhammad ﷺ</button><button type="button" class="exam-mcq-opt" data-q="20" data-v="2"><span class="opt-letter">c</span> Ibrāhīm ﷺ</button><button type="button" class="exam-mcq-opt" data-q="20" data-v="3"><span class="opt-letter">d</span> Mūsā ﷺ</button></div></div>
+
+    <!-- SECTION C: SOURCE MATCHING -->
+    <div class="exam-section-label"><span class="esec-num">SECTION C</span><span class="esec-title">Source Matching — طابق الآية بمصدرها</span><span class="esec-marks">5 marks · 1 each</span></div>
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)"><p style="font-size:.85rem;color:var(--ink-mid)">Match each Arabic verse to its correct sūrah reference.</p></div>
+
+    <div class="exam-q" id="eq21" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 21 — Match the source</p><p class="exam-q-text"><span class="exam-q-ar" style="font-size:1.2rem">«إِنَّا كُلَّ شَيْءٍ خَلَقْنَاهُ بِقَدَرٍ»</span></p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="21" data-v="0"><span class="opt-letter">a</span> Sūrat al-Ḥajj 22:7</button><button type="button" class="exam-mcq-opt" data-q="21" data-v="1"><span class="opt-letter">b</span> Sūrat al-Qamar 54:49</button><button type="button" class="exam-mcq-opt" data-q="21" data-v="2"><span class="opt-letter">c</span> Sūrat al-Ḥijr 15:9</button><button type="button" class="exam-mcq-opt" data-q="21" data-v="3"><span class="opt-letter">d</span> Sūrat al-Anfāl 8:2</button></div></div>
+
+    <div class="exam-q" id="eq22" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 22 — Match the source</p><p class="exam-q-text"><span class="exam-q-ar" style="font-size:1.2rem">«إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ»</span></p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="22" data-v="0"><span class="opt-letter">a</span> Sūrat al-Naḥl 16:36</button><button type="button" class="exam-mcq-opt" data-q="22" data-v="1"><span class="opt-letter">b</span> Sūrat al-Qamar 54:49</button><button type="button" class="exam-mcq-opt" data-q="22" data-v="2"><span class="opt-letter">c</span> Sūrat al-Ḥijr 15:9</button><button type="button" class="exam-mcq-opt" data-q="22" data-v="3"><span class="opt-letter">d</span> Sūrat al-Taḥrīm 66:6</button></div></div>
+
+    <div class="exam-q" id="eq23" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 23 — Match the source</p><p class="exam-q-text"><span class="exam-q-ar" style="font-size:1.2rem">«وَنَضَعُ الْمَوَازِينَ الْقِسْطَ لِيَوْمِ الْقِيَامَةِ»</span></p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="23" data-v="0"><span class="opt-letter">a</span> Sūrat al-Anbiyāʾ 21:47</button><button type="button" class="exam-mcq-opt" data-q="23" data-v="1"><span class="opt-letter">b</span> Sūrat al-Ḥajj 22:7</button><button type="button" class="exam-mcq-opt" data-q="23" data-v="2"><span class="opt-letter">c</span> Sūrat al-Taghābun 64:11</button><button type="button" class="exam-mcq-opt" data-q="23" data-v="3"><span class="opt-letter">d</span> Sūrat al-Ḥadīd 57:25</button></div></div>
+
+    <div class="exam-q" id="eq24" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 24 — Match the source</p><p class="exam-q-text"><span class="exam-q-ar" style="font-size:1.2rem">«لَّا يَعْصُونَ اللَّهَ مَا أَمَرَهُمْ وَيَفْعَلُونَ مَا يُؤْمَرُونَ»</span></p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="24" data-v="0"><span class="opt-letter">a</span> Sūrat al-Anbiyāʾ 21:26</button><button type="button" class="exam-mcq-opt" data-q="24" data-v="1"><span class="opt-letter">b</span> Sūrat al-Qamar 54:49</button><button type="button" class="exam-mcq-opt" data-q="24" data-v="2"><span class="opt-letter">c</span> Sūrat al-Ḥijr 15:9</button><button type="button" class="exam-mcq-opt" data-q="24" data-v="3"><span class="opt-letter">d</span> Sūrat al-Taḥrīm 66:6</button></div></div>
+
+    <div class="exam-q" id="eq25" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 25 — Match the source</p><p class="exam-q-text"><span class="exam-q-ar" style="font-size:1.2rem">«مَا أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذْنِ اللَّهِ وَمَن يُؤْمِن بِاللَّهِ يَهْدِ قَلْبَهُ»</span></p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="25" data-v="0"><span class="opt-letter">a</span> Sūrat al-Anbiyāʾ 21:47</button><button type="button" class="exam-mcq-opt" data-q="25" data-v="1"><span class="opt-letter">b</span> Sūrat al-Taghābun 64:11</button><button type="button" class="exam-mcq-opt" data-q="25" data-v="2"><span class="opt-letter">c</span> Sūrat al-Anfāl 8:2</button><button type="button" class="exam-mcq-opt" data-q="25" data-v="3"><span class="opt-letter">d</span> Sūrat al-Ḥajj 22:7</button></div></div>
+
+    <!-- SECTION D: MATCH & ORDER -->
+    <div class="exam-section-label"><span class="esec-num">SECTION D</span><span class="esec-title">Match &amp; Order — طابق ورتّب</span><span class="esec-marks">5 marks · 1 each</span></div>
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)"><p style="font-size:.85rem;color:var(--ink-mid)">Match each item to the correct article, angel, or stage.</p></div>
+
+    <div class="exam-q" id="eq26" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 26</p><p class="exam-q-text">Which angel is entrusted with blowing the Trumpet on the Last Day?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="26" data-v="0"><span class="opt-letter">a</span> Mīkāʾīl</button><button type="button" class="exam-mcq-opt" data-q="26" data-v="1"><span class="opt-letter">b</span> Jibrīl</button><button type="button" class="exam-mcq-opt" data-q="26" data-v="2"><span class="opt-letter">c</span> Isrāfīl</button><button type="button" class="exam-mcq-opt" data-q="26" data-v="3"><span class="opt-letter">d</span> Mālik</button></div></div>
+
+    <div class="exam-q" id="eq27" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 27</p><p class="exam-q-text">"He grants the servant success to repent, then accepts it" — but which level of qadar means Allah wrote all things in the Preserved Tablet?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="27" data-v="0"><span class="opt-letter">a</span> al-Kitābah (the Writing)</button><button type="button" class="exam-mcq-opt" data-q="27" data-v="1"><span class="opt-letter">b</span> al-Khalq (the Creation)</button><button type="button" class="exam-mcq-opt" data-q="27" data-v="2"><span class="opt-letter">c</span> al-Mashīʾah (the Will)</button><button type="button" class="exam-mcq-opt" data-q="27" data-v="3"><span class="opt-letter">d</span> al-ʿIlm (the Knowledge)</button></div></div>
+
+    <div class="exam-q" id="eq28" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 28</p><p class="exam-q-text">The Zabūr was revealed to which prophet?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="28" data-v="0"><span class="opt-letter">a</span> Mūsā (Moses)</button><button type="button" class="exam-mcq-opt" data-q="28" data-v="1"><span class="opt-letter">b</span> Dāwūd (David)</button><button type="button" class="exam-mcq-opt" data-q="28" data-v="2"><span class="opt-letter">c</span> ʿĪsā (Jesus)</button><button type="button" class="exam-mcq-opt" data-q="28" data-v="3"><span class="opt-letter">d</span> Ibrāhīm (Abraham)</button></div></div>
+
+    <div class="exam-q" id="eq29" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 29</p><p class="exam-q-text">Which event comes LAST among these four stages of the Last Day?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="29" data-v="0"><span class="opt-letter">a</span> The Gathering (al-ḥashr)</button><button type="button" class="exam-mcq-opt" data-q="29" data-v="1"><span class="opt-letter">b</span> The Resurrection (al-baʿth)</button><button type="button" class="exam-mcq-opt" data-q="29" data-v="2"><span class="opt-letter">c</span> The Reckoning (al-ḥisāb)</button><button type="button" class="exam-mcq-opt" data-q="29" data-v="3"><span class="opt-letter">d</span> Crossing the Bridge (al-ṣirāṭ)</button></div></div>
+
+    <div class="exam-q" id="eq30" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 30</p><p class="exam-q-text">Which angels record every deed a person does?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="30" data-v="0"><span class="opt-letter">a</span> Munkar and Nakīr</button><button type="button" class="exam-mcq-opt" data-q="30" data-v="1"><span class="opt-letter">b</span> Jibrīl and Mīkāʾīl</button><button type="button" class="exam-mcq-opt" data-q="30" data-v="2"><span class="opt-letter">c</span> al-Kirām al-Kātibūn (the noble scribes)</button><button type="button" class="exam-mcq-opt" data-q="30" data-v="3"><span class="opt-letter">d</span> Mālik and Riḍwān</button></div></div>
+
+    <!-- SECTION E: SHORT ANSWER -->
+    <div class="exam-section-label"><span class="esec-num">SECTION E</span><span class="esec-title">Short Answer — أجب بإيجاز</span><span class="esec-marks">5 marks · 1 each</span></div>
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)"><p style="font-size:.85rem;color:var(--ink-mid)">Write a short answer in Arabic or English. Marks are awarded on submission based on key terms found in your answer.</p></div>
+
+    <div class="exam-q" id="eq31" data-type="short" data-keywords="allah|angels|books|messengers|last day|qadar|ملائكة|كتب|رسل|اليوم|القدر|الله" data-marks="1"><p class="exam-q-num">Question 31</p><p class="exam-q-text"><span class="exam-q-ar">اذكر أركان الإيمان الستة.</span> List the six pillars of īmān.</p><textarea class="exam-fitb" id="ans31" rows="3" placeholder="Write your answer here... (Arabic or English)"></textarea></div>
+
+    <div class="exam-q" id="eq32" data-type="short" data-keywords="light|نور|disobey|لا يعصون|command|wings|servants|عباد" data-marks="1"><p class="exam-q-num">Question 32</p><p class="exam-q-text"><span class="exam-q-ar">صف طبيعة الملائكة بنقطتين.</span> Describe the nature of the angels in two points.</p><textarea class="exam-fitb" id="ans32" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+    <div class="exam-q" id="eq33" data-type="short" data-keywords="preserved|محفوظ|tahrif|تحريف|changed|altered|guardian|15:9|distort" data-marks="1"><p class="exam-q-num">Question 33</p><p class="exam-q-text"><span class="exam-q-ar">لماذا نأخذ ديننا من القرآن دون الكتب السابقة؟</span> Why do we take our religion from the Quran and not the earlier scriptures?</p><textarea class="exam-fitb" id="ans33" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+    <div class="exam-q" id="eq34" data-type="short" data-keywords="lord|religion|prophet|رب|دين|نبي|allah|islam|muhammad" data-marks="1"><p class="exam-q-num">Question 34</p><p class="exam-q-text"><span class="exam-q-ar">ما الأسئلة الثلاثة التي يُسأل عنها الميت في قبره؟</span> What are the three questions the deceased is asked in the grave?</p><textarea class="exam-fitb" id="ans34" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+    <div class="exam-q" id="eq35" data-type="short" data-keywords="knowledge|writing|will|creation|علم|كتابة|مشيئة|خلق|ilm|kitabah|mashiah|khalq" data-marks="1"><p class="exam-q-num">Question 35</p><p class="exam-q-text"><span class="exam-q-ar">اذكر مراتب القدر الأربع.</span> State the four levels of qadar.</p><textarea class="exam-fitb" id="ans35" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+  </form>
+
+  <div id="results-panel">
+    <p style="font-family:var(--font-arabic);font-size:1.5rem;color:var(--teal-deep);direction:rtl;margin-bottom:var(--space-sm)">نتيجة الاختبار</p>
+    <p style="font-size:1rem;font-weight:600;color:var(--ink-mid);margin-bottom:var(--space-xl)">Unit 3 Examination Results</p>
+    <div id="score-circle" class="result-score-circle grade-A"><span class="score-num" id="score-num">—</span><span class="score-total">out of 35</span></div>
+    <p style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:var(--space-sm)" id="grade-text"></p>
+    <p style="font-size:.9rem;color:var(--ink-mid);line-height:1.7;margin-bottom:var(--space-xl)" id="grade-message"></p>
+    <div style="display:flex;justify-content:center;gap:var(--space-md);flex-wrap:wrap">
+      <button class="btn-secondary" onclick="window.location.href='index.html'">← Back to Aqeedah</button>
+      <button class="btn-primary" onclick="window.location.href='../../index.html'">Back to Home →</button>
+    </div>
+    <p style="font-size:.78rem;color:var(--ink-faint);margin-top:var(--space-xl)">Review incorrect answers above — each question shows the correct answer and explanation after submission.</p>
+  </div>
+
+</div>
+
+<div class="exam-submit-bar">
+  <div class="answer-tracker">Answered: <strong id="answered-count">0</strong> / 35</div>
+  <button type="button" class="btn-primary" id="submit-btn" onclick="submitExam()">Submit Exam · تسليم الاختبار</button>
+</div>
+
+<script src="../../js/main.js"></script>
+<script>
+'use strict';
+
+let timeLeft = 35 * 60;
+let timerInterval;
+let examSubmitted = false;
+function stripAr(s) { return s.replace(/[\u064B-\u065F\u0670\u0640]/g, ''); }
+
+function startTimer() {
+  timerInterval = setInterval(function() {
+    if (examSubmitted) { clearInterval(timerInterval); return; }
+    timeLeft--;
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    document.getElementById('timer-text').textContent = m + ':' + String(s).padStart(2,'0');
+    const el = document.getElementById('timer-display');
+    if (timeLeft <= 0) { clearInterval(timerInterval); submitExam(true); }
+    else if (timeLeft <= 300) { el.className = 'exam-timer danger'; }
+    else if (timeLeft <= 600) { el.className = 'exam-timer warn'; }
+  }, 1000);
+}
+startTimer();
+
+const answers = {};
+let answeredCount = 0;
+function updateAnsweredCount() { document.getElementById('answered-count').textContent = Object.keys(answers).length; }
+
+document.querySelectorAll('.exam-mcq-opt').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (examSubmitted) return;
+    const q = this.dataset.q;
+    const v = parseInt(this.dataset.v);
+    document.querySelectorAll('.exam-mcq-opt[data-q="' + q + '"]').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    const wasAnswered = answers.hasOwnProperty('q' + q);
+    answers['q' + q] = v;
+    if (!wasAnswered) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+document.querySelectorAll('.exam-tf-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (examSubmitted) return;
+    const q = this.dataset.q;
+    const v = this.dataset.v;
+    document.querySelectorAll('.exam-tf-btn[data-q="' + q + '"]').forEach(b => b.classList.remove('selected-t','selected-f'));
+    this.classList.add(v === 'true' ? 'selected-t' : 'selected-f');
+    const wasAnswered = answers.hasOwnProperty('q' + q);
+    answers['q' + q] = v === 'true';
+    if (!wasAnswered) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+document.querySelectorAll('textarea.exam-fitb').forEach(ta => {
+  ta.addEventListener('input', function() {
+    if (examSubmitted) return;
+    const id = this.id.replace('ans','');
+    const wasAnswered = answers.hasOwnProperty('q' + id);
+    answers['q' + id] = this.value.trim();
+    if (!wasAnswered && this.value.trim()) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+function submitExam(force) {
+  if (examSubmitted) return;
+  if (!force && Object.keys(answers).length < 25) {
+    const proceed = confirm('You have answered ' + Object.keys(answers).length + ' of 35 questions. Submit anyway?');
+    if (!proceed) return;
+  }
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').textContent = 'Submitted';
+
+  let totalScore = 0;
+
+  document.querySelectorAll('.exam-q').forEach(function(qEl) {
+    const qNum = qEl.id.replace('eq','');
+    const type = qEl.dataset.type;
+    const marks = parseInt(qEl.dataset.marks);
+
+    if (type === 'tf') {
+      const correct = qEl.dataset.answer === 'true';
+      const userVal = answers['q' + qNum];
+      const isCorrect = userVal === correct;
+      markQuestion(qEl, isCorrect, marks, isCorrect ? marks : 0, 'Correct answer: ' + (correct ? 'True ✓' : 'False ✗'));
+      if (isCorrect) totalScore += marks;
+    } else if (type === 'mcq') {
+      const correct = parseInt(qEl.dataset.answer);
+      const userVal = answers['q' + qNum];
+      const isCorrect = userVal === correct;
+      const opts = qEl.querySelectorAll('.exam-mcq-opt');
+      opts.forEach(function(o, i) {
+        if (i === correct) o.style.cssText += 'border-color:#2a7a4b;background:#e8f4ee;';
+        else if (parseInt(o.dataset.v) === userVal && !isCorrect) o.style.cssText += 'border-color:#c0392b;background:#fdf4f4;';
+      });
+      const correctText = opts[correct] ? opts[correct].textContent.trim() : '';
+      markQuestion(qEl, isCorrect, marks, isCorrect ? marks : 0, 'Correct answer: ' + correctText);
+      if (isCorrect) totalScore += marks;
+    } else if (type === 'short') {
+      const keywords = stripAr((qEl.dataset.keywords || '').toLowerCase()).split('|');
+      const userText = stripAr((answers['q' + qNum] || '').toLowerCase());
+      const hits = keywords.filter(k => k && userText.includes(k)).length;
+      const awarded = hits >= 2 ? marks : (hits === 1 ? marks / 2 : 0);
+      totalScore += awarded;
+      const isCorrect = awarded >= marks;
+      const isPartial = awarded > 0 && !isCorrect;
+      markQuestion(qEl, isCorrect, marks, awarded, 'Key terms expected: ' + (qEl.dataset.keywords || '').replace(/\|/g, ', '), isPartial);
+    }
+  });
+
+  const pct = Math.round((totalScore / 35) * 100);
+  document.getElementById('score-num').textContent = totalScore;
+  const circle = document.getElementById('score-circle');
+  let gradeClass, gradeLetter, gradeMsg;
+  if (pct >= 90) {
+    gradeClass = 'grade-A'; gradeLetter = 'Excellent — ممتاز';
+    gradeMsg = 'Masha\'Allah! Outstanding. You have a firm grasp of all six articles of faith — and you have completed the Aqeedah track through Unit 3.';
+  } else if (pct >= 75) {
+    gradeClass = 'grade-B'; gradeLetter = 'Good — جيد جداً';
+    gradeMsg = 'Well done. You understand the six pillars well. Review the questions you missed — especially the order of the Last Day and the four levels of qadar.';
+  } else if (pct >= 60) {
+    gradeClass = 'grade-C'; gradeLetter = 'Pass — مقبول';
+    gradeMsg = 'You have passed, but strengthen your grasp. Revisit L.3 (the Last Day sequence) and L.4 (the levels of qadar) before moving on.';
+  } else {
+    gradeClass = 'grade-D'; gradeLetter = 'Needs Review — يحتاج مراجعة';
+    gradeMsg = 'We recommend reviewing all five lessons before retaking the exam. Focus on the six pillars, the named angels and books, and the four levels of qadar.';
+  }
+  circle.className = 'result-score-circle ' + gradeClass;
+  document.getElementById('grade-text').textContent = pct + '% — ' + gradeLetter;
+  document.getElementById('grade-message').textContent = gradeMsg;
+  document.getElementById('results-panel').classList.add('show');
+
+  if (typeof markLessonComplete === 'function') { markLessonComplete('aq3-unit3-exam'); }
+  if (window.STATE) {
+    window.STATE.scores['aq-unit3'] = { score: totalScore, total: 35, pct: pct, date: new Date().toISOString() };
+    if (typeof saveState === 'function') saveState();
+  }
+
+  setTimeout(function() { document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+}
+
+function markQuestion(qEl, isCorrect, totalMarks, awarded, explanation, isPartial) {
+  qEl.classList.add(isPartial ? 'partial' : isCorrect ? 'correct' : 'incorrect');
+  const badge = document.createElement('span');
+  badge.className = 'mark-badge ' + (isPartial ? 'partial' : isCorrect ? 'correct' : 'incorrect');
+  badge.textContent = isCorrect ? '✓ ' + awarded + '/' + totalMarks + ' marks'
+    : isPartial ? '~ ' + awarded + '/' + totalMarks + ' marks'
+    : '✗ 0/' + totalMarks + ' marks';
+  const exp = document.createElement('div');
+  exp.className = 'mark-explanation show';
+  exp.textContent = explanation;
+  qEl.appendChild(badge);
+  qEl.appendChild(exp);
+}
+</script>
+</body>
+</html>

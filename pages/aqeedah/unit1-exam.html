@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Exam — التوحيد والشرك | Aqeedah | دار الهجرة</title>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>">
+<script>document.documentElement.dataset.theme=localStorage.getItem('mdrs_theme')||'lilac';</script>
+<style>
+  /* ── Exam-specific styles ─────────────────────────────── */
+  .exam-hero {
+    background: linear-gradient(135deg, var(--tab-aqeedah), #4a1a1a);
+    color: white;
+    padding: var(--space-xl) var(--space-2xl);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .exam-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border: 1px solid rgba(201,151,42,.15);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .exam-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    margin-bottom: var(--space-lg);
+  }
+  .exam-timer .timer-dot {
+    width: 8px; height: 8px;
+    background: #4caf50;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+  .exam-timer.warn { border-color: rgba(255,200,0,.5); }
+  .exam-timer.warn .timer-dot { background: #ffcc00; }
+  .exam-timer.danger { border-color: rgba(255,80,80,.5); }
+  .exam-timer.danger .timer-dot { background: #ff5050; }
+
+  .exam-section-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-xl) 0 var(--space-lg);
+  }
+  .exam-section-label .esec-num {
+    background: var(--tab-aqeedah);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: 5px 14px;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+  .exam-section-label .esec-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .esec-marks {
+    margin-left: auto;
+    font-size: .78rem;
+    color: var(--ink-faint);
+    font-weight: 500;
+  }
+
+  .exam-q {
+    background: white;
+    border: 1px solid var(--ivory-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-md);
+    transition: border-color .2s;
+  }
+  .exam-q:focus-within { border-color: var(--teal-mid); }
+  .exam-q-num {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+    margin-bottom: var(--space-sm);
+  }
+  .exam-q-text {
+    font-size: .95rem;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+  .exam-q-ar {
+    font-family: var(--font-arabic);
+    font-size: 1.05rem;
+    color: var(--teal-deep);
+    direction: rtl;
+    display: block;
+    margin-bottom: var(--space-xs);
+    line-height: 1.7;
+  }
+
+  /* MCQ in exam */
+  .exam-mcq-options { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .exam-mcq-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border: 1.5px solid var(--ivory-dark);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: .9rem;
+    color: var(--ink-mid);
+    background: var(--ivory);
+    transition: all .15s;
+    text-align: left;
+    font-family: var(--font-english);
+    line-height: 1.5;
+  }
+  .exam-mcq-opt:hover { border-color: var(--teal-mid); background: #f0f8f8; }
+  .exam-mcq-opt.selected { border-color: var(--teal-mid); background: #e8f4f4; }
+  .exam-mcq-opt .opt-letter {
+    font-weight: 700;
+    color: var(--teal-deep);
+    min-width: 18px;
+    font-size: .8rem;
+    padding-top: 2px;
+  }
+
+  /* T/F in exam */
+  .exam-tf-btns { display: flex; gap: var(--space-md); }
+  .exam-tf-btn {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    border: 1.5px solid var(--ivory-dark);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: .88rem;
+    font-weight: 600;
+    background: var(--ivory);
+    color: var(--ink-mid);
+    transition: all .15s;
+    font-family: var(--font-english);
+  }
+  .exam-tf-btn:hover { border-color: var(--teal-mid); background: #f0f8f8; }
+  .exam-tf-btn.selected-t { border-color: #2a7a4b; background: #e8f4ee; color: #2a7a4b; }
+  .exam-tf-btn.selected-f { border-color: #8c3a3a; background: #f8eaea; color: #8c3a3a; }
+
+  /* Short answer / FITB in exam */
+  .exam-fitb {
+    width: 100%;
+    border: 1.5px solid var(--ivory-dark);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-english);
+    font-size: .9rem;
+    color: var(--ink);
+    background: var(--ivory);
+    outline: none;
+    transition: border-color .15s;
+  }
+  .exam-fitb:focus { border-color: var(--teal-mid); background: white; }
+  .exam-fitb-ar {
+    direction: rtl;
+    font-family: var(--font-arabic);
+    font-size: 1rem;
+  }
+
+  /* Marking results */
+  .exam-q.correct { border-color: #2a7a4b; background: #f4fbf6; }
+  .exam-q.incorrect { border-color: #c0392b; background: #fdf4f4; }
+  .exam-q.partial { border-color: var(--gold-warm); background: #fffbf0; }
+  .mark-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .75rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin-top: var(--space-sm);
+  }
+  .mark-badge.correct { background: #2a7a4b; color: white; }
+  .mark-badge.incorrect { background: #c0392b; color: white; }
+  .mark-badge.partial { background: var(--gold-warm); color: white; }
+  .mark-explanation {
+    font-size: .82rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(0,0,0,.03);
+    border-radius: var(--radius-sm);
+    display: none;
+  }
+  .mark-explanation.show { display: block; }
+
+  /* Results panel */
+  #results-panel {
+    display: none;
+    background: white;
+    border: 2px solid var(--tab-aqeedah);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+  #results-panel.show { display: block; }
+  .result-score-circle {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-lg);
+    border: 4px solid;
+  }
+  .result-score-circle .score-num {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .result-score-circle .score-total {
+    font-size: .75rem;
+    color: inherit;
+    opacity: .7;
+  }
+  .grade-A { border-color: #2a7a4b; color: #2a7a4b; }
+  .grade-B { border-color: var(--teal-deep); color: var(--teal-deep); }
+  .grade-C { border-color: var(--gold-warm); color: var(--gold-warm); }
+  .grade-D { border-color: #c0392b; color: #c0392b; }
+
+  /* Submit bar */
+  .exam-submit-bar {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid var(--ivory-dark);
+    padding: var(--space-md) var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    z-index: 10;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.06);
+  }
+  .answer-tracker {
+    font-size: .82rem;
+    color: var(--ink-faint);
+  }
+  .answer-tracker strong { color: var(--teal-deep); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="site-logo">
+      <span class="logo-ar">دار الهجرة</span>
+      <span class="logo-en">Salafi Foundational School</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li class="nav-item"><a href="../islam101/index.html"><span class="nav-ar">أساسيات</span><span class="nav-en">Islam 101</span></a></li>
+        <li class="nav-item"><a href="../quran/index.html"><span class="nav-ar">القرآن</span><span class="nav-en">Quran</span></a></li>
+        <li class="nav-item"><a href="../hadeeth/index.html"><span class="nav-ar">الحديث</span><span class="nav-en">Hadeeth</span></a></li>
+        <li class="nav-item"><a href="../seerah/index.html"><span class="nav-ar">السيرة</span><span class="nav-en">Seerah</span></a></li>
+        <li class="nav-item"><a href="../fiqh/index.html"><span class="nav-ar">الفقه</span><span class="nav-en">Fiqh</span></a></li>
+        <li class="nav-item active"><a href="index.html"><span class="nav-ar">العقيدة</span><span class="nav-en">Aqeedah</span></a></li>
+        <li class="nav-item"><a href="../arabic/index.html"><span class="nav-ar">العربية</span><span class="nav-en">Arabic</span></a></li>
+        <li class="nav-item"><a href="../resources/index.html"><span class="nav-ar">الموارد</span><span class="nav-en">Resources</span></a></li>
+      </ul>
+    </nav>
+    <div class="year-selector" role="group" aria-label="Select year level">
+      <select class="year-select" aria-label="Choose your year level"><option value="1">Year 1+</option><option value="2">Year 2+</option><option value="3">Year 3+</option><option value="4">Year 4+</option><option value="5">Year 5</option></select>
+    </div>
+  </div>
+</header>
+
+<div style="max-width:860px;margin:0 auto;padding:var(--space-xl) var(--space-lg) 100px">
+
+  <!-- EXAM HERO -->
+  <div class="exam-hero">
+    <div class="exam-timer" id="timer-display">
+      <span class="timer-dot"></span>
+      <span id="timer-text">35:00</span>
+      <span style="opacity:.6;font-size:.75rem">remaining</span>
+    </div>
+    <p style="font-family:var(--font-arabic);font-size:2rem;direction:rtl;font-weight:700;margin-bottom:4px">اختبار الوحدة الأولى</p>
+    <p style="font-size:1.1rem;font-weight:600;opacity:.9;margin-bottom:var(--space-sm)">Unit 1 Examination — التوحيد والشرك</p>
+    <p style="font-size:.88rem;opacity:.7;line-height:1.7">
+      Tawhid and Shirk · Lessons 0–4 · 35 marks · 35 minutes
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);margin-top:var(--space-lg)">
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem">
+        <strong>Section A</strong> — True / False · 10 marks
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem">
+        <strong>Section B</strong> — Multiple Choice · 10 marks
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem">
+        <strong>Section C</strong> — Source Matching · 5 marks
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem">
+        <strong>Section D</strong> — Classification · 5 marks
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem">
+        <strong>Section E</strong> — Short Answer · 5 marks
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--ivory);border:1px solid var(--ivory-dark);border-radius:0 0 var(--radius-xl) var(--radius-xl);padding:var(--space-md) var(--space-xl);margin-bottom:var(--space-xl)">
+    <p style="font-size:.82rem;color:var(--ink-mid);line-height:1.7">
+      <strong>Instructions:</strong> Answer all questions. Where Arabic is given, read it carefully before answering.
+      This exam covers all of Unit 1 — Lessons 0–4. Bismillāh.
+    </p>
+  </div>
+
+  <form id="exam-form" novalidate>
+
+    <!-- ══════════════ SECTION A: TRUE / FALSE ══════════════ -->
+    <div class="exam-section-label">
+      <span class="esec-num">SECTION A</span>
+      <span class="esec-title">True or False — صحيح أم خاطئ</span>
+      <span class="esec-marks">10 marks · 1 each</span>
+    </div>
+
+    <!-- Q1 -->
+    <div class="exam-q" id="eq1" data-type="tf" data-answer="true" data-marks="1">
+      <p class="exam-q-num">Question 1</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">التوحيد هو الهدف من خلق الإنسان والجن.</span>
+        Tawhid — believing in Allah's Oneness — is the purpose for which humans and jinn were created.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="1" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="1" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="exam-q" id="eq2" data-type="tf" data-answer="true" data-marks="1">
+      <p class="exam-q-num">Question 2</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">كلمة «شرك» تأتي من الجذر ش-ر-ك بمعنى الاشتراك والمشاركة.</span>
+        The word "shirk" comes from the root ش-ر-ك meaning to share or associate.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="2" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="2" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="exam-q" id="eq3" data-type="tf" data-answer="false" data-marks="1">
+      <p class="exam-q-num">Question 3</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">الشرك الأصغر يُخرج صاحبه من الإسلام.</span>
+        Minor shirk (al-shirk al-aṣghar) takes a person outside of Islam.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="3" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="3" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="exam-q" id="eq4" data-type="tf" data-answer="true" data-marks="1">
+      <p class="exam-q-num">Question 4</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">الرياء هو من أخوف ما خاف النبي ﷺ على أمته.</span>
+        The Prophet ﷺ described riyāʾ (showing off) as what he feared most for his ummah.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="4" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="4" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="exam-q" id="eq5" data-type="tf" data-answer="false" data-marks="1">
+      <p class="exam-q-num">Question 5</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">زيارة القبور لأجل الدعاء لصاحبها هي شرك أكبر.</span>
+        Visiting graves to make duʿāʾ <em>for</em> the deceased is major shirk.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="5" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="5" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="exam-q" id="eq6" data-type="tf" data-answer="true" data-marks="1">
+      <p class="exam-q-num">Question 6</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">وصف لقمان الشرك لابنه بأنه «ظلم عظيم» في سورة لقمان.</span>
+        Luqmān described shirk to his son as "ẓulm ʿaẓīm" (tremendous wrongdoing) in Sūrat Luqmān.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="6" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="6" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="exam-q" id="eq7" data-type="tf" data-answer="false" data-marks="1">
+      <p class="exam-q-num">Question 7</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">التوكل الصحيح على الله يعني ترك الأسباب الطبيعية والأدوية.</span>
+        Correct tawakkul (reliance on Allah) means abandoning natural means and medicines.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="7" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="7" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="exam-q" id="eq8" data-type="tf" data-answer="true" data-marks="1">
+      <p class="exam-q-num">Question 8</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">الحديث القدسي هو كلام الله يرويه النبي ﷺ لكنه ليس جزءاً من القرآن.</span>
+        A ḥadīth qudsī is the speech of Allah narrated by the Prophet ﷺ but is not part of the Quran.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="8" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="8" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="exam-q" id="eq9" data-type="tf" data-answer="false" data-marks="1">
+      <p class="exam-q-num">Question 9</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">«ما شاء الله وفلان» تعبير صحيح يمدحه النبي ﷺ.</span>
+        The phrase "as Allah and so-and-so willed" (mā shāʾa Allāhu wa fulān) is a phrase the Prophet ﷺ approved.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="9" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="9" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="exam-q" id="eq10" data-type="tf" data-answer="true" data-marks="1">
+      <p class="exam-q-num">Question 10</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">«الإحباط» في القرآن يعني إبطال العمل وإزالة ثوابه كلياً.</span>
+        "Iḥbāṭ" (إحباط) in the Quran means complete nullification of a deed — its reward is entirely wiped out.
+      </p>
+      <div class="exam-tf-btns">
+        <button type="button" class="exam-tf-btn" data-q="10" data-v="true">True ✓</button>
+        <button type="button" class="exam-tf-btn" data-q="10" data-v="false">False ✗</button>
+      </div>
+    </div>
+
+    <!-- ══════════════ SECTION B: MCQ ══════════════ -->
+    <div class="exam-section-label">
+      <span class="esec-num">SECTION B</span>
+      <span class="esec-title">Multiple Choice — اختر الإجابة الصحيحة</span>
+      <span class="esec-marks">10 marks · 1 each</span>
+    </div>
+
+    <!-- Q11 -->
+    <div class="exam-q" id="eq11" data-type="mcq" data-answer="2" data-marks="1">
+      <p class="exam-q-num">Question 11</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما التعريف الصحيح للشرك في الاصطلاح الإسلامي؟</span>
+        What is the correct Islamic definition of shirk?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="11" data-v="0"><span class="opt-letter">a</span> Denying the existence of Allah</button>
+        <button type="button" class="exam-mcq-opt" data-q="11" data-v="1"><span class="opt-letter">b</span> Neglecting prayer and other obligations</button>
+        <button type="button" class="exam-mcq-opt" data-q="11" data-v="2"><span class="opt-letter">c</span> Making a partner with Allah in any right that belongs exclusively to Him</button>
+        <button type="button" class="exam-mcq-opt" data-q="11" data-v="3"><span class="opt-letter">d</span> Doubting the Day of Judgement</button>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="exam-q" id="eq12" data-type="mcq" data-answer="1" data-marks="1">
+      <p class="exam-q-num">Question 12</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">أي الآيات التالية تنهى عن اتخاذ الأنداد مع الله؟</span>
+        Which verse prohibits setting up rivals (andād) to Allah?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="12" data-v="0"><span class="opt-letter">a</span> Sūrat al-Naḥl 16:36 — "Worship Allah and avoid false gods"</button>
+        <button type="button" class="exam-mcq-opt" data-q="12" data-v="1"><span class="opt-letter">b</span> Sūrat al-Baqarah 2:22 — "Do not set up rivals (andād) to Allah"</button>
+        <button type="button" class="exam-mcq-opt" data-q="12" data-v="2"><span class="opt-letter">c</span> Sūrat al-Nisāʾ 4:48 — "Allah does not forgive that partners be associated with Him"</button>
+        <button type="button" class="exam-mcq-opt" data-q="12" data-v="3"><span class="opt-letter">d</span> Sūrat al-Zumar 39:65 — "If you were to associate partners, your deeds would be nullified"</button>
+      </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="exam-q" id="eq13" data-type="mcq" data-answer="0" data-marks="1">
+      <p class="exam-q-num">Question 13</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما أشد أنواع الشرك وأعظمها؟</span>
+        Which type of shirk is the most severe?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="13" data-v="0"><span class="opt-letter">a</span> الشرك الأكبر — Major shirk, which takes one outside of Islam</button>
+        <button type="button" class="exam-mcq-opt" data-q="13" data-v="1"><span class="opt-letter">b</span> الشرك الأصغر — Minor shirk, which nullifies specific deeds</button>
+        <button type="button" class="exam-mcq-opt" data-q="13" data-v="2"><span class="opt-letter">c</span> الشرك الخفي — Hidden shirk in the heart</button>
+        <button type="button" class="exam-mcq-opt" data-q="13" data-v="3"><span class="opt-letter">d</span> All types are equal in severity</button>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="exam-q" id="eq14" data-type="mcq" data-answer="3" data-marks="1">
+      <p class="exam-q-num">Question 14</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما معنى كلمة «أندَاد» في الآية الكريمة: «فَلَا تَجْعَلُوا لِلَّهِ أَنْدَادًا»؟</span>
+        What does "andād" (أنداد) mean in the verse: "Do not set up andād to Allah"?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="14" data-v="0"><span class="opt-letter">a</span> Prophets and messengers</button>
+        <button type="button" class="exam-mcq-opt" data-q="14" data-v="1"><span class="opt-letter">b</span> Angels</button>
+        <button type="button" class="exam-mcq-opt" data-q="14" data-v="2"><span class="opt-letter">c</span> Believers</button>
+        <button type="button" class="exam-mcq-opt" data-q="14" data-v="3"><span class="opt-letter">d</span> Rivals or equals set up alongside Allah</button>
+      </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="exam-q" id="eq15" data-type="mcq" data-answer="2" data-marks="1">
+      <p class="exam-q-num">Question 15</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">أيّ من التالي مثال على الشرك الأكبر؟</span>
+        Which of the following is an example of major shirk?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="15" data-v="0"><span class="opt-letter">a</span> Praying more attentively when others are watching</button>
+        <button type="button" class="exam-mcq-opt" data-q="15" data-v="1"><span class="opt-letter">b</span> Saying "I swear by my life"</button>
+        <button type="button" class="exam-mcq-opt" data-q="15" data-v="2"><span class="opt-letter">c</span> Visiting a fortune-teller and believing their predictions about the unseen</button>
+        <button type="button" class="exam-mcq-opt" data-q="15" data-v="3"><span class="opt-letter">d</span> Feeling proud after a good prayer</button>
+      </div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="exam-q" id="eq16" data-type="mcq" data-answer="1" data-marks="1">
+      <p class="exam-q-num">Question 16</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما الفرق بين «وَ» و «ثُمَّ» في قول: «ما شاء الله وفلان / ثم فلان»؟</span>
+        What is the key difference between "wāw (و)" and "thumma (ثم)" in this context?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="16" data-v="0"><span class="opt-letter">a</span> There is no difference — both are acceptable</button>
+        <button type="button" class="exam-mcq-opt" data-q="16" data-v="1"><span class="opt-letter">b</span> "Wāw" joins as equals; "thumma" shows proper sequence — Allah first, then others</button>
+        <button type="button" class="exam-mcq-opt" data-q="16" data-v="2"><span class="opt-letter">c</span> "Thumma" joins as equals; "wāw" shows sequence</button>
+        <button type="button" class="exam-mcq-opt" data-q="16" data-v="3"><span class="opt-letter">d</span> Both expressions are forbidden regardless of which conjunction is used</button>
+      </div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="exam-q" id="eq17" data-type="mcq" data-answer="0" data-marks="1">
+      <p class="exam-q-num">Question 17</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما معنى «الإخلاص» ودوره في العبادة؟</span>
+        What is "ikhlāṣ" (الإخلاص) and what is its role in worship?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="17" data-v="0"><span class="opt-letter">a</span> Sincerity — performing deeds purely for Allah's sake; the condition for a deed to be accepted</button>
+        <button type="button" class="exam-mcq-opt" data-q="17" data-v="1"><span class="opt-letter">b</span> Patience — enduring hardship without complaint</button>
+        <button type="button" class="exam-mcq-opt" data-q="17" data-v="2"><span class="opt-letter">c</span> Knowledge — learning Islamic sciences before worshipping</button>
+        <button type="button" class="exam-mcq-opt" data-q="17" data-v="3"><span class="opt-letter">d</span> Gratitude — thanking Allah after every blessing</button>
+      </div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="exam-q" id="eq18" data-type="mcq" data-answer="3" data-marks="1">
+      <p class="exam-q-num">Question 18</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما الحديث القدسي الذي يُبيّن عاقبة العمل المشوب بالرياء يوم القيامة؟</span>
+        Which ḥadīth qudsī describes the fate of deeds done for show on the Day of Judgement?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="18" data-v="0"><span class="opt-letter">a</span> "The most feared thing for you is minor shirk" (Aḥmad)</button>
+        <button type="button" class="exam-mcq-opt" data-q="18" data-v="1"><span class="opt-letter">b</span> "Shirk among you is more subtle than the crawl of an ant"</button>
+        <button type="button" class="exam-mcq-opt" data-q="18" data-v="2"><span class="opt-letter">c</span> "Whoever swears by other than Allah has committed shirk" (Abū Dāwūd)</button>
+        <button type="button" class="exam-mcq-opt" data-q="18" data-v="3"><span class="opt-letter">d</span> "I am the most free of need for partners — whoever does a deed associating someone with Me, I leave him and his shirk" (Muslim)</button>
+      </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="exam-q" id="eq19" data-type="mcq" data-answer="1" data-marks="1">
+      <p class="exam-q-num">Question 19</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما الدعاء الذي علّمه النبي ﷺ للاستعاذة من الشرك الخفي؟</span>
+        What duʿāʾ did the Prophet ﷺ teach to seek refuge from hidden shirk?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="19" data-v="0"><span class="opt-letter">a</span> اللهم إنك عفو كريم تحب العفو فاعف عني</button>
+        <button type="button" class="exam-mcq-opt" data-q="19" data-v="1"><span class="opt-letter">b</span> اللهم إني أعوذ بك أن أشرك بك وأنا أعلم وأستغفرك لما لا أعلم</button>
+        <button type="button" class="exam-mcq-opt" data-q="19" data-v="2"><span class="opt-letter">c</span> رب اجعلني مقيم الصلاة ومن ذريتي</button>
+        <button type="button" class="exam-mcq-opt" data-q="19" data-v="3"><span class="opt-letter">d</span> لا إله إلا أنت سبحانك إني كنت من الظالمين</button>
+      </div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="exam-q" id="eq20" data-type="mcq" data-answer="2" data-marks="1">
+      <p class="exam-q-num">Question 20</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما الشرطان اللذان يجب أن يتوفرا في العمل الصالح ليُقبل عند الله؟ (سورة الكهف 18:110)</span>
+        According to Sūrat al-Kahf 18:110 and the scholars' tafsīr, what are the two conditions for a deed to be accepted?
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="20" data-v="0"><span class="opt-letter">a</span> Knowledge and wealth</button>
+        <button type="button" class="exam-mcq-opt" data-q="20" data-v="1"><span class="opt-letter">b</span> Repetition and consistency</button>
+        <button type="button" class="exam-mcq-opt" data-q="20" data-v="2"><span class="opt-letter">c</span> Correct action (following the Prophet ﷺ) and sincere intention (for Allah alone)</button>
+        <button type="button" class="exam-mcq-opt" data-q="20" data-v="3"><span class="opt-letter">d</span> Doing it in the masjid and telling a scholar</button>
+      </div>
+    </div>
+
+    <!-- ══════════════ SECTION C: SOURCE MATCHING ══════════════ -->
+    <div class="exam-section-label">
+      <span class="esec-num">SECTION C</span>
+      <span class="esec-title">Source Matching — طابق الدليل بمصدره</span>
+      <span class="esec-marks">5 marks · 1 each</span>
+    </div>
+
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)">
+      <p style="font-size:.85rem;color:var(--ink-mid)">Match each Arabic text to its correct source by selecting the surah/hadith reference.</p>
+    </div>
+
+    <!-- Q21 -->
+    <div class="exam-q" id="eq21" data-type="mcq" data-answer="1" data-marks="1">
+      <p class="exam-q-num">Question 21 — Match the source</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar" style="font-size:1.2rem">«إِنَّ اللَّهَ لَا يَغْفِرُ أَن يُشْرَكَ بِهِ وَيَغْفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَاءُ»</span>
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="21" data-v="0"><span class="opt-letter">a</span> Sūrat al-Baqarah 2:22</button>
+        <button type="button" class="exam-mcq-opt" data-q="21" data-v="1"><span class="opt-letter">b</span> Sūrat al-Nisāʾ 4:48</button>
+        <button type="button" class="exam-mcq-opt" data-q="21" data-v="2"><span class="opt-letter">c</span> Sūrat Luqmān 31:13</button>
+        <button type="button" class="exam-mcq-opt" data-q="21" data-v="3"><span class="opt-letter">d</span> Sūrat al-Zumar 39:65</button>
+      </div>
+    </div>
+
+    <!-- Q22 -->
+    <div class="exam-q" id="eq22" data-type="mcq" data-answer="3" data-marks="1">
+      <p class="exam-q-num">Question 22 — Match the source</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar" style="font-size:1.2rem">«وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَّسُولاً أَنِ اعْبُدُوا اللَّهَ وَاجْتَنِبُوا الطَّاغُوتَ»</span>
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="22" data-v="0"><span class="opt-letter">a</span> Sūrat al-Nisāʾ 4:48</button>
+        <button type="button" class="exam-mcq-opt" data-q="22" data-v="1"><span class="opt-letter">b</span> Sūrat al-Zumar 39:65</button>
+        <button type="button" class="exam-mcq-opt" data-q="22" data-v="2"><span class="opt-letter">c</span> Sūrat al-Kahf 18:110</button>
+        <button type="button" class="exam-mcq-opt" data-q="22" data-v="3"><span class="opt-letter">d</span> Sūrat al-Naḥl 16:36</button>
+      </div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="exam-q" id="eq23" data-type="mcq" data-answer="0" data-marks="1">
+      <p class="exam-q-num">Question 23 — Match the source</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar" style="font-size:1.2rem">«إِنَّ الشِّرْكَ لَظُلْمٌ عَظِيمٌ»</span>
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="23" data-v="0"><span class="opt-letter">a</span> Sūrat Luqmān 31:13</button>
+        <button type="button" class="exam-mcq-opt" data-q="23" data-v="1"><span class="opt-letter">b</span> Sūrat al-Baqarah 2:22</button>
+        <button type="button" class="exam-mcq-opt" data-q="23" data-v="2"><span class="opt-letter">c</span> Sūrat al-Naḥl 16:36</button>
+        <button type="button" class="exam-mcq-opt" data-q="23" data-v="3"><span class="opt-letter">d</span> Sūrat al-Nisāʾ 4:48</button>
+      </div>
+    </div>
+
+    <!-- Q24 -->
+    <div class="exam-q" id="eq24" data-type="mcq" data-answer="2" data-marks="1">
+      <p class="exam-q-num">Question 24 — Match the source</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar" style="font-size:1.2rem">«فَمَن كَانَ يَرْجُو لِقَاءَ رَبِّهِ فَلْيَعْمَلْ عَمَلًا صَالِحًا وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِ أَحَدًا»</span>
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="24" data-v="0"><span class="opt-letter">a</span> Sūrat Luqmān 31:13</button>
+        <button type="button" class="exam-mcq-opt" data-q="24" data-v="1"><span class="opt-letter">b</span> Sūrat al-Zumar 39:65</button>
+        <button type="button" class="exam-mcq-opt" data-q="24" data-v="2"><span class="opt-letter">c</span> Sūrat al-Kahf 18:110</button>
+        <button type="button" class="exam-mcq-opt" data-q="24" data-v="3"><span class="opt-letter">d</span> Sūrat al-Baqarah 2:22</button>
+      </div>
+    </div>
+
+    <!-- Q25 -->
+    <div class="exam-q" id="eq25" data-type="mcq" data-answer="1" data-marks="1">
+      <p class="exam-q-num">Question 25 — Match the source</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar" style="font-size:1.2rem">«وَلَقَدْ أُوحِيَ إِلَيْكَ وَإِلَى الَّذِينَ مِن قَبْلِكَ لَئِنْ أَشْرَكْتَ لَيَحْبَطَنَّ عَمَلُكَ»</span>
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="25" data-v="0"><span class="opt-letter">a</span> Sūrat al-Naḥl 16:36</button>
+        <button type="button" class="exam-mcq-opt" data-q="25" data-v="1"><span class="opt-letter">b</span> Sūrat al-Zumar 39:65</button>
+        <button type="button" class="exam-mcq-opt" data-q="25" data-v="2"><span class="opt-letter">c</span> Sūrat al-Nisāʾ 4:48</button>
+        <button type="button" class="exam-mcq-opt" data-q="25" data-v="3"><span class="opt-letter">d</span> Sūrat Luqmān 31:13</button>
+      </div>
+    </div>
+
+    <!-- ══════════════ SECTION D: CLASSIFICATION ══════════════ -->
+    <div class="exam-section-label">
+      <span class="esec-num">SECTION D</span>
+      <span class="esec-title">Classification — صنّف كل مثال</span>
+      <span class="esec-marks">5 marks · 1 each</span>
+    </div>
+
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)">
+      <p style="font-size:.85rem;color:var(--ink-mid)">Classify each scenario: Major Shirk (الأكبر) · Minor Shirk (الأصغر) · Hidden Shirk (الخفي) · Not Shirk</p>
+    </div>
+
+    <!-- Q26 -->
+    <div class="exam-q" id="eq26" data-type="mcq" data-answer="0" data-marks="1">
+      <p class="exam-q-num">Question 26</p>
+      <p class="exam-q-text">
+        Someone stands at a grave and says: "O Prophet ﷺ, cure my sick child" — directly addressing the deceased Prophet for cure.
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="26" data-v="0"><span class="opt-letter">a</span> Major Shirk — directing duʿāʾ to other than Allah</button>
+        <button type="button" class="exam-mcq-opt" data-q="26" data-v="1"><span class="opt-letter">b</span> Minor Shirk — only words, not full worship</button>
+        <button type="button" class="exam-mcq-opt" data-q="26" data-v="2"><span class="opt-letter">c</span> Hidden Shirk — it is an inner state</button>
+        <button type="button" class="exam-mcq-opt" data-q="26" data-v="3"><span class="opt-letter">d</span> Not Shirk — visiting graves is sunnah</button>
+      </div>
+    </div>
+
+    <!-- Q27 -->
+    <div class="exam-q" id="eq27" data-type="mcq" data-answer="1" data-marks="1">
+      <p class="exam-q-num">Question 27</p>
+      <p class="exam-q-text">
+        A student fasts during Ramadan every year sincerely. This year, knowing her Islamic studies teacher will find out, she is especially careful not to miss any fast — partly to please the teacher.
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="27" data-v="0"><span class="opt-letter">a</span> Major Shirk — she associates the teacher with Allah</button>
+        <button type="button" class="exam-mcq-opt" data-q="27" data-v="1"><span class="opt-letter">b</span> Hidden Shirk — mixing intention with seeking others' approval</button>
+        <button type="button" class="exam-mcq-opt" data-q="27" data-v="2"><span class="opt-letter">c</span> Minor Shirk — it is an external action</button>
+        <button type="button" class="exam-mcq-opt" data-q="27" data-v="3"><span class="opt-letter">d</span> Not Shirk — wanting to be a good example is fine</button>
+      </div>
+    </div>
+
+    <!-- Q28 -->
+    <div class="exam-q" id="eq28" data-type="mcq" data-answer="3" data-marks="1">
+      <p class="exam-q-num">Question 28</p>
+      <p class="exam-q-text">
+        Mūsā asks his older brother to help him carry heavy furniture. His brother does so. Mūsā says "Alḥamdulillāh, and jazākallāhu khayran (may Allah reward you well)."
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="28" data-v="0"><span class="opt-letter">a</span> Major Shirk — seeking help from creation</button>
+        <button type="button" class="exam-mcq-opt" data-q="28" data-v="1"><span class="opt-letter">b</span> Minor Shirk — attributing benefit to his brother</button>
+        <button type="button" class="exam-mcq-opt" data-q="28" data-v="2"><span class="opt-letter">c</span> Hidden Shirk — relying on his brother</button>
+        <button type="button" class="exam-mcq-opt" data-q="28" data-v="3"><span class="opt-letter">d</span> Not Shirk — using proper means and thanking Allah first</button>
+      </div>
+    </div>
+
+    <!-- Q29 -->
+    <div class="exam-q" id="eq29" data-type="mcq" data-answer="2" data-marks="1">
+      <p class="exam-q-num">Question 29</p>
+      <p class="exam-q-text">
+        After winning a competition, Nūr says to her friend: "I swear by my father's life that I practised every single day."
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="29" data-v="0"><span class="opt-letter">a</span> Major Shirk — she is worshipping her father</button>
+        <button type="button" class="exam-mcq-opt" data-q="29" data-v="1"><span class="opt-letter">b</span> Hidden Shirk — it is an inner attachment</button>
+        <button type="button" class="exam-mcq-opt" data-q="29" data-v="2"><span class="opt-letter">c</span> Minor Shirk — swearing by other than Allah</button>
+        <button type="button" class="exam-mcq-opt" data-q="29" data-v="3"><span class="opt-letter">d</span> Not Shirk — it is just a figure of speech</button>
+      </div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="exam-q" id="eq30" data-type="mcq" data-answer="0" data-marks="1">
+      <p class="exam-q-num">Question 30</p>
+      <p class="exam-q-text">
+        Ibrāhīm regularly visits a man who reads palms and tells him what his future holds. Ibrāhīm believes the palm reader can genuinely see his future.
+      </p>
+      <div class="exam-mcq-options">
+        <button type="button" class="exam-mcq-opt" data-q="30" data-v="0"><span class="opt-letter">a</span> Major Shirk — believing a human can know the unseen (ʿilm al-ghayb)</button>
+        <button type="button" class="exam-mcq-opt" data-q="30" data-v="1"><span class="opt-letter">b</span> Minor Shirk — he only visits, not worships</button>
+        <button type="button" class="exam-mcq-opt" data-q="30" data-v="2"><span class="opt-letter">c</span> Hidden Shirk — it is a heart attachment</button>
+        <button type="button" class="exam-mcq-opt" data-q="30" data-v="3"><span class="opt-letter">d</span> Not Shirk — curious people visit for entertainment</button>
+      </div>
+    </div>
+
+    <!-- ══════════════ SECTION E: SHORT ANSWER ══════════════ -->
+    <div class="exam-section-label">
+      <span class="esec-num">SECTION E</span>
+      <span class="esec-title">Short Answer — أجب بإيجاز</span>
+      <span class="esec-marks">5 marks · 1 each</span>
+    </div>
+
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)">
+      <p style="font-size:.85rem;color:var(--ink-mid)">
+        Write a short answer in Arabic or English. These questions are marked for understanding — a complete sentence is expected.
+        Marks are awarded on submission based on key terms found in your answer.
+      </p>
+    </div>
+
+    <!-- Q31 -->
+    <div class="exam-q" id="eq31" data-type="short" data-keywords="riya|showing off|minor shirk|asghar|أصغر|الرياء" data-marks="1">
+      <p class="exam-q-num">Question 31</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما هو الشرك الأصغر؟ اذكر مثالاً واحداً.</span>
+        What is minor shirk? Give one example.
+      </p>
+      <textarea class="exam-fitb" id="ans31" rows="3" placeholder="Write your answer here... (Arabic or English)"></textarea>
+    </div>
+
+    <!-- Q32 -->
+    <div class="exam-q" id="eq32" data-type="short" data-keywords="heart|قلب|hidden|خفي|intention|نية|fear|hope|love" data-marks="1">
+      <p class="exam-q-num">Question 32</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">أين يوجد الشرك الخفي؟ واذكر سبباً يجعله خطيراً.</span>
+        Where does hidden shirk occur? Give one reason why it is dangerous.
+      </p>
+      <textarea class="exam-fitb" id="ans32" rows="3" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <!-- Q33 -->
+    <div class="exam-q" id="eq33" data-type="short" data-keywords="tawhid|توحيد|purpose|creation|worship|خلق|عبادة" data-marks="1">
+      <p class="exam-q-num">Question 33</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">لماذا يجب على المسلم أن يتعلم عن الشرك؟</span>
+        Why must a Muslim learn about shirk?
+      </p>
+      <textarea class="exam-fitb" id="ans33" rows="3" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <!-- Q34 -->
+    <div class="exam-q" id="eq34" data-type="short" data-keywords="ihbat|iḥbāṭ|nullif|إحباط|deed|عمل|reward|أجر" data-marks="1">
+      <p class="exam-q-num">Question 34</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما معنى «الإحباط»؟ وأي نوع من الشرك يُحبط جميع الأعمال إذا مات عليه الإنسان؟</span>
+        What does "iḥbāṭ" mean? Which type of shirk nullifies all deeds if a person dies upon it?
+      </p>
+      <textarea class="exam-fitb" id="ans34" rows="3" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <!-- Q35 -->
+    <div class="exam-q" id="eq35" data-type="short" data-keywords="tawakkul|توكل|means|asbab|أسباب|medicine|rely|reliance" data-marks="1">
+      <p class="exam-q-num">Question 35</p>
+      <p class="exam-q-text">
+        <span class="exam-q-ar">ما التوكل الصحيح؟ وكيف يختلف عن الشرك في الاعتماد على الأسباب؟</span>
+        What is correct tawakkul? How is it different from shirk in over-relying on means?
+      </p>
+      <textarea class="exam-fitb" id="ans35" rows="3" placeholder="Write your answer here..."></textarea>
+    </div>
+
+  </form>
+
+  <!-- Results Panel -->
+  <div id="results-panel">
+    <p style="font-family:var(--font-arabic);font-size:1.5rem;color:var(--teal-deep);direction:rtl;margin-bottom:var(--space-sm)">نتيجة الاختبار</p>
+    <p style="font-size:1rem;font-weight:600;color:var(--ink-mid);margin-bottom:var(--space-xl)">Unit 1 Examination Results</p>
+    <div id="score-circle" class="result-score-circle grade-A">
+      <span class="score-num" id="score-num">—</span>
+      <span class="score-total">out of 35</span>
+    </div>
+    <p style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:var(--space-sm)" id="grade-text"></p>
+    <p style="font-size:.9rem;color:var(--ink-mid);line-height:1.7;margin-bottom:var(--space-xl)" id="grade-message"></p>
+    <div style="display:flex;justify-content:center;gap:var(--space-md);flex-wrap:wrap">
+      <button class="btn-secondary" onclick="window.location.href='index.html'">← Back to Aqeedah</button>
+      <button class="btn-primary" onclick="window.location.href='u2-l0-asma-intro.html'">Continue to Unit 2 →</button>
+    </div>
+    <p style="font-size:.78rem;color:var(--ink-faint);margin-top:var(--space-xl)">
+      Review incorrect answers above — each question shows the correct answer and explanation after submission.
+    </p>
+  </div>
+
+</div>
+
+<!-- Sticky Submit Bar -->
+<div class="exam-submit-bar">
+  <div class="answer-tracker">
+    Answered: <strong id="answered-count">0</strong> / 35
+  </div>
+  <button type="button" class="btn-primary" id="submit-btn" onclick="submitExam()">
+    Submit Exam · تسليم الاختبار
+  </button>
+</div>
+
+<script src="../../js/main.js"></script>
+<script>
+'use strict';
+
+// ── Timer ──────────────────────────────────────────────
+let timeLeft = 35 * 60;
+let timerInterval;
+let examSubmitted = false;
+function stripAr(s) { return s.replace(/[\u064B-\u065F\u0670\u0640]/g, ''); }
+
+function startTimer() {
+  timerInterval = setInterval(function() {
+    if (examSubmitted) { clearInterval(timerInterval); return; }
+    timeLeft--;
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    document.getElementById('timer-text').textContent = m + ':' + String(s).padStart(2,'0');
+    const el = document.getElementById('timer-display');
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+    } else if (timeLeft <= 300) {
+      el.className = 'exam-timer danger';
+    } else if (timeLeft <= 600) {
+      el.className = 'exam-timer warn';
+    }
+  }, 1000);
+}
+startTimer();
+
+// ── Answer tracking ────────────────────────────────────
+const answers = {};
+let answeredCount = 0;
+
+function updateAnsweredCount() {
+  document.getElementById('answered-count').textContent = Object.keys(answers).length;
+}
+
+// MCQ selection
+document.querySelectorAll('.exam-mcq-opt').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (examSubmitted) return;
+    const q = this.dataset.q;
+    const v = parseInt(this.dataset.v);
+    // Deselect others in same question
+    document.querySelectorAll('.exam-mcq-opt[data-q="' + q + '"]').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    const wasAnswered = answers.hasOwnProperty('q' + q);
+    answers['q' + q] = v;
+    if (!wasAnswered) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+// T/F selection
+document.querySelectorAll('.exam-tf-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (examSubmitted) return;
+    const q = this.dataset.q;
+    const v = this.dataset.v;
+    document.querySelectorAll('.exam-tf-btn[data-q="' + q + '"]').forEach(b => {
+      b.classList.remove('selected-t','selected-f');
+    });
+    this.classList.add(v === 'true' ? 'selected-t' : 'selected-f');
+    const wasAnswered = answers.hasOwnProperty('q' + q);
+    answers['q' + q] = v === 'true';
+    if (!wasAnswered) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+// Short answer tracking
+document.querySelectorAll('textarea.exam-fitb').forEach(ta => {
+  ta.addEventListener('input', function() {
+    if (examSubmitted) return;
+    const id = this.id.replace('ans','');
+    const wasAnswered = answers.hasOwnProperty('q' + id);
+    answers['q' + id] = this.value.trim();
+    if (!wasAnswered && this.value.trim()) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+// ── Submit ─────────────────────────────────────────────
+function submitExam(force) {
+  if (examSubmitted) return;
+  if (!force && Object.keys(answers).length < 25) {
+    const proceed = confirm('You have answered ' + Object.keys(answers).length + ' of 35 questions. Submit anyway?');
+    if (!proceed) return;
+  }
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').textContent = 'Submitted';
+
+  let totalScore = 0;
+
+  // Mark each question
+  document.querySelectorAll('.exam-q').forEach(function(qEl) {
+    const qNum = qEl.id.replace('eq','');
+    const type = qEl.dataset.type;
+    const marks = parseInt(qEl.dataset.marks);
+
+    if (type === 'tf') {
+      const correct = qEl.dataset.answer === 'true';
+      const userVal = answers['q' + qNum];
+      const isCorrect = userVal === correct;
+      markQuestion(qEl, isCorrect, marks, isCorrect ? marks : 0,
+        'Correct answer: ' + (correct ? 'True ✓' : 'False ✗'));
+      if (isCorrect) totalScore += marks;
+
+    } else if (type === 'mcq') {
+      const correct = parseInt(qEl.dataset.answer);
+      const userVal = answers['q' + qNum];
+      const isCorrect = userVal === correct;
+      const opts = qEl.querySelectorAll('.exam-mcq-opt');
+      opts.forEach(function(o, i) {
+        if (i === correct) o.style.cssText += 'border-color:#2a7a4b;background:#e8f4ee;';
+        else if (parseInt(o.dataset.v) === userVal && !isCorrect) o.style.cssText += 'border-color:#c0392b;background:#fdf4f4;';
+      });
+      const correctText = opts[correct] ? opts[correct].textContent.trim() : '';
+      markQuestion(qEl, isCorrect, marks, isCorrect ? marks : 0, 'Correct answer: ' + correctText);
+      if (isCorrect) totalScore += marks;
+
+    } else if (type === 'short') {
+      const keywords = stripAr((qEl.dataset.keywords || '').toLowerCase()).split('|');
+      const userText = stripAr((answers['q' + qNum] || '').toLowerCase());
+      const hits = keywords.filter(k => k && userText.includes(k)).length;
+      const awarded = hits >= 2 ? marks : (hits === 1 ? marks / 2 : 0);
+      totalScore += awarded;
+      const isCorrect = awarded >= marks;
+      const isPartial = awarded > 0 && !isCorrect;
+      markQuestion(qEl, isCorrect, marks, awarded,
+        'Key terms expected: ' + (qEl.dataset.keywords || '').replace(/\|/g, ', '), isPartial);
+    }
+  });
+
+  // Show results
+  const pct = Math.round((totalScore / 35) * 100);
+  document.getElementById('score-num').textContent = totalScore;
+  const circle = document.getElementById('score-circle');
+  let gradeClass, gradeLetter, gradeMsg;
+  if (pct >= 90) {
+    gradeClass = 'grade-A'; gradeLetter = 'Excellent — ممتاز';
+    gradeMsg = 'Masha\'Allah! Outstanding work. You have a strong grasp of Tawhid, the types of Shirk, their evidence, and classification. You are ready for Unit 2.';
+  } else if (pct >= 75) {
+    gradeClass = 'grade-B'; gradeLetter = 'Good — جيد جداً';
+    gradeMsg = 'Well done. You understand the core material. Review the questions you missed — pay attention to the evidence sections and source matching.';
+  } else if (pct >= 60) {
+    gradeClass = 'grade-C'; gradeLetter = 'Pass — مقبول';
+    gradeMsg = 'You have passed, but there is room to strengthen your understanding. Revisit Lessons 2 and 3 (Types and Evidence) before moving to Unit 2.';
+  } else {
+    gradeClass = 'grade-D'; gradeLetter = 'Needs Review — يحتاج مراجعة';
+    gradeMsg = 'We recommend reviewing all four lessons before retaking the exam. Focus especially on: the definition of shirk, the three types, and their Quranic evidence.';
+  }
+  circle.className = 'result-score-circle ' + gradeClass;
+  document.getElementById('grade-text').textContent = pct + '% — ' + gradeLetter;
+  document.getElementById('grade-message').textContent = gradeMsg;
+  document.getElementById('results-panel').classList.add('show');
+
+  // Save to progress
+  if (typeof markLessonComplete === 'function') {
+    markLessonComplete('aq-unit1-exam');
+  }
+  if (window.STATE) {
+    window.STATE.scores['aq-unit1'] = { score: totalScore, total: 35, pct: pct, date: new Date().toISOString() };
+    if (typeof saveState === 'function') saveState();
+  }
+
+  // Scroll to results
+  setTimeout(function() {
+    document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 300);
+}
+
+function markQuestion(qEl, isCorrect, totalMarks, awarded, explanation, isPartial) {
+  qEl.classList.add(isPartial ? 'partial' : isCorrect ? 'correct' : 'incorrect');
+  const badge = document.createElement('span');
+  badge.className = 'mark-badge ' + (isPartial ? 'partial' : isCorrect ? 'correct' : 'incorrect');
+  badge.textContent = isCorrect ? '✓ ' + awarded + '/' + totalMarks + ' marks'
+    : isPartial ? '~ ' + awarded + '/' + totalMarks + ' marks'
+    : '✗ 0/' + totalMarks + ' marks';
+  const exp = document.createElement('div');
+  exp.className = 'mark-explanation show';
+  exp.textContent = explanation;
+  qEl.appendChild(badge);
+  qEl.appendChild(exp);
+}
+</script>
+</body>
+</html>

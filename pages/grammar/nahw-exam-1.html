@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naḥw Exam 1 — اختبار النحو الأول | دار الهجرة</title>
+<meta name="description" content="Naḥw track examination 1 — covering al-Ājurrūmiyyah lessons L1-L12: kalām and the three word types, iʿrāb and the case signs, the three verbs, fāʿil, mubtadaʾ and khabar, kāna and inna, mafʿūl bih, ẓarf, ḥāl and tamyīz, the genitives and the tawābiʿ. 35 marks, 35 minutes, auto-marked.">
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+<script>document.documentElement.dataset.theme=localStorage.getItem('mdrs_theme')||'lilac';</script>
+<style>
+  .exam-hero{background:linear-gradient(135deg,var(--tab-grammar),#0a5650);color:white;padding:var(--space-xl) var(--space-2xl);border-radius:var(--radius-xl) var(--radius-xl) 0 0;position:relative;overflow:hidden}
+  .exam-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border:1px solid rgba(255,255,255,.12);border-radius:50%;pointer-events:none}
+  .exam-timer{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 16px;font-size:.85rem;font-weight:600;letter-spacing:.04em;margin-bottom:var(--space-lg)}
+  .exam-timer .timer-dot{width:8px;height:8px;background:#4caf50;border-radius:50%;animation:pulse 1.5s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .exam-timer.warn{border-color:rgba(255,200,0,.5)}.exam-timer.warn .timer-dot{background:#ffcc00}
+  .exam-timer.danger{border-color:rgba(255,80,80,.5)}.exam-timer.danger .timer-dot{background:#ff5050}
+  .exam-section-label{display:flex;align-items:center;gap:var(--space-md);margin:var(--space-xl) 0 var(--space-lg)}
+  .exam-section-label .esec-num{background:var(--tab-grammar);color:white;border-radius:var(--radius-md);padding:5px 14px;font-size:.72rem;font-weight:700;letter-spacing:.08em;white-space:nowrap}
+  .exam-section-label .esec-title{font-size:1rem;font-weight:600;color:var(--ink)}
+  .esec-marks{margin-left:auto;font-size:.78rem;color:var(--ink-faint);font-weight:500}
+  .exam-q{background:white;border:1px solid var(--ivory-dark);border-radius:var(--radius-lg);padding:var(--space-lg) var(--space-xl);margin-bottom:var(--space-md);transition:border-color .2s}
+  .exam-q:focus-within{border-color:var(--teal-mid)}
+  .exam-q-num{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:var(--space-sm)}
+  .exam-q-text{font-size:.95rem;color:var(--ink);line-height:1.8;margin-bottom:var(--space-md)}
+  .exam-q-ar{font-family:var(--font-arabic);font-size:1.05rem;color:var(--teal-deep);direction:rtl;display:block;margin-bottom:var(--space-xs);line-height:1.7}
+  .exam-mcq-options{display:flex;flex-direction:column;gap:var(--space-sm)}
+  .exam-mcq-opt{display:flex;align-items:flex-start;gap:var(--space-md);padding:var(--space-sm) var(--space-md);border:1.5px solid var(--ivory-dark);border-radius:var(--radius-md);cursor:pointer;font-size:.9rem;color:var(--ink-mid);background:var(--ivory);transition:all .15s;text-align:left;font-family:var(--font-english);line-height:1.5}
+  .exam-mcq-opt:hover{border-color:var(--teal-mid);background:#f0f8f8}
+  .exam-mcq-opt.selected{border-color:var(--teal-mid);background:#e8f4f4}
+  .exam-mcq-opt .opt-letter{font-weight:700;color:var(--teal-deep);min-width:18px;font-size:.8rem;padding-top:2px}
+  .exam-mcq-opt .opt-ar{font-family:var(--font-arabic);font-size:1.1rem}
+  .exam-tf-btns{display:flex;gap:var(--space-md)}
+  .exam-tf-btn{flex:1;padding:var(--space-sm) var(--space-md);border:1.5px solid var(--ivory-dark);border-radius:var(--radius-md);cursor:pointer;font-size:.88rem;font-weight:600;background:var(--ivory);color:var(--ink-mid);transition:all .15s;font-family:var(--font-english)}
+  .exam-tf-btn:hover{border-color:var(--teal-mid);background:#f0f8f8}
+  .exam-tf-btn.selected-t{border-color:#2a7a4b;background:#e8f4ee;color:#2a7a4b}
+  .exam-tf-btn.selected-f{border-color:#8c3a3a;background:#f8eaea;color:#8c3a3a}
+  .exam-fitb{width:100%;border:1.5px solid var(--ivory-dark);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-family:var(--font-english);font-size:.9rem;color:var(--ink);background:var(--ivory);outline:none;transition:border-color .15s}
+  .exam-fitb:focus{border-color:var(--teal-mid);background:white}
+  .exam-q.correct{border-color:#2a7a4b;background:#f4fbf6}
+  .exam-q.incorrect{border-color:#c0392b;background:#fdf4f4}
+  .exam-q.partial{border-color:var(--gold-warm);background:#fffbf0}
+  .mark-badge{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;font-weight:700;border-radius:999px;padding:2px 10px;margin-top:var(--space-sm)}
+  .mark-badge.correct{background:#2a7a4b;color:white}
+  .mark-badge.incorrect{background:#c0392b;color:white}
+  .mark-badge.partial{background:var(--gold-warm);color:white}
+  .mark-explanation{font-size:.82rem;color:var(--ink-mid);line-height:1.7;margin-top:var(--space-sm);padding:var(--space-sm) var(--space-md);background:rgba(0,0,0,.03);border-radius:var(--radius-sm);display:none}
+  .mark-explanation.show{display:block}
+  #results-panel{display:none;background:white;border:2px solid var(--tab-grammar);border-radius:var(--radius-xl);padding:var(--space-2xl);text-align:center;margin-top:var(--space-xl)}
+  #results-panel.show{display:block}
+  .result-score-circle{width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto var(--space-lg);border:4px solid}
+  .result-score-circle .score-num{font-size:2rem;font-weight:700;line-height:1}
+  .result-score-circle .score-total{font-size:.75rem;color:inherit;opacity:.7}
+  .grade-A{border-color:#2a7a4b;color:#2a7a4b}.grade-B{border-color:var(--teal-deep);color:var(--teal-deep)}
+  .grade-C{border-color:var(--gold-warm);color:var(--gold-warm)}.grade-D{border-color:#c0392b;color:#c0392b}
+  .exam-submit-bar{position:sticky;bottom:0;background:white;border-top:1px solid var(--ivory-dark);padding:var(--space-md) var(--space-xl);display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);z-index:10;box-shadow:0 -4px 20px rgba(0,0,0,.06)}
+  .answer-tracker{font-size:.82rem;color:var(--ink-faint)}
+  .answer-tracker strong{color:var(--teal-deep)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="site-logo">
+      <span class="logo-ar">دار الهجرة</span>
+      <span class="logo-en">Salafi Foundational School</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li class="nav-item"><a href="../islam101/index.html"><span class="nav-ar">أساسيات</span><span class="nav-en">Islam 101</span></a></li>
+        <li class="nav-item"><a href="../quran/index.html"><span class="nav-ar">القرآن</span><span class="nav-en">Quran</span></a></li>
+        <li class="nav-item"><a href="../hadeeth/index.html"><span class="nav-ar">الحديث</span><span class="nav-en">Hadeeth</span></a></li>
+        <li class="nav-item"><a href="../seerah/index.html"><span class="nav-ar">السيرة</span><span class="nav-en">Seerah</span></a></li>
+        <li class="nav-item"><a href="../fiqh/index.html"><span class="nav-ar">الفقه</span><span class="nav-en">Fiqh</span></a></li>
+        <li class="nav-item"><a href="../aqeedah/index.html"><span class="nav-ar">العقيدة</span><span class="nav-en">Aqeedah</span></a></li>
+        <li class="nav-item active"><a href="../arabic/index.html"><span class="nav-ar">العربية</span><span class="nav-en">Arabic</span></a></li>
+        <li class="nav-item"><a href="../resources/index.html"><span class="nav-ar">الموارد</span><span class="nav-en">Resources</span></a></li>
+      </ul>
+    </nav>
+    <div class="year-selector" role="group" aria-label="Select year level">
+      <select class="year-select" aria-label="Choose your year level"><option value="1">Year 1+</option><option value="2">Year 2+</option><option value="3">Year 3+</option><option value="4">Year 4+</option><option value="5">Year 5</option></select>
+    </div>
+  </div>
+</header>
+
+<div style="max-width:860px;margin:0 auto;padding:var(--space-xl) var(--space-lg) 100px">
+
+  <a href="../arabic/index.html" style="font-size:.82rem;color:var(--ink-light);text-decoration:none;display:inline-block;margin-bottom:var(--space-md)">← العربية · Arabic Hub</a>
+
+  <div class="exam-hero">
+    <div class="exam-timer" id="timer-display">
+      <span class="timer-dot"></span>
+      <span id="timer-text">35:00</span>
+      <span style="opacity:.6;font-size:.75rem">remaining</span>
+    </div>
+    <p style="font-family:var(--font-arabic);font-size:2rem;direction:rtl;font-weight:700;margin-bottom:4px">اختبار النحو الأول</p>
+    <p style="font-size:1.1rem;font-weight:600;opacity:.9;margin-bottom:var(--space-sm)">Naḥw Track · al-Ājurrūmiyyah Core Examination 1</p>
+    <p style="font-size:.88rem;opacity:.7;line-height:1.7">Naḥw L1–L12 · 35 marks · 35 minutes</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);margin-top:var(--space-lg)">
+      <div style="background:rgba(255,255,255,.12);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section A</strong> — True / False · 10 marks</div>
+      <div style="background:rgba(255,255,255,.12);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section B</strong> — Multiple Choice · 10 marks</div>
+      <div style="background:rgba(255,255,255,.12);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section C</strong> — Identify the Role · 5 marks</div>
+      <div style="background:rgba(255,255,255,.12);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section D</strong> — Case &amp; Sign · 5 marks</div>
+      <div style="background:rgba(255,255,255,.12);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);font-size:.8rem"><strong>Section E</strong> — Short Answer · 5 marks</div>
+    </div>
+  </div>
+
+  <div style="background:var(--ivory);border:1px solid var(--ivory-dark);border-radius:0 0 var(--radius-xl) var(--radius-xl);padding:var(--space-md) var(--space-xl);margin-bottom:var(--space-xl)">
+    <p style="font-size:.82rem;color:var(--ink-mid);line-height:1.7"><strong>Instructions:</strong> Answer all questions. This exam reviews the whole Ājurrūmiyyah core — Naḥw lessons 1–12: الكلام (speech) and its three parts, الإعراب (declension) and its signs, the three verbs, الفاعل (the doer), المبتدأ والخبر (subject and predicate), كان and إنّ, the accusatives (المفعول به، الظرف، الحال، التمييز), the genitives (حروف الجر والإضافة) and التوابع (the followers). Every rule tested here was taught in those lessons. Bismillāh.</p>
+  </div>
+
+  <form id="exam-form" novalidate>
+
+    <!-- SECTION A: TRUE / FALSE -->
+    <div class="exam-section-label"><span class="esec-num">SECTION A</span><span class="esec-title">True or False — صحيح أم خاطئ</span><span class="esec-marks">10 marks · 1 each</span></div>
+
+    <div class="exam-q" id="eq1" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 1</p><p class="exam-q-text">In naḥw, الكلام (speech) means any single word on its own, even if it gives no complete meaning.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="1" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="1" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq2" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 2</p><p class="exam-q-text"><span class="exam-q-ar">الكلامُ ثلاثةُ أقسام</span> Every Arabic word belongs to one of exactly three kinds: الاسم (noun), الفعل (verb), or الحرف (particle).</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="2" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="2" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq3" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 3</p><p class="exam-q-text"><span class="exam-q-ar">البيتُ · البيتَ · البيتِ</span> الإعراب (declension) is the change that comes over the <strong>end</strong> of a word to show its job in the sentence.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="3" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="3" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq4" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 4</p><p class="exam-q-text">The sign of النصب (the accusative case) on a single noun is the ضمة (the -u vowel).</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="4" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="4" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq5" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 5</p><p class="exam-q-text"><span class="exam-q-ar">قَامَ زَيْدٌ</span> The الفاعل (the doer of the verb) is always مرفوع (in the nominative case).</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="5" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="5" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq6" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 6</p><p class="exam-q-text"><span class="exam-q-ar">المَسْجِدُ كَبِيرٌ</span> In the nominal sentence, the المبتدأ (subject) is مرفوع but the الخبر (predicate) is منصوب.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="6" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="6" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq7" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 7</p><p class="exam-q-text"><span class="exam-q-ar">وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا</span> When كانَ enters a nominal sentence, it keeps its noun مرفوع and makes the الخبر منصوب.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="7" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="7" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq8" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 8</p><p class="exam-q-text">The المفعول به (direct object) is the noun that <em>did</em> the action, and it is مرفوع.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="8" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="8" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq9" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 9</p><p class="exam-q-text"><span class="exam-q-ar">ذَهَبْتُ إِلَى المَسْجِدِ</span> A noun coming straight after a حرف جر (preposition) such as إِلَى or فِي is مجرور (in the genitive case).</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="9" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="9" data-v="false">False ✗</button></div></div>
+
+    <div class="exam-q" id="eq10" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 10</p><p class="exam-q-text">The التوابع (the followers — النعت، العطف، التوكيد، البدل) each take their own independent case, ignoring the word before them.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="10" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="10" data-v="false">False ✗</button></div></div>
+
+    <!-- SECTION B: MULTIPLE CHOICE -->
+    <div class="exam-section-label"><span class="esec-num">SECTION B</span><span class="esec-title">Multiple Choice — اختر الإجابة الصحيحة</span><span class="esec-marks">10 marks · 1 each</span></div>
+
+    <div class="exam-q" id="eq11" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 11</p><p class="exam-q-text">What is the sign of الرفع (the nominative case) on a single noun?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="11" data-v="0"><span class="opt-letter">a</span> فتحة (the -a vowel)</button><button type="button" class="exam-mcq-opt" data-q="11" data-v="1"><span class="opt-letter">b</span> ضمة (the -u vowel)</button><button type="button" class="exam-mcq-opt" data-q="11" data-v="2"><span class="opt-letter">c</span> كسرة (the -i vowel)</button><button type="button" class="exam-mcq-opt" data-q="11" data-v="3"><span class="opt-letter">d</span> سكون (no vowel)</button></div></div>
+
+    <div class="exam-q" id="eq12" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 12</p><p class="exam-q-text">Which case do <strong>nouns</strong> take but <strong>verbs</strong> never take?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="12" data-v="0"><span class="opt-letter">a</span> الخفض (the genitive — also called الجرّ)</button><button type="button" class="exam-mcq-opt" data-q="12" data-v="1"><span class="opt-letter">b</span> الجزم (the jussive)</button><button type="button" class="exam-mcq-opt" data-q="12" data-v="2"><span class="opt-letter">c</span> الرفع (the nominative)</button><button type="button" class="exam-mcq-opt" data-q="12" data-v="3"><span class="opt-letter">d</span> النصب (the accusative)</button></div></div>
+
+    <div class="exam-q" id="eq13" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 13</p><p class="exam-q-text">Which of these words is a حرف (particle)?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="13" data-v="0"><span class="opt-letter">a</span> <span class="opt-ar">مَسْجِدٌ</span></button><button type="button" class="exam-mcq-opt" data-q="13" data-v="1"><span class="opt-letter">b</span> <span class="opt-ar">كَتَبَ</span></button><button type="button" class="exam-mcq-opt" data-q="13" data-v="2"><span class="opt-letter">c</span> <span class="opt-ar">إِلَى</span></button><button type="button" class="exam-mcq-opt" data-q="13" data-v="3"><span class="opt-letter">d</span> <span class="opt-ar">رَجُلٌ</span></button></div></div>
+
+    <div class="exam-q" id="eq14" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 14</p><p class="exam-q-text">What does كانَ do to the الخبر (predicate) when it enters a nominal sentence?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="14" data-v="0"><span class="opt-letter">a</span> it makes it مرفوع (nominative)</button><button type="button" class="exam-mcq-opt" data-q="14" data-v="1"><span class="opt-letter">b</span> it makes it منصوب (accusative)</button><button type="button" class="exam-mcq-opt" data-q="14" data-v="2"><span class="opt-letter">c</span> it makes it مجرور (genitive)</button><button type="button" class="exam-mcq-opt" data-q="14" data-v="3"><span class="opt-letter">d</span> it removes it from the sentence</button></div></div>
+
+    <div class="exam-q" id="eq15" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 15</p><p class="exam-q-text">What does إنَّ do to the noun after it (its اسم) when it enters a nominal sentence?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="15" data-v="0"><span class="opt-letter">a</span> it keeps it مرفوع (nominative)</button><button type="button" class="exam-mcq-opt" data-q="15" data-v="1"><span class="opt-letter">b</span> it makes it مجزوم (jussive)</button><button type="button" class="exam-mcq-opt" data-q="15" data-v="2"><span class="opt-letter">c</span> it makes it منصوب (accusative)</button><button type="button" class="exam-mcq-opt" data-q="15" data-v="3"><span class="opt-letter">d</span> it makes it مجرور (genitive)</button></div></div>
+
+    <div class="exam-q" id="eq16" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 16</p><p class="exam-q-text">The المضارع (present/future verb) always begins with one of which four letters?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="16" data-v="0"><span class="opt-letter">a</span> <span class="opt-ar">ب · ت · ث · ن</span></button><button type="button" class="exam-mcq-opt" data-q="16" data-v="1"><span class="opt-letter">b</span> <span class="opt-ar">س · ش · ص · ض</span></button><button type="button" class="exam-mcq-opt" data-q="16" data-v="2"><span class="opt-letter">c</span> <span class="opt-ar">ق · د · و · ل</span></button><button type="button" class="exam-mcq-opt" data-q="16" data-v="3"><span class="opt-letter">d</span> <span class="opt-ar">أ · ن · ي · ت</span></button></div></div>
+
+    <div class="exam-q" id="eq17" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 17</p><p class="exam-q-text">What makes a noun مجرور (genitive)?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="17" data-v="0"><span class="opt-letter">a</span> a حرف جر (preposition) before it, or being the مضاف إليه of an إضافة</button><button type="button" class="exam-mcq-opt" data-q="17" data-v="1"><span class="opt-letter">b</span> beginning the sentence</button><button type="button" class="exam-mcq-opt" data-q="17" data-v="2"><span class="opt-letter">c</span> receiving the action of the verb</button><button type="button" class="exam-mcq-opt" data-q="17" data-v="3"><span class="opt-letter">d</span> carrying الـ (the definite article)</button></div></div>
+
+    <div class="exam-q" id="eq18" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 18</p><p class="exam-q-text"><span class="exam-q-ar">الاسم المنصوب الذي وقع عليه فعل الفاعل</span> "The accusative noun upon which the doer's action falls" — this is the definition of:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="18" data-v="0"><span class="opt-letter">a</span> الفاعل (the doer)</button><button type="button" class="exam-mcq-opt" data-q="18" data-v="1"><span class="opt-letter">b</span> المبتدأ (the subject)</button><button type="button" class="exam-mcq-opt" data-q="18" data-v="2"><span class="opt-letter">c</span> الظرف (the adverbial)</button><button type="button" class="exam-mcq-opt" data-q="18" data-v="3"><span class="opt-letter">d</span> المفعول به (the direct object)</button></div></div>
+
+    <div class="exam-q" id="eq19" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 19</p><p class="exam-q-text">Every الظرف (adverbial of time or place) carries the hidden meaning of which particle?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="19" data-v="0"><span class="opt-letter">a</span> <span class="opt-ar">مِنْ</span> (from)</button><button type="button" class="exam-mcq-opt" data-q="19" data-v="1"><span class="opt-letter">b</span> <span class="opt-ar">فِي</span> (in / at / on)</button><button type="button" class="exam-mcq-opt" data-q="19" data-v="2"><span class="opt-letter">c</span> <span class="opt-ar">إِلَى</span> (to)</button><button type="button" class="exam-mcq-opt" data-q="19" data-v="3"><span class="opt-letter">d</span> <span class="opt-ar">كَـ</span> (like)</button></div></div>
+
+    <div class="exam-q" id="eq20" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 20</p><p class="exam-q-text">The الحال (circumstantial accusative) answers which question?</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="20" data-v="0"><span class="opt-letter">a</span> <span class="opt-ar">متى؟</span> (When?)</button><button type="button" class="exam-mcq-opt" data-q="20" data-v="1"><span class="opt-letter">b</span> <span class="opt-ar">أين؟</span> (Where?)</button><button type="button" class="exam-mcq-opt" data-q="20" data-v="2"><span class="opt-letter">c</span> <span class="opt-ar">كيف؟</span> (How? / In what state?)</button><button type="button" class="exam-mcq-opt" data-q="20" data-v="3"><span class="opt-letter">d</span> <span class="opt-ar">ماذا؟</span> (What?)</button></div></div>
+
+    <!-- SECTION C: IDENTIFY THE ROLE -->
+    <div class="exam-section-label"><span class="esec-num">SECTION C</span><span class="esec-title">Identify the Role — ما إعرابُ الكلمة؟</span><span class="esec-marks">5 marks · 1 each</span></div>
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)"><p style="font-size:.85rem;color:var(--ink-mid)">Each phrase below is from your lessons. Identify the grammatical role of the word in bold.</p></div>
+
+    <div class="exam-q" id="eq21" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 21</p><p class="exam-q-text"><span class="exam-q-ar">قَامَ <strong>زَيْدٌ</strong></span> "Zayd stood." — the word زَيْدٌ is the:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="21" data-v="0"><span class="opt-letter">a</span> الفاعل (the doer)</button><button type="button" class="exam-mcq-opt" data-q="21" data-v="1"><span class="opt-letter">b</span> المفعول به (the direct object)</button><button type="button" class="exam-mcq-opt" data-q="21" data-v="2"><span class="opt-letter">c</span> الخبر (the predicate)</button><button type="button" class="exam-mcq-opt" data-q="21" data-v="3"><span class="opt-letter">d</span> النعت (the adjective)</button></div></div>
+
+    <div class="exam-q" id="eq22" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 22</p><p class="exam-q-text"><span class="exam-q-ar">نَصَرَ اللهُ <strong>المُؤْمِنِينَ</strong></span> "Allah helped the believers." — the word المُؤْمِنِينَ is the:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="22" data-v="0"><span class="opt-letter">a</span> الفاعل (the doer)</button><button type="button" class="exam-mcq-opt" data-q="22" data-v="1"><span class="opt-letter">b</span> الخبر (the predicate)</button><button type="button" class="exam-mcq-opt" data-q="22" data-v="2"><span class="opt-letter">c</span> المفعول به (the direct object)</button><button type="button" class="exam-mcq-opt" data-q="22" data-v="3"><span class="opt-letter">d</span> المضاف إليه (the possessor)</button></div></div>
+
+    <div class="exam-q" id="eq23" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 23</p><p class="exam-q-text"><span class="exam-q-ar">المَسْجِدُ <strong>كَبِيرٌ</strong></span> "The mosque is big." — the word كَبِيرٌ is the:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="23" data-v="0"><span class="opt-letter">a</span> المبتدأ (the subject)</button><button type="button" class="exam-mcq-opt" data-q="23" data-v="1"><span class="opt-letter">b</span> الفاعل (the doer)</button><button type="button" class="exam-mcq-opt" data-q="23" data-v="2"><span class="opt-letter">c</span> النعت (the adjective)</button><button type="button" class="exam-mcq-opt" data-q="23" data-v="3"><span class="opt-letter">d</span> الخبر (the predicate)</button></div></div>
+
+    <div class="exam-q" id="eq24" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 24</p><p class="exam-q-text"><span class="exam-q-ar">كِتَابُ <strong>اللهِ</strong></span> "the Book of Allah" — the word اللهِ is the:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="24" data-v="0"><span class="opt-letter">a</span> النعت (the adjective)</button><button type="button" class="exam-mcq-opt" data-q="24" data-v="1"><span class="opt-letter">b</span> المضاف إليه (the possessor — always مجرور)</button><button type="button" class="exam-mcq-opt" data-q="24" data-v="2"><span class="opt-letter">c</span> الفاعل (the doer)</button><button type="button" class="exam-mcq-opt" data-q="24" data-v="3"><span class="opt-letter">d</span> المفعول به (the direct object)</button></div></div>
+
+    <div class="exam-q" id="eq25" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 25</p><p class="exam-q-text"><span class="exam-q-ar">الرَّحْمَٰنِ <strong>الرَّحِيمِ</strong></span> (al-Fātiḥah 1:3) — the word الرَّحِيمِ is a:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="25" data-v="0"><span class="opt-letter">a</span> نعت (adjective — it follows the word before it in case)</button><button type="button" class="exam-mcq-opt" data-q="25" data-v="1"><span class="opt-letter">b</span> بدل (substitution)</button><button type="button" class="exam-mcq-opt" data-q="25" data-v="2"><span class="opt-letter">c</span> توكيد (emphasis)</button><button type="button" class="exam-mcq-opt" data-q="25" data-v="3"><span class="opt-letter">d</span> عطف (conjunction)</button></div></div>
+
+    <!-- SECTION D: CASE & SIGN -->
+    <div class="exam-section-label"><span class="esec-num">SECTION D</span><span class="esec-title">Choose the Case &amp; Sign — اختر الحالة والعلامة</span><span class="esec-marks">5 marks · 1 each</span></div>
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)"><p style="font-size:.85rem;color:var(--ink-mid)">Choose the correct case (or its sign) for each situation.</p></div>
+
+    <div class="exam-q" id="eq26" data-type="mcq" data-answer="2" data-marks="1"><p class="exam-q-num">Question 26</p><p class="exam-q-text"><span class="exam-q-ar">ذَهَبْتُ إِلَى المَسْجِدِ</span> The noun after إِلَى is:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="26" data-v="0"><span class="opt-letter">a</span> مرفوع (nominative)</button><button type="button" class="exam-mcq-opt" data-q="26" data-v="1"><span class="opt-letter">b</span> منصوب (accusative)</button><button type="button" class="exam-mcq-opt" data-q="26" data-v="2"><span class="opt-letter">c</span> مجرور (genitive)</button><button type="button" class="exam-mcq-opt" data-q="26" data-v="3"><span class="opt-letter">d</span> مجزوم (jussive)</button></div></div>
+
+    <div class="exam-q" id="eq27" data-type="mcq" data-answer="0" data-marks="1"><p class="exam-q-num">Question 27</p><p class="exam-q-text"><span class="exam-q-ar">إِنَّ اللَّهَ غَفُورٌ</span> The الخبر of إنَّ (here غَفُورٌ) is:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="27" data-v="0"><span class="opt-letter">a</span> مرفوع (nominative — the ضمة on غَفُورٌ shows it)</button><button type="button" class="exam-mcq-opt" data-q="27" data-v="1"><span class="opt-letter">b</span> منصوب (accusative)</button><button type="button" class="exam-mcq-opt" data-q="27" data-v="2"><span class="opt-letter">c</span> مجرور (genitive)</button><button type="button" class="exam-mcq-opt" data-q="27" data-v="3"><span class="opt-letter">d</span> مجزوم (jussive)</button></div></div>
+
+    <div class="exam-q" id="eq28" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 28</p><p class="exam-q-text"><span class="exam-q-ar">المُؤْمِنِينَ</span> The sign of النصب on جمع المذكر السالم (the sound masculine plural) is:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="28" data-v="0"><span class="opt-letter">a</span> فتحة (the -a vowel)</button><button type="button" class="exam-mcq-opt" data-q="28" data-v="1"><span class="opt-letter">b</span> كسرة (the -i vowel)</button><button type="button" class="exam-mcq-opt" data-q="28" data-v="2"><span class="opt-letter">c</span> ألف (the letter alif)</button><button type="button" class="exam-mcq-opt" data-q="28" data-v="3"><span class="opt-letter">d</span> الياء (the letter yāʾ — the ending ـِينَ)</button></div></div>
+
+    <div class="exam-q" id="eq29" data-type="mcq" data-answer="1" data-marks="1"><p class="exam-q-num">Question 29</p><p class="exam-q-text"><span class="exam-q-ar">لَمْ يَذْهَبْ</span> After لَمْ, the verb يَذْهَبْ is:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="29" data-v="0"><span class="opt-letter">a</span> مرفوع with a ضمة</button><button type="button" class="exam-mcq-opt" data-q="29" data-v="1"><span class="opt-letter">b</span> مجزوم with a سكون</button><button type="button" class="exam-mcq-opt" data-q="29" data-v="2"><span class="opt-letter">c</span> منصوب with a فتحة</button><button type="button" class="exam-mcq-opt" data-q="29" data-v="3"><span class="opt-letter">d</span> مجرور with a كسرة</button></div></div>
+
+    <div class="exam-q" id="eq30" data-type="mcq" data-answer="3" data-marks="1"><p class="exam-q-num">Question 30</p><p class="exam-q-text"><span class="exam-q-ar">كَانَ اللَّهُ غَفُورًا</span> The اسم of كان (here اللَّهُ) is:</p><div class="exam-mcq-options"><button type="button" class="exam-mcq-opt" data-q="30" data-v="0"><span class="opt-letter">a</span> منصوب (accusative)</button><button type="button" class="exam-mcq-opt" data-q="30" data-v="1"><span class="opt-letter">b</span> مجرور (genitive)</button><button type="button" class="exam-mcq-opt" data-q="30" data-v="2"><span class="opt-letter">c</span> مجزوم (jussive)</button><button type="button" class="exam-mcq-opt" data-q="30" data-v="3"><span class="opt-letter">d</span> مرفوع (nominative — the ضمة on اللَّهُ shows it)</button></div></div>
+
+    <!-- SECTION E: SHORT ANSWER -->
+    <div class="exam-section-label"><span class="esec-num">SECTION E</span><span class="esec-title">Short Answer — أجب بإيجاز</span><span class="esec-marks">5 marks · 1 each</span></div>
+    <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)"><p style="font-size:.85rem;color:var(--ink-mid)">Write your answer in Arabic (transliteration accepted). Marks are awarded on submission based on key words found in your answer.</p></div>
+
+    <div class="exam-q" id="eq31" data-type="short" data-keywords="اسم|ism|noun;فعل|fi'l|fil|fiʿl|verb;حرف|harf|ḥarf|particle" data-required="3" data-marks="1"><p class="exam-q-num">Question 31</p><p class="exam-q-text">Name the three kinds of word (أقسام الكلام).</p><textarea class="exam-fitb" id="ans31" rows="3" placeholder="Write your answer here... (Arabic or transliteration)"></textarea></div>
+
+    <div class="exam-q" id="eq32" data-type="short" data-keywords="رفع|raf|ضمة|damm|ḍamm;نصب|nasb|naṣb|فتحة|fath|fatḥ;خفض|جر|khafd|khafḍ|jarr|كسرة|kasra|kasrah" data-required="3" data-marks="1"><p class="exam-q-num">Question 32</p><p class="exam-q-text">Name the three cases a <strong>noun</strong> can take, and the sign of each on a single noun.</p><textarea class="exam-fitb" id="ans32" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+    <div class="exam-q" id="eq33" data-type="short" data-keywords="تنوين|ينون|tanwin|tanween|tanwīn;التعريف|ال التعريف|alif lam|definite" data-required="2" data-marks="1"><p class="exam-q-num">Question 33</p><p class="exam-q-text">What are the two rules of the المضاف (the first noun of an إضافة)? What does it drop?</p><textarea class="exam-fitb" id="ans33" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+    <div class="exam-q" id="eq34" data-type="short" data-keywords="كتاب|رسول|باب|بسم|الله|المسجد|kitab|kitāb|rasul|rasūl|bab|bāb|bismillah|allah|masjid" data-required="1" data-marks="1"><p class="exam-q-num">Question 34</p><p class="exam-q-text">Give one example of الإضافة (a possessive construct) in Arabic — for instance from your lessons.</p><textarea class="exam-fitb" id="ans34" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+    <div class="exam-q" id="eq35" data-type="short" data-keywords="كأن|kaanna|ka'anna|ka-anna;لكن|lakinna|lakin;لعل|la'alla|laalla|laʿalla;ليت|layta;أن|anna" data-required="2" data-marks="1"><p class="exam-q-num">Question 35</p><p class="exam-q-text">Name two sisters of إنَّ.</p><textarea class="exam-fitb" id="ans35" rows="3" placeholder="Write your answer here..."></textarea></div>
+
+  </form>
+
+  <div id="results-panel">
+    <p style="font-family:var(--font-arabic);font-size:1.5rem;color:var(--teal-deep);direction:rtl;margin-bottom:var(--space-sm)">نتيجة الاختبار</p>
+    <p style="font-size:1rem;font-weight:600;color:var(--ink-mid);margin-bottom:var(--space-xl)">Naḥw Track — Examination 1 Results (Naḥw L1–L12)</p>
+    <div id="score-circle" class="result-score-circle grade-A"><span class="score-num" id="score-num">—</span><span class="score-total">out of 35</span></div>
+    <p style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:var(--space-sm)" id="grade-text"></p>
+    <p style="font-size:.9rem;color:var(--ink-mid);line-height:1.7;margin-bottom:var(--space-xl)" id="grade-message"></p>
+    <div style="display:flex;justify-content:center;gap:var(--space-md);flex-wrap:wrap">
+      <button class="btn-secondary" onclick="window.location.href='index.html'">← Back to Naḥw Track</button>
+      <button class="btn-primary" onclick="window.location.href='u6-d1-tadrib-irab.html'">Year 2 begins · تدريب الإعراب →</button>
+    </div>
+    <p style="font-size:.78rem;color:var(--ink-faint);margin-top:var(--space-xl)">Review incorrect answers above — each question shows the correct answer after submission.</p>
+  </div>
+
+</div>
+
+<div class="exam-submit-bar">
+  <div class="answer-tracker">Answered: <strong id="answered-count">0</strong> / 35</div>
+  <button type="button" class="btn-primary" id="submit-btn" onclick="submitExam()">Submit Exam · تسليم الاختبار</button>
+</div>
+
+<footer class="site-footer">
+  <p class="site-footer-ar" style="font-size:1.05rem;color:rgba(255,255,255,.8);margin-top:0">دار الهجرة — المدرسة السلفية التأسيسية للعلوم الشرعية</p>
+  <p>Naḥw built on al-Ājurrūmiyyah with al-ʿUthaymīn's sharḥ · taught in our own words</p>
+  <p class="site-footer-ar">لأغراض التعليم فقط — هذا الموقع لا يُفتي. للفتاوى، يُرجع إلى العلماء الموثوقين.</p>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script>
+'use strict';
+
+let timeLeft = 35 * 60;
+let timerInterval;
+let examSubmitted = false;
+function stripAr(s) { return s.replace(/[\u064B-\u065F\u0670\u0640]/g, ''); }
+
+function startTimer() {
+  timerInterval = setInterval(function() {
+    if (examSubmitted) { clearInterval(timerInterval); return; }
+    timeLeft--;
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    document.getElementById('timer-text').textContent = m + ':' + String(s).padStart(2,'0');
+    const el = document.getElementById('timer-display');
+    if (timeLeft <= 0) { clearInterval(timerInterval); submitExam(true); }
+    else if (timeLeft <= 300) { el.className = 'exam-timer danger'; }
+    else if (timeLeft <= 600) { el.className = 'exam-timer warn'; }
+  }, 1000);
+}
+startTimer();
+
+const answers = {};
+let answeredCount = 0;
+function updateAnsweredCount() { document.getElementById('answered-count').textContent = Object.keys(answers).length; }
+
+document.querySelectorAll('.exam-mcq-opt').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (examSubmitted) return;
+    const q = this.dataset.q;
+    const v = parseInt(this.dataset.v);
+    document.querySelectorAll('.exam-mcq-opt[data-q="' + q + '"]').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    const wasAnswered = answers.hasOwnProperty('q' + q);
+    answers['q' + q] = v;
+    if (!wasAnswered) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+document.querySelectorAll('.exam-tf-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (examSubmitted) return;
+    const q = this.dataset.q;
+    const v = this.dataset.v;
+    document.querySelectorAll('.exam-tf-btn[data-q="' + q + '"]').forEach(b => b.classList.remove('selected-t','selected-f'));
+    this.classList.add(v === 'true' ? 'selected-t' : 'selected-f');
+    const wasAnswered = answers.hasOwnProperty('q' + q);
+    answers['q' + q] = v === 'true';
+    if (!wasAnswered) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+document.querySelectorAll('textarea.exam-fitb').forEach(ta => {
+  ta.addEventListener('input', function() {
+    if (examSubmitted) return;
+    const id = this.id.replace('ans','');
+    const wasAnswered = answers.hasOwnProperty('q' + id);
+    answers['q' + id] = this.value.trim();
+    if (!wasAnswered && this.value.trim()) { answeredCount++; updateAnsweredCount(); }
+  });
+});
+
+function submitExam(force) {
+  if (examSubmitted) return;
+  if (!force && Object.keys(answers).length < 25) {
+    const proceed = confirm('You have answered ' + Object.keys(answers).length + ' of 35 questions. Submit anyway?');
+    if (!proceed) return;
+  }
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').textContent = 'Submitted';
+
+  let totalScore = 0;
+
+  document.querySelectorAll('.exam-q').forEach(function(qEl) {
+    const qNum = qEl.id.replace('eq','');
+    const type = qEl.dataset.type;
+    const marks = parseInt(qEl.dataset.marks);
+
+    if (type === 'tf') {
+      const correct = qEl.dataset.answer === 'true';
+      const userVal = answers['q' + qNum];
+      const isCorrect = userVal === correct;
+      markQuestion(qEl, isCorrect, marks, isCorrect ? marks : 0, 'Correct answer: ' + (correct ? 'True ✓' : 'False ✗'));
+      if (isCorrect) totalScore += marks;
+    } else if (type === 'mcq') {
+      const correct = parseInt(qEl.dataset.answer);
+      const userVal = answers['q' + qNum];
+      const isCorrect = userVal === correct;
+      const opts = qEl.querySelectorAll('.exam-mcq-opt');
+      opts.forEach(function(o, i) {
+        if (i === correct) o.style.cssText += 'border-color:#2a7a4b;background:#e8f4ee;';
+        else if (parseInt(o.dataset.v) === userVal && !isCorrect) o.style.cssText += 'border-color:#c0392b;background:#fdf4f4;';
+      });
+      const correctText = opts[correct] ? opts[correct].textContent.trim() : '';
+      markQuestion(qEl, isCorrect, marks, isCorrect ? marks : 0, 'Correct answer: ' + correctText);
+      if (isCorrect) totalScore += marks;
+    } else if (type === 'short') {
+      const raw = stripAr((qEl.dataset.keywords || '').toLowerCase());
+      const userText = stripAr((answers['q' + qNum] || '').toLowerCase());
+      const required = parseInt(qEl.dataset.required || '2');
+      let hits;
+      if (raw.includes(';')) {
+        // grouped keywords: each ';'-separated group counts once; matched text is
+        // consumed so a word like كأنّ cannot also satisfy the أنّ group
+        let text = userText;
+        hits = 0;
+        raw.split(';').forEach(function(group) {
+          const k = group.split('|').find(function(kw) { return kw && text.includes(kw); });
+          if (k) { hits++; text = text.replace(k, ''); }
+        });
+      } else {
+        hits = raw.split('|').filter(function(kw) { return kw && userText.includes(kw); }).length;
+      }
+      const awarded = hits >= required ? marks : (hits > 0 ? marks / 2 : 0);
+      totalScore += awarded;
+      const isCorrect = awarded >= marks;
+      const isPartial = awarded > 0 && !isCorrect;
+      markQuestion(qEl, isCorrect, marks, awarded, 'Key terms expected: ' + (qEl.dataset.keywords || '').replace(/[|;]/g, ', '), isPartial);
+    }
+  });
+
+  const pct = Math.round((totalScore / 35) * 100);
+  document.getElementById('score-num').textContent = totalScore;
+  const circle = document.getElementById('score-circle');
+  let gradeClass, gradeLetter, gradeMsg;
+  if (pct >= 90) {
+    gradeClass = 'grade-A'; gradeLetter = 'Excellent — ممتاز';
+    gradeMsg = 'Masha\'Allah! Outstanding. The core of al-Ājurrūmiyyah is firmly yours — the three kinds of word, the four cases and their signs, both sentence types, the accusatives, the genitives and the tawābiʿ. You are ready to parse the Book of Allah and press on.';
+  } else if (pct >= 75) {
+    gradeClass = 'grade-B'; gradeLetter = 'Good — جيد جداً';
+    gradeMsg = 'Well done. Your naḥw foundation is solid. Re-read the lessons behind the questions you missed — most students slip on كان vs إنّ (Unit 3) and the naṣb sub-signs (Unit 4) — then continue forward.';
+  } else if (pct >= 60) {
+    gradeClass = 'grade-C'; gradeLetter = 'Pass — مقبول';
+    gradeMsg = 'You have passed, but the rules are not yet automatic. Revisit Unit 3 (الفاعل، المبتدأ والخبر، كان وإنّ) and Unit 4 (المنصوبات), re-do each lesson\'s quiz and memorize block, then retake this exam.';
+  } else {
+    gradeClass = 'grade-D'; gradeLetter = 'Needs Review — يحتاج مراجعة';
+    gradeMsg = 'We recommend reviewing the naḥw lessons before retaking. Go back to Unit 1 (الكلام) and Unit 2 (الإعراب وعلاماته والأفعال), then work forward a lesson a day through Unit 3, Unit 4 (المنصوبات) and Unit 5 (المخفوضات والتوابع), memorizing each احفظ line as you go.';
+  }
+  circle.className = 'result-score-circle ' + gradeClass;
+  document.getElementById('grade-text').textContent = pct + '% — ' + gradeLetter;
+  document.getElementById('grade-message').textContent = gradeMsg;
+  document.getElementById('results-panel').classList.add('show');
+
+  if (typeof markLessonComplete === 'function') { markLessonComplete('nh-exam1'); }
+  if (window.STATE) {
+    window.STATE.scores['nh-exam1'] = { score: totalScore, total: 35, pct: pct, date: new Date().toISOString() };
+    if (typeof saveState === 'function') saveState();
+  }
+
+  setTimeout(function() { document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+}
+
+function markQuestion(qEl, isCorrect, totalMarks, awarded, explanation, isPartial) {
+  qEl.classList.add(isPartial ? 'partial' : isCorrect ? 'correct' : 'incorrect');
+  const badge = document.createElement('span');
+  badge.className = 'mark-badge ' + (isPartial ? 'partial' : isCorrect ? 'correct' : 'incorrect');
+  badge.textContent = isCorrect ? '✓ ' + awarded + '/' + totalMarks + ' marks'
+    : isPartial ? '~ ' + awarded + '/' + totalMarks + ' marks'
+    : '✗ 0/' + totalMarks + ' marks';
+  const exp = document.createElement('div');
+  exp.className = 'mark-explanation show';
+  exp.textContent = explanation;
+  qEl.appendChild(badge);
+  qEl.appendChild(exp);
+}
+</script>
+</body>
+</html>

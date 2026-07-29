@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L.4 أمثلة الشرك Examples | Aqeedah | دار الهجرة</title>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>">
+<script>document.documentElement.dataset.theme=localStorage.getItem('mdrs_theme')||'lilac';</script>
+<style>
+  .scenario-card {
+    background: white;
+    border: 1px solid var(--ivory-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-lg);
+  }
+  .scenario-card .scenario-num {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--ink-faint);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+  }
+  .scenario-card .scenario-text {
+    font-size: .95rem;
+    color: var(--ink-mid);
+    line-height: 1.85;
+    margin-bottom: var(--space-lg);
+    border-left: 3px solid var(--ivory-dark);
+    padding-left: var(--space-md);
+    font-style: italic;
+  }
+  .classify-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+  .classify-btn {
+    border: 2px solid var(--ivory-dark);
+    background: var(--ivory);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: .82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .18s;
+    font-family: var(--font-english);
+    color: var(--ink);
+  }
+  .classify-btn:hover { border-color: var(--teal-mid); background: #f0f8f8; }
+  .classify-btn.selected-major { background: #8c3a3a; border-color: #8c3a3a; color: white; }
+  .classify-btn.selected-minor { background: var(--gold-warm); border-color: var(--gold-warm); color: white; }
+  .classify-btn.selected-hidden { background: #1a5a8c; border-color: #1a5a8c; color: white; }
+  .classify-btn.selected-not { background: var(--teal-deep); border-color: var(--teal-deep); color: white; }
+  .classify-btn.correct-reveal { background: #2a7a4b; border-color: #2a7a4b; color: white; }
+  .classify-btn.wrong-reveal { background: #c0392b; border-color: #c0392b; color: white; }
+  .scenario-explanation {
+    display: none;
+    background: var(--ivory);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-lg);
+    font-size: .88rem;
+    color: var(--ink-mid);
+    line-height: 1.8;
+    margin-top: var(--space-md);
+    border-left: 3px solid var(--teal-mid);
+  }
+  .scenario-explanation.show { display: block; }
+  .nuance-box {
+    background: linear-gradient(135deg, #f0f8f8, #e8f4f0);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border: 1px solid var(--teal-mid);
+    margin: var(--space-lg) 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="site-logo">
+      <span class="logo-ar">دار الهجرة</span>
+      <span class="logo-en">Salafi Foundational School</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li class="nav-item"><a href="../islam101/index.html"><span class="nav-ar">أساسيات</span><span class="nav-en">Islam 101</span></a></li>
+        <li class="nav-item"><a href="../quran/index.html"><span class="nav-ar">القرآن</span><span class="nav-en">Quran</span></a></li>
+        <li class="nav-item"><a href="../hadeeth/index.html"><span class="nav-ar">الحديث</span><span class="nav-en">Hadeeth</span></a></li>
+        <li class="nav-item"><a href="../seerah/index.html"><span class="nav-ar">السيرة</span><span class="nav-en">Seerah</span></a></li>
+        <li class="nav-item"><a href="../fiqh/index.html"><span class="nav-ar">الفقه</span><span class="nav-en">Fiqh</span></a></li>
+        <li class="nav-item active"><a href="index.html"><span class="nav-ar">العقيدة</span><span class="nav-en">Aqeedah</span></a></li>
+        <li class="nav-item"><a href="../arabic/index.html"><span class="nav-ar">العربية</span><span class="nav-en">Arabic</span></a></li>
+        <li class="nav-item"><a href="../resources/index.html"><span class="nav-ar">الموارد</span><span class="nav-en">Resources</span></a></li>
+      </ul>
+    </nav>
+    <div class="year-selector" role="group" aria-label="Select year level">
+      <select class="year-select" aria-label="Choose your year level"><option value="1">Year 1+</option><option value="2">Year 2+</option><option value="3">Year 3+</option><option value="4">Year 4+</option><option value="5">Year 5</option></select>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrapper">
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <p class="sidebar-title">Unit 1 · الوحدة الأولى</p>
+      <ul class="lesson-list">
+        <li><a href="l1-tawhid.html" data-lesson-id="aq-l0"><div class="lesson-row"><span class="lesson-status"></span><div><span class="l-ar">ما هو التوحيد؟</span><span class="l-en">What Is Tawhid?</span></div></div></a></li>
+        <li><a href="l1-shirk-what.html" data-lesson-id="aq-l1"><div class="lesson-row"><span class="lesson-status"></span><div><span class="l-ar">ما هو الشرك؟</span><span class="l-en">L.1 What Is Shirk?</span></div></div></a></li>
+        <li><a href="l2-shirk-types.html" data-lesson-id="aq-l2"><div class="lesson-row"><span class="lesson-status"></span><div><span class="l-ar">أنواع الشرك</span><span class="l-en">L.2 Types of Shirk</span></div></div></a></li>
+        <li><a href="l3-shirk-evidence.html" data-lesson-id="aq-l3"><div class="lesson-row"><span class="lesson-status"></span><div><span class="l-ar">أدلة أنواع الشرك</span><span class="l-en">L.3 Types with Evidence</span></div></div></a></li>
+        <li><a href="l4-shirk-examples.html" class="active" data-lesson-id="aq-l4"><div class="lesson-row"><span class="lesson-status current"></span><div><span class="l-ar">أمثلة الشرك</span><span class="l-en">L.4 Examples</span></div></div></a></li>
+        <li><a href="unit1-exam.html"><div class="lesson-row"><span class="lesson-status locked"></span><div><span class="l-ar">اختبار الوحدة</span><span class="l-en">Unit 1 Exam</span></div></div></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-title">On this page</p>
+      <ul class="lesson-list">
+        <li><a href="#section-howto"><span class="l-en">How to classify</span></a></li>
+        <li><a href="#section-clear"><span class="l-en">Clear examples</span></a></li>
+        <li><a href="#section-scenarios"><span class="l-en">Scenario drill</span></a></li>
+        <li><a href="#section-nuance"><span class="l-en">Nuance &amp; caution</span></a></li>
+        <li><a href="#section-grammar"><span class="l-en">Grammar drill</span></a></li>
+        <li><a href="#section-exercises"><span class="l-en">Exercises</span></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content-main">
+
+    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson progress">
+      <div class="progress-fill" style="width:90%"></div>
+    </div>
+
+    <article class="lesson-card">
+      <div class="lesson-card-header">
+        <span class="lesson-number">Aqeedah · Unit 1 · Lesson 4</span>
+        <div class="lesson-title-wrap">
+          <h1 class="lesson-title-ar">أمثلة الشرك وتطبيقها</h1>
+          <p class="lesson-title-en">Examples of Shirk — Classification in Practice</p>
+        </div>
+        <span data-min-year="2" style="background:var(--year2);color:white;border-radius:20px;padding:4px 12px;font-size:.7rem;font-weight:600">Year 2+</span>
+      </div>
+
+      <div class="lesson-card-body">
+
+        <div class="objectives-box">
+          <p class="objectives-title">After this lesson you will be able to · بعد هذا الدرس ستتمكن من</p>
+          <ul class="objectives-list">
+            <li>Correctly classify real-life scenarios as major, minor, or hidden shirk — or not shirk at all</li>
+            <li>Explain the reasoning behind each classification using the correct dalīl</li>
+            <li>Recognise nuance — acts that look like shirk but are not, and acts that look innocent but are</li>
+            <li>Understand the importance of not making takfīr (declaring someone a kāfir) hastily</li>
+          </ul>
+        </div>
+
+        <!-- HOW TO CLASSIFY -->
+        <section id="section-howto">
+          <div class="section-heading">
+            <span class="sh-ar">كيف نصنّف؟</span>
+            <span class="sh-en">How to Classify — The Method</span>
+          </div>
+
+          <p style="font-size:.95rem;color:var(--ink-mid);line-height:1.9;margin-bottom:var(--space-lg)">
+            When you encounter an act and ask "is this shirk?" — follow these steps:
+          </p>
+
+          <div style="counter-reset:steps">
+          <div style="display:flex;gap:var(--space-md);align-items:flex-start;margin-bottom:var(--space-md);padding:var(--space-md) var(--space-lg);background:white;border-radius:var(--radius-md);border:1px solid var(--ivory-dark)">
+            <span style="background:var(--teal-deep);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0">1</span>
+            <div>
+              <p style="font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Is there a dalīl (text) that calls this act "shirk"?</p>
+              <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">If yes → it is shirk. If no → do not call it shirk based on your own reasoning alone.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-md);align-items:flex-start;margin-bottom:var(--space-md);padding:var(--space-md) var(--space-lg);background:white;border-radius:var(--radius-md);border:1px solid var(--ivory-dark)">
+            <span style="background:var(--teal-deep);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0">2</span>
+            <div>
+              <p style="font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Does it involve directing a right of Allah to other than Allah?</p>
+              <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Worship (ʿibādah), ultimate fear (khawf), complete hope (rajāʾ), ultimate love (maḥabbah) — these belong only to Allah.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-md);align-items:flex-start;margin-bottom:var(--space-md);padding:var(--space-md) var(--space-lg);background:white;border-radius:var(--radius-md);border:1px solid var(--ivory-dark)">
+            <span style="background:var(--teal-deep);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0">3</span>
+            <div>
+              <p style="font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">If it is shirk — is it major, minor, or hidden?</p>
+              <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Major → exits Islam. Minor → named shirk in text but does not exit Islam. Hidden → in the heart.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-md);align-items:flex-start;padding:var(--space-md) var(--space-lg);background:white;border-radius:var(--radius-md);border:1px solid var(--ivory-dark)">
+            <span style="background:var(--gold-warm);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0">!</span>
+            <div>
+              <p style="font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Be careful: classifying an <em>act</em> vs. declaring a <em>person</em></p>
+              <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Saying "this act is major shirk" is different from saying "this person is a kāfir." The second requires additional conditions — knowledge, no coercion, no misunderstanding — and is left to scholars.</p>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        <!-- CLEAR EXAMPLES -->
+        <section id="section-clear">
+          <div class="section-heading">
+            <span class="sh-ar">أمثلة واضحة</span>
+            <span class="sh-en">Clear Examples — Before the Scenarios</span>
+          </div>
+
+          <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--ivory-dark)">
+            <table class="grammar-table" style="min-width:650px">
+              <thead>
+                <tr>
+                  <th>Example — المثال</th>
+                  <th>Type</th>
+                  <th>Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-size:.85rem">Bowing before an idol and asking it to heal you</td>
+                  <td style="text-align:center"><span style="background:#8c3a3a;color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Major</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Directing ʿibādah (bowing/supplication) to other than Allah</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Visiting a fortune-teller and believing their information</td>
+                  <td style="text-align:center"><span style="background:#8c3a3a;color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Major</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Claiming knowledge of the unseen (ʿilm al-ghayb) belongs only to Allah</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Reciting Quran louder when the teacher enters the room</td>
+                  <td style="text-align:center"><span style="background:var(--gold-warm);color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Minor</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Riyāʾ — performing worship to be noticed (unless genuinely motivated for correction)</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Saying "I swear by the Prophet ﷺ this is true"</td>
+                  <td style="text-align:center"><span style="background:var(--gold-warm);color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Minor</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Prophet ﷺ forbade swearing by other than Allah — though we love the Prophet ﷺ deeply</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Praying because you fear Allah might punish you <em>and</em> because your parents are watching</td>
+                  <td style="text-align:center"><span style="background:#1a5a8c;color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Hidden</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Deed mixed with wanting others' approval alongside Allah's — corrupts sincerity</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Asking a living person for help that is within their power</td>
+                  <td style="text-align:center"><span style="background:var(--teal-deep);color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Not shirk</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Seeking help from people in what they can do is a normal human act — tawhid is intact</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Using medicine to cure an illness</td>
+                  <td style="text-align:center"><span style="background:var(--teal-deep);color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Not shirk</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Using means (asbāb) while the heart relies on Allah is tawakkul — it is not shirk</td>
+                </tr>
+                <tr>
+                  <td style="font-size:.85rem">Visiting the grave of a Muslim scholar to make duʿāʾ <em>to Allah</em> there</td>
+                  <td style="text-align:center"><span style="background:var(--teal-deep);color:white;border-radius:999px;padding:2px 10px;font-size:.75rem;white-space:nowrap">Not shirk</span></td>
+                  <td style="font-size:.82rem;color:var(--ink-light)">Visiting graves and making duʿāʾ to Allah is sunnah — the shirk would be if duʿāʾ was directed to the deceased</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SCENARIO CLASSIFICATION DRILL -->
+        <section id="section-scenarios">
+          <div class="section-heading">
+            <span class="sh-ar">تدريب على التصنيف</span>
+            <span class="sh-en">Scenario Classification Drill — صنّف كل موقف</span>
+          </div>
+
+          <p style="font-size:.9rem;color:var(--ink-mid);line-height:1.8;margin-bottom:var(--space-lg)">
+            Read each scenario carefully. Select the correct category, then read the explanation.
+            Some scenarios are deliberately subtle — think before you click.
+          </p>
+
+          <!-- Scenario 1 -->
+          <div class="scenario-card" id="sc1">
+            <p class="scenario-num">Scenario 1</p>
+            <div class="scenario-text">
+              Umm Khālid keeps a blue bead hanging in her car. She believes it protects her from the evil eye and harm while driving. She does not pray to the bead, but she feels genuinely unsafe without it.
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="1" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="1" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="1" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="1" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp1">
+              <strong style="color:var(--gold-warm)">Minor Shirk (الأصغر)</strong> — wearing a charm or amulet
+              believing it independently protects from harm is a form of minor shirk (tamīmah). The Prophet ﷺ said:
+              <em style="font-family:var(--font-arabic);display:block;direction:rtl;margin:var(--space-sm) 0;color:var(--teal-deep);font-size:1rem">«مَنْ تَعَلَّقَ شَيْئًا وُكِّلَ إِلَيْهِ»</em>
+              "Whoever hangs himself on something will be entrusted to it." (Tirmidhī)
+              Harm and benefit belong only to Allah. A bead has no power to protect.
+              <strong>Note:</strong> if she believed the bead was a deity or had divine power in itself, it would move toward major shirk.
+              The key distinction: she doesn't worship it, but she <em>relies on it</em> — that is the minor category.
+            </div>
+          </div>
+
+          <!-- Scenario 2 -->
+          <div class="scenario-card" id="sc2">
+            <p class="scenario-num">Scenario 2</p>
+            <div class="scenario-text">
+              Bilāl is a student who donates to charity every week sincerely. One Friday, his teacher publicly praises him in class for his charity. The following week, Bilāl gives a larger donation than usual — and notices that his motivation is partly to be praised again.
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="2" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="2" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="2" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="2" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp2">
+              <strong style="color:#1a5a8c">Hidden Shirk (الخفي) — with elements of minor shirk</strong> —
+              The sincere donations are rewarded. But the extra donation made <em>partly</em> for praise is
+              tainted by riyāʾ (showing off) — a form of hidden shirk that poisons the specific deed it enters.
+              <br><br>
+              The scholars explain: if the deed started sincerely and riyāʾ entered <em>later</em>,
+              the original deed is not cancelled — but the additional part done for others loses its reward.
+              This scenario is a good reminder to constantly check intentions (<span style="font-family:var(--font-arabic);color:var(--teal-deep)">محاسبة النفس</span>).
+            </div>
+          </div>
+
+          <!-- Scenario 3 -->
+          <div class="scenario-card" id="sc3">
+            <p class="scenario-num">Scenario 3</p>
+            <div class="scenario-text">
+              Yūsuf visits a local "healer" who claims to know the future and who places written charms under a pillow to bring good luck. Yūsuf pays the healer and believes in his power. He returns regularly for guidance.
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="3" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="3" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="3" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="3" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp3">
+              <strong style="color:#8c3a3a">Major Shirk (الأكبر)</strong> —
+              visiting fortune-tellers and believing them is major shirk. The Prophet ﷺ said:
+              <em style="font-family:var(--font-arabic);display:block;direction:rtl;margin:var(--space-sm) 0;color:var(--teal-deep);font-size:1rem">«مَنْ أَتَى كَاهِنًا فَصَدَّقَهُ بِمَا يَقُولُ فَقَدْ كَفَرَ بِمَا أُنْزِلَ عَلَى مُحَمَّدٍ ﷺ»</em>
+              "Whoever goes to a fortune-teller and believes what he says has disbelieved in what was revealed to Muḥammad ﷺ." (Abū Dāwūd, ṣaḥīḥ)
+              Knowledge of the unseen belongs only to Allah. Believing a human can access it is major shirk.
+            </div>
+          </div>
+
+          <!-- Scenario 4 -->
+          <div class="scenario-card" id="sc4">
+            <p class="scenario-num">Scenario 4</p>
+            <div class="scenario-text">
+              Maryam is unwell. Her mother takes her to a doctor. The doctor prescribes medicine. Maryam takes the medicine, makes duʿāʾ to Allah for cure, and says "all healing comes from Allah."
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="4" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="4" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="4" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="4" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp4">
+              <strong style="color:var(--teal-deep)">Not shirk</strong> —
+              this is correct tawakkul (reliance on Allah). Using means (asbāb) while the heart
+              relies on Allah is not shirk — it is how Muslims are meant to live.
+              The Prophet ﷺ himself used medicine, wore armour in battle, and ate food.
+              <br><br>
+              Tawhid does not mean abandoning means — it means not placing your ultimate reliance <em>in</em> the means.
+              Maryam takes medicine <em>and</em> her heart is anchored in Allah — this is tawhid in action.
+            </div>
+          </div>
+
+          <!-- Scenario 5 -->
+          <div class="scenario-card" id="sc5">
+            <p class="scenario-num">Scenario 5</p>
+            <div class="scenario-text">
+              Ḥamzah is in a difficult situation. He says to his friend: "If it were not for Allah <em>and</em> you, I would have been ruined." He means this as a genuine expression of gratitude to both Allah and his friend.
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="5" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="5" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="5" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="5" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp5">
+              <strong style="color:var(--gold-warm)">Minor Shirk (الأصغر)</strong> —
+              The Prophet ﷺ corrected exactly this wording. The word "and (وَ)" joins two things at equal level.
+              Placing a person's help alongside Allah's with "and" gives the person a level of causation that belongs only to Allah.
+              <br><br>
+              The correct expression:
+              <em style="font-family:var(--font-arabic);display:block;direction:rtl;margin:var(--space-sm) 0;color:var(--teal-deep);font-size:1rem">«مَا شَاءَ اللهُ ثُمَّ شَاءَ فُلَانٌ»</em>
+              "As Allah willed, <em>then</em> as so-and-so willed." (thumma — "then" — shows proper sequence and priority.)
+              <br>Ḥamzah's <em>intention</em> is good — but the wording itself falls under minor shirk. He should be corrected gently.
+            </div>
+          </div>
+
+          <!-- Scenario 6 -->
+          <div class="scenario-card" id="sc6">
+            <p class="scenario-num">Scenario 6</p>
+            <div class="scenario-text">
+              Zaynab visits the grave of a beloved scholar. At the grave, she makes duʿāʾ — she faces the qiblah, raises her hands, and says "O Allah, forgive me and have mercy on me." She also says "May Allah have mercy on this scholar and grant him a high rank."
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="6" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="6" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="6" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="6" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp6">
+              <strong style="color:var(--teal-deep)">Not shirk</strong> —
+              Zaynab is making duʿāʾ to Allah, not to the deceased. Visiting graves is a recommended sunnah.
+              The Prophet ﷺ said: "Visit graves, for they remind you of the hereafter." (Muslim)
+              <br><br>
+              The shirk would be if she said: "O scholar, intercede for me!" or "O scholar, cure my illness!" —
+              that is: directing duʿāʾ, hope, or fear to the deceased as if they can act independently.
+              What Zaynab did is fully correct — her duʿāʾ is directed to Allah alone.
+            </div>
+          </div>
+
+          <!-- Scenario 7 (Year 3+ harder) -->
+          <div class="scenario-card" id="sc7" data-min-year="3">
+            <p class="scenario-num">Scenario 7 <span style="background:var(--year3);color:white;border-radius:999px;padding:1px 8px;font-size:.7rem;margin-left:6px">Y3+</span></p>
+            <div class="scenario-text">
+              Tariq's boss at work is known for firing people who speak against him. Tariq is asked about a matter of Islamic law at a gathering. He knows the correct answer, but stays silent — fearing his boss will hear and fire him, even though stating the truth would not harm anyone except financially.
+            </div>
+            <div class="classify-btns">
+              <button class="classify-btn" data-sc="7" data-val="major">Major Shirk — الأكبر</button>
+              <button class="classify-btn" data-sc="7" data-val="minor">Minor Shirk — الأصغر</button>
+              <button class="classify-btn" data-sc="7" data-val="hidden">Hidden Shirk — الخفي</button>
+              <button class="classify-btn" data-sc="7" data-val="not">Not shirk</button>
+            </div>
+            <div class="scenario-explanation" id="exp7">
+              <strong style="color:#1a5a8c">Hidden Shirk (الخفي) — fear of creation suppressing truth</strong> —
+              This is a subtle but serious form of hidden shirk. Fearing people to the point where it prevents
+              fulfilling a religious duty shows that the fear of creation has taken precedence over the fear of Allah.
+              <br><br>
+              The Quran commands:
+              <em style="font-family:var(--font-arabic);display:block;direction:rtl;margin:var(--space-sm) 0;color:var(--teal-deep);font-size:1rem">«فَلَا تَخْشَوُا النَّاسَ وَاخْشَوْنِ»</em>
+              "Do not fear the people — fear Me." (5:44)
+              <br>
+              Note: fearing losing a job is natural and not shirk by itself. It becomes hidden shirk when that fear
+              actively prevents a religious obligation and the heart prioritises the creation's displeasure over Allah's pleasure.
+            </div>
+          </div>
+
+        </section>
+
+        <!-- NUANCE & CAUTION -->
+        <section id="section-nuance">
+          <div class="section-heading">
+            <span class="sh-ar">الدقة والحذر</span>
+            <span class="sh-en">Nuance and Caution — Things That May Seem Like Shirk But Are Not</span>
+          </div>
+
+          <div class="nuance-box">
+            <p style="font-size:.9rem;font-weight:600;color:var(--teal-deep);margin-bottom:var(--space-md)">These acts are sometimes wrongly called shirk — but are not:</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--space-md)">
+              <div>
+                <p style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px">Loving the Prophet ﷺ intensely</p>
+                <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Loving the Prophet ﷺ above all creation is commanded. It only becomes problematic if that love leads to directing ʿibādah to him — which is not the case for a Muslim who prays to Allah alone.</p>
+              </div>
+              <div>
+                <p style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px">Tawassul through righteous people (alive)</p>
+                <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Asking a living righteous person to make duʿāʾ for you is not shirk — it is a sunnah practice. The key: duʿāʾ is still made to Allah; the person is asked to <em>ask</em> Allah on your behalf.</p>
+              </div>
+              <div>
+                <p style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px">Respect for scholars and parents</p>
+                <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Standing for a scholar, kissing a parent's hand, obeying parents in lawful matters — all permitted. Shirk requires the acts of worship directed elsewhere, not ordinary respect.</p>
+              </div>
+              <div>
+                <p style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px">Pride or sadness during worship</p>
+                <p style="font-size:.82rem;color:var(--ink-light);line-height:1.6">Feeling naturally pleased that your prayer was good, or sad about a sin — this is not riyāʾ. Riyāʾ requires <em>performing</em> the deed <em>because of</em> people's eyes on you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#fdf0f0;border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid #f0d0d0;margin-top:var(--space-lg)">
+            <p style="font-size:.88rem;color:#5a2020;line-height:1.9">
+              <strong>Important principle:</strong> Being too quick to call something shirk is itself a mistake.
+              The Prophet ﷺ warned against hastily declaring a Muslim outside of Islam (<span style="font-family:var(--font-arabic);color:var(--teal-deep)">التكفير</span> — takfīr).
+              Our job as students of knowledge is to <em>understand</em> what shirk is, <em>avoid</em> it ourselves,
+              and <em>teach</em> it correctly — not to label people.
+            </p>
+          </div>
+        </section>
+
+        <!-- GRAMMAR DRILL: Verb Forms in Prohibitions -->
+        <section id="section-grammar">
+          <div class="section-heading">
+            <span class="sh-ar">تدريب القواعد</span>
+            <span class="sh-en">Grammar Drill — Prohibitions in Arabic (لا + مضارع مجزوم)</span>
+          </div>
+
+          <p style="font-size:.9rem;color:var(--ink-mid);line-height:1.8;margin-bottom:var(--space-md)">
+            In Arabic, prohibitions are formed with
+            <strong style="font-family:var(--font-arabic);font-size:1.1rem;color:var(--teal-deep)">لَا</strong> (lā al-nāhiyah — the prohibiting lā)
+            + the verb in the <strong>jussive (مجزوم)</strong> form. This appears many times in our Quranic evidence.
+            Look at the pattern, then complete the table:
+          </p>
+
+          <div style="background:var(--ivory);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);border:1px solid var(--ivory-dark);margin-bottom:var(--space-lg)">
+            <p style="font-size:.9rem;color:var(--ink-mid);margin-bottom:var(--space-sm)"><strong>Pattern:</strong></p>
+            <p style="font-family:var(--font-arabic);font-size:1.2rem;color:var(--teal-deep);direction:rtl;margin-bottom:var(--space-sm)">لَا + فعل مضارع مجزوم = نهي</p>
+            <p style="font-size:.85rem;color:var(--ink-light)">e.g. <span style="font-family:var(--font-arabic);color:var(--teal-deep)">لَا تُشْرِكْ</span> (lā tushrik) — "Do not associate partners!"</p>
+          </div>
+
+          <div data-drill style="background:white;border:1px solid var(--ivory-dark);border-radius:var(--radius-lg);padding:var(--space-xl)">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th class="ar-col">Quranic prohibition</th>
+                  <th>Transliteration</th>
+                  <th>Translation</th>
+                  <th class="ar-col">Root</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ar-cell">لَا تُشْرِكْ بِاللَّهِ</td>
+                  <td style="font-size:.85rem">lā tushrik billāh</td>
+                  <td><input type="text" data-answer="Do not associate partners with Allah" data-alt="do not commit shirk|don't associate|don't commit shirk" class="fitb-blank" style="width:180px" placeholder="English translation"></td>
+                  <td class="ar-cell" style="color:var(--ink-faint);font-size:.88rem">ش-ر-ك</td>
+                </tr>
+                <tr>
+                  <td class="ar-cell">لَا تَجْعَلُوا لِلَّهِ أَنْدَادًا</td>
+                  <td style="font-size:.85rem">lā tajʿalū lillāhi andādan</td>
+                  <td><input type="text" data-answer="Do not set up rivals to Allah" data-alt="do not make rivals|don't make equals|don't set up rivals" class="fitb-blank" style="width:180px" placeholder="English translation"></td>
+                  <td class="ar-cell" style="color:var(--ink-faint);font-size:.88rem">ج-ع-ل / ن-د-د</td>
+                </tr>
+                <tr>
+                  <td class="ar-cell">وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِ أَحَدًا</td>
+                  <td style="font-size:.85rem">wa lā yushrik biʿibādati rabbihī aḥadan</td>
+                  <td><input type="text" data-answer="And let him not associate anyone in the worship of his Lord" data-alt="do not associate anyone|not associate anyone in worship" class="fitb-blank" style="width:180px" placeholder="English translation"></td>
+                  <td class="ar-cell" style="color:var(--ink-faint);font-size:.88rem">ش-ر-ك / ع-ب-د</td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn-check-drill btn-primary mt-md" style="margin-top:var(--space-md)">Check translations · تحقق</button>
+          </div>
+        </section>
+
+        <!-- EXERCISES -->
+        <section id="section-exercises">
+          <div class="section-heading">
+            <span class="sh-ar">التمارين</span>
+            <span class="sh-en">Exercises</span>
+          </div>
+
+          <div class="exercise-block">
+            <div class="exercise-header">
+              <span class="exercise-type">Exercise A</span>
+              <span class="exercise-title-ar">صحيح أم خاطئ</span>
+            </div>
+            <div class="exercise-body" data-quiz="tf" data-quiz-id="aq-l4-tf">
+
+              <div class="tf-question" data-answer="false">
+                <div class="tf-text">
+                  <span class="tf-ar">زيارة القبور لأجل الدعاء لصاحبها شرك.</span>
+                  Visiting graves to make duʿāʾ <em>for</em> the deceased is shirk.
+                </div>
+                <div class="tf-buttons">
+                  <button class="tf-btn" data-val="true">True ✓</button>
+                  <button class="tf-btn" data-val="false">False ✗</button>
+                </div>
+              </div>
+
+              <div class="tf-question" data-answer="true">
+                <div class="tf-text">
+                  <span class="tf-ar">تصديق الكاهن والعراف فيما يقول عن الغيب شرك أكبر.</span>
+                  Believing a fortune-teller's claims about the unseen is major shirk.
+                </div>
+                <div class="tf-buttons">
+                  <button class="tf-btn" data-val="true">True ✓</button>
+                  <button class="tf-btn" data-val="false">False ✗</button>
+                </div>
+              </div>
+
+              <div class="tf-question" data-answer="false">
+                <div class="tf-text">
+                  <span class="tf-ar">الاستعانة بشخص حي فيما يقدر عليه شرك.</span>
+                  Seeking help from a living person in what they are capable of is shirk.
+                </div>
+                <div class="tf-buttons">
+                  <button class="tf-btn" data-val="true">True ✓</button>
+                  <button class="tf-btn" data-val="false">False ✗</button>
+                </div>
+              </div>
+
+              <div class="tf-question" data-answer="true">
+                <div class="tf-text">
+                  <span class="tf-ar">قول «ما شاء الله وفلان» يُدرجه النبي ﷺ ضمن الشرك الأصغر.</span>
+                  The Prophet ﷺ places the phrase "as Allah and so-and-so willed" within minor shirk.
+                </div>
+                <div class="tf-buttons">
+                  <button class="tf-btn" data-val="true">True ✓</button>
+                  <button class="tf-btn" data-val="false">False ✗</button>
+                </div>
+              </div>
+
+              <div class="tf-question" data-answer="false">
+                <div class="tf-text">
+                  <span class="tf-ar">التوكل على الله يعني ترك الأسباب الطبيعية والأدوية.</span>
+                  Tawakkul (reliance on Allah) means leaving natural means and medicine.
+                </div>
+                <div class="tf-buttons">
+                  <button class="tf-btn" data-val="true">True ✓</button>
+                  <button class="tf-btn" data-val="false">False ✗</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <div class="exercise-header">
+              <span class="exercise-type">Exercise B</span>
+              <span class="exercise-title-ar">اختر الإجابة الصحيحة</span>
+            </div>
+            <div class="exercise-body" data-quiz="mcq" data-quiz-id="aq-l4-mcq">
+
+              <div class="mcq-question" data-correct="2">
+                <p class="mcq-q-text">
+                  <span class="mcq-q-ar">إذا طلب شخص من وليّ صالح متوفى أن يشفيه — فهذا:</span>
+                  If someone asks a deceased righteous person to cure them — this is:
+                </p>
+                <div class="mcq-options">
+                  <button class="mcq-option">a) Hidden shirk — it is in their heart</button>
+                  <button class="mcq-option">b) Minor shirk — it is only words</button>
+                  <button class="mcq-option">c) Major shirk — directing duʿāʾ to other than Allah</button>
+                  <button class="mcq-option">d) Not shirk — they love and honour the saint</button>
+                </div>
+              </div>
+
+              <div class="mcq-question" data-correct="0">
+                <p class="mcq-q-text">
+                  <span class="mcq-q-ar">ما الفرق بين الرياء وبين الفرح بعبادة أدّاها المؤمن بإخلاص؟</span>
+                  What is the difference between riyāʾ and a believer feeling pleased with a sincere act of worship?
+                </p>
+                <div class="mcq-options">
+                  <button class="mcq-option">a) Riyāʾ means performing the deed <em>because of</em> people's eyes; pleasure afterward is natural and not condemned</button>
+                  <button class="mcq-option">b) Any pleasure felt about worship is riyāʾ</button>
+                  <button class="mcq-option">c) Both are the same — both are minor shirk</button>
+                  <button class="mcq-option">d) Riyāʾ only applies to prayer, not other deeds</button>
+                </div>
+              </div>
+
+              <div class="mcq-question" data-correct="3">
+                <p class="mcq-q-text">
+                  <span class="mcq-q-ar">شخص يرتدي خاتماً ويقول: «إنه يجلب لي الرزق.» — هذا مثال على:</span>
+                  Someone wears a ring saying "it brings me provision." This is an example of:
+                </p>
+                <div class="mcq-options">
+                  <button class="mcq-option">a) Nothing — wearing rings is allowed in Islam</button>
+                  <button class="mcq-option">b) Major shirk — worshipping the ring</button>
+                  <button class="mcq-option">c) Hidden shirk — it is in their heart</button>
+                  <button class="mcq-option">d) Minor shirk — attributing independent benefit to an object (tamīmah)</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Final Reflection -->
+          <div class="exercise-block">
+            <div class="exercise-header">
+              <span class="exercise-type">Exercise C</span>
+              <span class="exercise-title-ar">تفكر وأجب</span>
+            </div>
+            <div class="exercise-body">
+              <div style="margin-bottom:var(--space-lg)">
+                <p style="font-size:.95rem;font-weight:500;color:var(--ink);margin-bottom:var(--space-sm)">
+                  <span style="font-family:var(--font-arabic);display:block;direction:rtl;color:var(--teal-deep);margin-bottom:4px">اذكر موقفاً من حياتك اليومية قد يكون فيه شرك خفي. كيف تعالجه؟</span>
+                  Think of a situation from daily life that might involve hidden shirk. How would you address it?
+                </p>
+                <textarea style="width:100%;border:1px solid var(--ivory-dark);border-radius:var(--radius-md);padding:var(--space-md);font-family:var(--font-english);font-size:.9rem;color:var(--ink);background:var(--ivory);resize:vertical;min-height:90px;outline:none" placeholder="Be honest and reflective..."></textarea>
+              </div>
+              <div>
+                <p style="font-size:.95rem;font-weight:500;color:var(--ink);margin-bottom:var(--space-sm)">
+                  <span style="font-family:var(--font-arabic);display:block;direction:rtl;color:var(--teal-deep);margin-bottom:4px">لماذا من المهم أن نفرّق بين وصف الفعل بالشرك وبين الحكم على الشخص بأنه مشرك؟</span>
+                  Why is it important to distinguish between calling an <em>act</em> shirk and declaring a <em>person</em> a mushrik?
+                </p>
+                <textarea style="width:100%;border:1px solid var(--ivory-dark);border-radius:var(--radius-md);padding:var(--space-md);font-family:var(--font-english);font-size:.9rem;color:var(--ink);background:var(--ivory);resize:vertical;min-height:90px;outline:none" placeholder="Write your answer here..."></textarea>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- MEMORIZATION -->
+        <section>
+          <div class="section-heading">
+            <span class="sh-ar">للحفظ</span>
+            <span class="sh-en">Memorize This Verse</span>
+          </div>
+          <div class="memorize-block">
+            <p class="memorize-label">🌙 Memorize — للحفظ</p>
+            <p class="memorize-ar">يَا بُنَيَّ لَا تُشْرِكْ بِاللَّهِ ۖ إِنَّ الشِّرْكَ لَظُلْمٌ عَظِيمٌ</p>
+            <p class="memorize-en">"O my son, do not associate partners with Allah. Indeed, shirk is a tremendous wrongdoing." — Sūrat Luqmān 31:13</p>
+          </div>
+        </section>
+
+        <!-- AI Quiz -->
+        <section style="margin-top:var(--space-xl)">
+          <div class="section-heading">
+            <span class="sh-ar">اختبار جديد بالذكاء الاصطناعي</span>
+            <span class="sh-en">AI-Generated Practice Quiz</span>
+          </div>
+          <div style="background:var(--ivory);border:1px solid var(--ivory-dark);border-radius:var(--radius-lg);padding:var(--space-xl);text-align:center">
+            <p style="font-size:.9rem;color:var(--ink-mid);margin-bottom:var(--space-lg);line-height:1.7">
+              Generate a fresh scenario-classification quiz — every set is different.
+            </p>
+            <button class="btn-gold" onclick="generateAIQuiz('Classifying shirk examples: Major - fortune telling, calling upon dead, idol worship. Minor - riya showing off, wearing amulets for protection, swearing by other than Allah, saying mashallah wa fulan. Hidden - fearing creation excessively, hope entirely in means, insincerity in deeds. Not shirk - using medicine with tawakkul, asking living person for help in their capacity, visiting graves to pray for deceased.', 'Shirk Examples and Classification', document.getElementById('ai-quiz-target-l4'))">
+              ✨ Generate new quiz — أنشئ اختباراً جديداً
+            </button>
+            <div id="ai-quiz-target-l4" style="margin-top:var(--space-lg);text-align:left"></div>
+          </div>
+        </section>
+
+        <!-- Navigation -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid var(--ivory-dark)">
+          <a href="l3-shirk-evidence.html" class="btn-secondary">← L.3: Types with Evidence</a>
+          <button class="btn-primary" onclick="markLessonComplete('aq-l4');window.location.href='unit1-exam.html'">
+            Mark complete & take Unit 1 Exam →
+          </button>
+        </div>
+
+      </div>
+    </article>
+  </main>
+</div>
+
+<script src="../../js/main.js"></script>
+<script>
+// Scenario classification interactivity
+(function() {
+  const answers = { '1':'minor', '2':'hidden', '3':'major', '4':'not', '5':'minor', '6':'not', '7':'hidden' };
+
+  document.querySelectorAll('.classify-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const sc = this.dataset.sc;
+      const val = this.dataset.val;
+      const correct = answers[sc];
+
+      // Prevent re-answering
+      const parent = document.getElementById('sc' + sc);
+      if (parent.dataset.answered) return;
+      parent.dataset.answered = '1';
+
+      // Style all buttons in this scenario
+      parent.querySelectorAll('.classify-btn').forEach(b => {
+        const bVal = b.dataset.val;
+        if (bVal === correct) {
+          b.classList.add('correct-reveal');
+        } else if (b === this && bVal !== correct) {
+          b.classList.add('wrong-reveal');
+        }
+        b.disabled = true;
+      });
+
+      // Show explanation
+      const exp = document.getElementById('exp' + sc);
+      if (exp) exp.classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>

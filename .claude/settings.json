@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python C:\\\\Users\\\\abdul\\\\Downloads\\\\_searchindex.py; python \"C:\\\\Users\\\\abdul\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-abdul-Downloads-Madrasah-Site\\\\eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096\\\\scratchpad\\\\audit_site.py\" 2>&1 | Select-Object -First 3; foreach \\($u in @\\('pages/arabic/vocab-28-tiqniyah.html','pages/arabic/vocab-29-biah.html','pages/arabic/vocab-30-mal.html','pages/arabic/vocab-exam-4.html','pages/arabic/index.html','index.html'\\)\\) { \\(Invoke-WebRequest -Uri \"http://localhost:8123/$u\" -UseBasicParsing\\).StatusCode })",
+      "PowerShell(python C:\\\\Users\\\\abdul\\\\Downloads\\\\_searchindex.py; python \"C:\\\\Users\\\\abdul\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-abdul-Downloads-Madrasah-Site\\\\eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096\\\\scratchpad\\\\audit_site.py\" 2>&1 | Select-Object -First 3; foreach \\($u in @\\('pages/arabic/vocab-31-mihan.html','pages/arabic/vocab-32-hajj.html','pages/arabic/vocab-33-diyafah.html','pages/arabic/index.html','index.html'\\)\\) { \\(Invoke-WebRequest -Uri \"http://localhost:8123/$u\" -UseBasicParsing\\).StatusCode })",
+      "PowerShell(python C:\\\\Users\\\\abdul\\\\Downloads\\\\_searchindex.py)",
+      "PowerShell(python \"C:\\\\Users\\\\abdul\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-abdul-Downloads-Madrasah-Site\\\\eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096\\\\scratchpad\\\\audit_site.py\" 2>&1)",
+      "PowerShell($pages = @\\('vocab-34-akhlaq.html','vocab-35-alam.html','vocab-36-talab.html','vocab-exam-5.html'\\); foreach \\($p in $pages\\) { try { $r = Invoke-WebRequest -Uri \"http://localhost:8123/pages/arabic/$p\" -UseBasicParsing -TimeoutSec 5; \"$p $\\($r.StatusCode\\)\" } catch { \"$p FAIL $\\($_.Exception.Message\\)\" } })",
+      "Read(//c/Users/abdul/Downloads/Madrasah-Site/pages/arabic/**)",
+      "Read(//c/Users/abdul/Downloads/Madrasah-Site/pages/quran/**)",
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\abdul\\\\Downloads\\\\Madrasah-Site\\\\pages\\\\quran\\\\index.html\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(gh --version)",
+      "PowerShell(gh auth status)",
+      "PowerShell(winget install --id GitHub.cli --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell(git config --global user.name; git config --global user.email; Get-ChildItem \"c:\\\\Users\\\\abdul\\\\Downloads\\\\Madrasah-Site\" -Recurse -File | Sort-Object Length -Descending | Select-Object -First 5 | ForEach-Object { \"{0:N1} MB  {1}\" -f \\($_.Length/1MB\\), $_.FullName.Replace\\('c:\\\\Users\\\\abdul\\\\Downloads\\\\Madrasah-Site\\\\',''\\) })",
+      "PowerShell(git init 2>&1)",
+      "PowerShell(git config user.name \"Kenneth Andrews\")"
+    ]
+  }
+}
