@@ -1,0 +1,7 @@
+.claude
+.git
+*.py
+CLAUDE.md
+_PROGRESS.md
+assets/md
+wrangler.jsonc
