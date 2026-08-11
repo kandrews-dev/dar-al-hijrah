@@ -756,6 +756,11 @@ body {
   transition: transform var(--duration) var(--ease),
               box-shadow var(--duration) var(--ease);
   perspective: 1000px;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .vocab-card:hover {
   transform: translateY(-2px);
@@ -778,6 +783,38 @@ body {
   display: block;
   margin: 2px 0 var(--space-sm);
 }
+/* Front-face hint under the Arabic — deliberately faint, no meaning given away */
+.vocab-hint {
+  font-size: 0.66rem;
+  color: var(--ink-faint);
+  letter-spacing: .04em;
+  margin-top: var(--space-sm);
+  display: block;
+  opacity: .55;
+  font-family: var(--font-arabic);
+}
+/* Fuller definition shown on the flipped face */
+.vocab-def {
+  font-size: 0.82rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-top: var(--space-xs);
+  display: block;
+}
+/* "Peek" toggle — pronunciation hidden until the student asks for it */
+.vocab-peek {
+  margin-top: var(--space-sm);
+}
+.vocab-peek > summary {
+  font-size: 0.7rem;
+  color: var(--teal-light);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-arabic);
+}
+.vocab-peek > summary::-webkit-details-marker { display: none; }
+.vocab-peek[open] > summary { margin-bottom: 4px; }
+.vocab-peek .vocab-transliteration { margin-bottom: 0; }
 .vocab-en {
   font-size: 0.9rem;
   color: var(--ink-mid);

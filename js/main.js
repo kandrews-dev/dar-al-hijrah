@@ -203,34 +203,40 @@ window.resetQuiz = function(btn) {
 };
 
 // ── Vocabulary Flashcards ────────────────────────────────────
+// Arabic-first flashcard. Front = the vowelled Arabic only (read it first).
+// Tap flips to the meaning; transliteration lives under a "peek" toggle so the
+// student only glances at it if stuck — reducing the crutch (immersion rule 6).
 function initFlashcards() {
   document.querySelectorAll('.vocab-card').forEach(card => {
+    const ar = card.dataset.ar || card.querySelector('.vocab-ar')?.textContent || '';
+    const translit = card.dataset.translit || '';
+    const en = card.dataset.en || '';
+    const root = card.dataset.root || '';
     const back = card.dataset.definition || '';
     const example = card.dataset.example || '';
+
+    const frontHTML = `
+      <span class="vocab-ar">${ar}</span>
+      <span class="vocab-hint">اِقْرَأْ ثُمَّ اكْشِفْ · tap</span>
+    `;
+    const backHTML = `
+      <span class="vocab-en" style="font-size:1rem;font-weight:600;color:var(--teal-deep)">${en || back}</span>
+      ${back && en ? `<span class="vocab-def">${back}</span>` : ''}
+      ${example ? `<span class="vocab-root" style="font-style:italic">"${example}"</span>` : ''}
+      ${root ? `<span class="vocab-root">الجَذْر · ${root}</span>` : ''}
+      ${translit ? `<details class="vocab-peek"><summary>النُّطْق · say it</summary><span class="vocab-transliteration">${translit}</span></details>` : ''}
+    `;
+
+    card.innerHTML = frontHTML;
+    card.dataset.face = 'front';
     let flipped = false;
 
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      // Opening the pronunciation peek must not flip the card.
+      if (e.target.closest('.vocab-peek')) return;
       flipped = !flipped;
-      if (flipped) {
-        card.dataset.face = 'back';
-        card.innerHTML = `
-          <span class="vocab-en" style="font-size:1rem;font-weight:500;color:var(--teal-deep)">${back}</span>
-          ${example ? `<span class="vocab-root" style="font-style:italic">"${example}"</span>` : ''}
-          <span class="vocab-transliteration">tap to flip</span>
-        `;
-      } else {
-        const ar = card.dataset.ar || '';
-        const translit = card.dataset.translit || '';
-        const en = card.dataset.en || '';
-        const root = card.dataset.root || '';
-        card.dataset.face = 'front';
-        card.innerHTML = `
-          <span class="vocab-ar">${ar}</span>
-          ${translit ? `<span class="vocab-transliteration">${translit}</span>` : ''}
-          <span class="vocab-en">${en}</span>
-          ${root ? `<span class="vocab-root">root: ${root}</span>` : ''}
-        `;
-      }
+      card.dataset.face = flipped ? 'back' : 'front';
+      card.innerHTML = flipped ? backHTML : frontHTML;
     });
   });
 }
