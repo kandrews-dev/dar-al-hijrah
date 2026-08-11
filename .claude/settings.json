@@ -21,7 +21,20 @@
       "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status 2>&1)",
       "PowerShell(Get-Process -Name msiexec -ErrorAction SilentlyContinue | Select-Object -First 1 Id; $paths = @\\(\"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\gh.exe\", \"C:\\\\Program Files\\\\GitHub CLI\\\\bin\\\\gh.exe\", \"C:\\\\Program Files \\(x86\\)\\\\GitHub CLI\\\\gh.exe\"\\); foreach \\($p in $paths\\) { if \\(Test-Path $p\\) { \"FOUND: $p\" } })",
       "PowerShell($gh = Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\",\"C:\\\\Program Files \\(x86\\)\\\\GitHub CLI\",\"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\" -Filter gh.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName; if \\($gh\\) { \"GH: $gh\" } else { \"NOT INSTALLED YET\"; Get-Process msiexec -ErrorAction SilentlyContinue | Select-Object Id | Out-String })",
-      "PowerShell($sp = \"C:\\\\Users\\\\abdul\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-abdul-Downloads-Madrasah-Site\\\\eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096\\\\scratchpad\"; Invoke-WebRequest -Uri \"https://github.com/cli/cli/releases/download/v2.96.0/gh_2.96.0_windows_amd64.zip\" -OutFile \"$sp\\\\gh.zip\" -UseBasicParsing; Expand-Archive \"$sp\\\\gh.zip\" -DestinationPath \"$sp\\\\ghcli\" -Force; & \"$sp\\\\ghcli\\\\bin\\\\gh.exe\" --version)"
+      "PowerShell($sp = \"C:\\\\Users\\\\abdul\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-abdul-Downloads-Madrasah-Site\\\\eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096\\\\scratchpad\"; Invoke-WebRequest -Uri \"https://github.com/cli/cli/releases/download/v2.96.0/gh_2.96.0_windows_amd64.zip\" -OutFile \"$sp\\\\gh.zip\" -UseBasicParsing; Expand-Archive \"$sp\\\\gh.zip\" -DestinationPath \"$sp\\\\ghcli\" -Force; & \"$sp\\\\ghcli\\\\bin\\\\gh.exe\" --version)",
+      "Bash(grep -viE \"node_modules|/\\\\.git/\")",
+      "Bash(python -m pip install --quiet pymupdf)",
+      "Bash(python -c \"import fitz; print\\('PyMuPDF version:', fitz.__doc__.split\\(chr\\(10\\)\\)[0] if fitz.__doc__ else fitz.VersionBind\\)\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/render_samples.py\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/check_imsiu.py\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/map_book1.py\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/map_book1b.py\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 12 48 \"p1a\")",
+      "Bash(python -c ' *)",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 48 84 \"p1b\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 84 120 \"p1c\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 120 156 \"p1d\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 156 192 \"p1e\")"
     ]
   }
 }
