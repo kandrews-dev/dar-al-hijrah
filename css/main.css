@@ -815,6 +815,47 @@ body {
 .vocab-peek > summary::-webkit-details-marker { display: none; }
 .vocab-peek[open] > summary { margin-bottom: 4px; }
 .vocab-peek .vocab-transliteration { margin-bottom: 0; }
+
+/* ── Stacked brand subtitle (header logo + hero) ─────────────── */
+.logo-sub {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 400;
+  opacity: 0.72;
+  letter-spacing: 0.08em;
+  margin-top: 1px;
+}
+.hero-title-sub {
+  display: block;
+  font-size: 0.66em;
+  font-weight: 400;
+  opacity: 0.8;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  margin-top: 6px;
+}
+
+/* ── Year badge (curriculum year each lesson belongs to) ─────── */
+.year-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-light);
+  background: var(--surface-2);
+  margin-left: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.year-badge.year-match {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
 .vocab-en {
   font-size: 0.9rem;
   color: var(--ink-mid);

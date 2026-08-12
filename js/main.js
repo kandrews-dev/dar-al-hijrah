@@ -43,12 +43,16 @@ function initYearSelector() {
 }
 
 function applyYearFilter() {
-  // Show/hide year-tagged content
+  // "Badge only, never hide": light up the badge for the student's current year
+  // so the toggle gives feedback, but nothing on the page is ever hidden.
+  document.querySelectorAll('.year-badge[data-year]').forEach(el => {
+    el.classList.toggle('year-match', parseInt(el.dataset.year) === STATE.year);
+  });
+  // Legacy per-block reveal (a handful of index/lesson pages still use it)
   document.querySelectorAll('[data-min-year]').forEach(el => {
     const min = parseInt(el.dataset.minYear || '1');
     const max = parseInt(el.dataset.maxYear || '5');
-    const show = STATE.year >= min && STATE.year <= max;
-    el.style.display = show ? '' : 'none';
+    el.style.display = (STATE.year >= min && STATE.year <= max) ? '' : 'none';
   });
 }
 
