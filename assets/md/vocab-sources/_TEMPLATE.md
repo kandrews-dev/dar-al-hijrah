@@ -30,3 +30,16 @@ and build each unit to ~90% of its real vocabulary, verified and pushed live.
 
 Source PDFs (scanned images, need OCR/transcription) live at:
 `C:\Users\abdul\OneDrive\Documents\Arabic Pdf's\`  — Bayna Yadayk 1–4 + IMSIU L3/L4.
+Read /mnt/c/Users/abdul/OneDrive/Documents/Arabic\ Pdf\'s/al-arabibiyyah-bayna-yadaik-1.pdf and extract all vocabulary per unit in this format:
+
+## Book 1 — Unit N — [unit title in Arabic]
+- fully-vowelled Arabic — English meaning — (plural for nouns) — (root if clear)
+
+Use pdfplumber or PyPDF2. Don't skip any units. Save output to assets/md/vocab-sources/bayna-yadayk-1-vocab.md
+Skip the desktop chat handoff. You can read the PDF yourself.
+
+Read C:\Users\abdul\OneDrive\Documents\Arabic Pdf's\al-arabibiyyah-bayna-yadaik-1.pdf directly using pdfplumber (pip install pdfplumber if needed).
+
+Extract all vocabulary per unit in the format specified in _TEMPLATE.md. Save output to assets\md\vocab-sources\bayna-yadayk-1-vocab.md.
+
+If pdfplumber can't extract text (it's a scanned image), use pytesseract for OCR with Arabic language pack (tesseract with -l ara).
