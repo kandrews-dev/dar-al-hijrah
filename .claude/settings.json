@@ -36,7 +36,8 @@
       "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 120 156 \"p1d\")",
       "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 156 192 \"p1e\")",
       "Bash(grep -oE '<p class=\"ayah-arabic[^\"]*\"[^>]*>[^<]{0,80}|class=\"vocab-ar\">[^<]{0,30}|sh-ar\">[^<]{0,40}' pages/fiqh/u1-l1-wudu.html)",
-      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/vowel_aqeedah.py\")"
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/vowel_aqeedah.py\")",
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/vowel_arabic.py\")"
     ]
   }
 }
