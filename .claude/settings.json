@@ -37,7 +37,14 @@
       "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/contact.py\" \"العرب_بين_يديك Al_Arabiyyah Bayna Yadayk B1 P1.pdf\" 156 192 \"p1e\")",
       "Bash(grep -oE '<p class=\"ayah-arabic[^\"]*\"[^>]*>[^<]{0,80}|class=\"vocab-ar\">[^<]{0,30}|sh-ar\">[^<]{0,40}' pages/fiqh/u1-l1-wudu.html)",
       "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/vowel_aqeedah.py\")",
-      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/vowel_arabic.py\")"
+      "Bash(python \"C:/Users/abdul/AppData/Local/Temp/claude/c--Users-abdul-Downloads-Madrasah-Site/eea8c7ad-6bb7-479d-9b5a-d8cc5ea3d096/scratchpad/vowel_arabic.py\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\abdul\\\\OneDrive\\\\Documents\\\\Arabic Pdf''s' -Filter '*.pdf' | Select-Object Name | Format-Table -AutoSize\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\abdul\\\\OneDrive\\\\Documents\\\\Arabic Pdf''s' -Filter '*ayna*adai*3*' | Select-Object Name, Length | Format-Table -AutoSize; Get-ChildItem 'C:\\\\Users\\\\abdul\\\\OneDrive\\\\Documents\\\\Arabic Pdf''s' -Filter '*Bk3*' | Select-Object Name, Length | Format-Table -AutoSize\")",
+      "Bash(python contact.py \"al-arabibiyyah-bayna-yadaik-3.pdf\" 0 60 b3a)",
+      "Bash(python contact.py \"al-arabibiyyah-bayna-yadaik-3.pdf\" 60 120 b3b)",
+      "Bash(python contact.py \"al-arabibiyyah-bayna-yadaik-3.pdf\" 120 180 b3c)",
+      "Bash(python contact.py \"al-arabibiyyah-bayna-yadaik-3.pdf\" 180 232 b3d)",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\abdul\\\\OneDrive\\\\Documents\\\\Arabic Pdf''s' -Filter '*3*.pdf' -File | Select-Object -ExpandProperty Name\")"
     ]
   }
 }
