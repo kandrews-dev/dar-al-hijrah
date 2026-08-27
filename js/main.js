@@ -66,6 +66,32 @@ function initNav() {
   });
 }
 
+// ── Nav dropdown (tap-to-toggle for touch; CSS handles hover) ──
+function initNavDropdown() {
+  document.querySelectorAll('.nav-item.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const item = link.closest('.nav-item.has-dropdown');
+      if (!item) return;
+      if (window.matchMedia('(hover: none)').matches) {
+        e.preventDefault();
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.nav-item.has-dropdown.open').forEach(o => o.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-item.has-dropdown.open').forEach(item => {
+      if (!item.contains(e.target)) item.classList.remove('open');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item.has-dropdown.open').forEach(o => o.classList.remove('open'));
+    }
+  });
+}
+
 // ── True / False Quiz ────────────────────────────────────────
 function initTrueFalse() {
   document.querySelectorAll('[data-quiz="tf"]').forEach(container => {
@@ -524,6 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initYearSelector();
   initNav();
+  initNavDropdown();
   initTrueFalse();
   initMCQ();
   initFillBlank();
