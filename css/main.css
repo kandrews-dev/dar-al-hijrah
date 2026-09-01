@@ -862,6 +862,90 @@ body {
 .vocab-peek[open] > summary { margin-bottom: 4px; }
 .vocab-peek .vocab-transliteration { margin-bottom: 0; }
 
+/* ── تَعْبِير box — expression/idiom/false-friend, taught by comprehension ── */
+.tabir-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-warm, var(--brand));
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+.tabir-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+  margin-bottom: var(--space-xs);
+}
+.tabir-phrase {
+  font-family: var(--font-arabic);
+  font-size: 1.3rem;
+  color: var(--ink);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.9;
+  margin-bottom: var(--space-md);
+}
+.tabir-layer { margin-bottom: var(--space-md); }
+.tabir-layer:last-of-type { margin-bottom: 0; }
+.tabir-label {
+  font-family: var(--font-arabic);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--tab-grammar);
+  display: block;
+  margin-bottom: 3px;
+}
+.tabir-ar {
+  font-family: var(--font-arabic);
+  font-size: 1.02rem;
+  color: var(--ink-mid);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.9;
+}
+.tabir-ayah { font-family: var(--font-arabic); color: var(--brand-deep); }
+.tabir-source { font-size: 0.78rem; color: var(--ink-faint); margin-top: 2px; }
+.tabir-family-list { list-style: none; padding: 0; margin: 0; }
+.tabir-family-list li {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  font-size: 0.98rem;
+  color: var(--ink-mid);
+  line-height: 2;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+.tabir-family-list li:last-child { border-bottom: none; margin-bottom: 0; }
+.tabir-footer {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--line);
+  font-style: italic;
+}
+.tabir-peek { margin-top: 6px; }
+.tabir-peek > summary {
+  font-size: 0.72rem;
+  color: var(--teal-light, var(--ink-faint));
+  cursor: pointer;
+  list-style: none;
+}
+.tabir-peek > summary::-webkit-details-marker { display: none; }
+.tabir-peek-body {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
 /* ── Stacked brand subtitle (header logo + hero) ─────────────── */
 .logo-sub {
   display: block;
