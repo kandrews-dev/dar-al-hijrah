@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة ولي الأمر — Parent Dashboard | دار الهجرة</title>
+<meta name="description" content="Parent/teacher dashboard for Dār al-Hijrah — a private, on-this-device summary of completed lessons and exam scores, with backup export/import so progress is never lost if the browser is cleared.">
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<script>document.documentElement.dataset.theme=localStorage.getItem('mdrs_theme')||'lilac';</script>
+<style>
+  .pd-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--space-md);margin-bottom:var(--space-xl)}
+  .pd-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--space-lg);text-align:center}
+  .pd-stat-num{font-size:2rem;font-weight:700;color:var(--brand-deep);line-height:1}
+  .pd-stat-label{font-size:.78rem;color:var(--ink-mid);margin-top:6px}
+  .pd-section{margin-bottom:var(--space-2xl)}
+  .pd-table{width:100%;border-collapse:collapse;font-size:.88rem}
+  .pd-table th{background:var(--tab-grammar);color:white;padding:8px 12px;text-align:left;font-size:.76rem}
+  .pd-table td{padding:8px 12px;border-bottom:1px solid var(--line)}
+  .pd-table tr:nth-child(even){background:var(--surface-2)}
+  .pd-pct{font-weight:700;padding:2px 10px;border-radius:999px;font-size:.8rem;white-space:nowrap}
+  .pd-pct.a{background:#e8f4ee;color:#2a7a4b}
+  .pd-pct.b{background:var(--brand-wash);color:var(--brand-deep)}
+  .pd-pct.c{background:#fffbf0;color:var(--gold-warm,#a67c00)}
+  .pd-pct.d{background:#fdf4f4;color:#c0392b}
+  .pd-empty{font-size:.88rem;color:var(--ink-faint);padding:var(--space-lg);text-align:center;background:var(--surface-2);border-radius:var(--radius-md)}
+  .pd-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:var(--space-xl)}
+  .pd-subject-bar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .pd-subject-name{font-size:.85rem;color:var(--ink-mid);width:160px;flex-shrink:0}
+  .pd-subject-track{flex:1;background:var(--surface-2);border-radius:999px;height:10px;overflow:hidden}
+  .pd-subject-fill{height:100%;background:var(--tab-grammar);border-radius:999px}
+  .pd-subject-count{font-size:.78rem;color:var(--ink-faint);width:50px;text-align:right;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="site-logo" aria-label="Home — Dār al-Hijrah">
+      <span class="logo-ar">دار الهجرة</span>
+      <span class="logo-en">Foundational Path to the Islamic Sciences<span class="logo-sub">according to the way of the Salaf</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li class="nav-item"><a href="../islam101/index.html"><span class="nav-ar">أساسيات</span><span class="nav-en">Islam 101</span></a></li>
+        <li class="nav-item"><a href="../quran/index.html"><span class="nav-ar">القرآن</span><span class="nav-en">Quran</span></a></li>
+        <li class="nav-item"><a href="../hadeeth/index.html"><span class="nav-ar">الحديث</span><span class="nav-en">Hadeeth</span></a></li>
+        <li class="nav-item"><a href="../seerah/index.html"><span class="nav-ar">السيرة</span><span class="nav-en">Seerah</span></a></li>
+        <li class="nav-item"><a href="../fiqh/index.html"><span class="nav-ar">الفقه</span><span class="nav-en">Fiqh</span></a></li>
+        <li class="nav-item"><a href="../aqeedah/index.html"><span class="nav-ar">العقيدة</span><span class="nav-en">Aqeedah</span></a></li>
+        <li class="nav-item has-dropdown"><a href="../arabic/index.html"><span class="nav-ar">العربية</span><span class="nav-en">Arabic</span><span class="dd-caret">&#9662;</span></a><ul class="nav-dropdown"><li><a href="../arabic/index.html"><span class="dd-ar">المسارات</span><span class="dd-en">All Tracks</span></a></li><li class="dd-divider"></li><li><a href="../arabic/vocab-01-greetings.html"><span class="dd-ar">الكتاب الأول</span><span class="dd-en">Book 1</span></a></li><li><a href="../arabic/vocab-10-travel.html"><span class="dd-ar">الكتاب الثاني</span><span class="dd-en">Book 2</span></a></li><li><a href="../arabic/vocab-25-mujizah.html"><span class="dd-ar">الكتاب الثالث</span><span class="dd-en">Book 3</span></a></li><li class="dd-divider"></li><li><a href="../grammar/index.html"><span class="dd-ar">النحو</span><span class="dd-en">Naḥw</span></a></li><li><a href="../arabic/sarf-01-mizan.html"><span class="dd-ar">الصرف</span><span class="dd-en">Ṣarf</span></a></li><li><a href="../arabic/qiraah-01-yawm.html"><span class="dd-ar">القراءة</span><span class="dd-en">Qirāʼah</span></a></li><li class="dd-divider"></li><li><a href="../arabic/dictionary-index.html"><span class="dd-ar">المعجم</span><span class="dd-en">Dictionary</span></a></li><li class="dd-divider"></li><li><a href="../arabic/vocab-print-index.html"><span class="dd-ar">قوائم للطباعة</span><span class="dd-en">🖨️ Print Vocab Lists</span></a></li></ul></li>
+        <li class="nav-item active"><a href="index.html"><span class="nav-ar">الموارد</span><span class="nav-en">Resources</span></a></li>
+      </ul>
+    </nav>
+    <div class="year-selector" role="group" aria-label="Select your year level">
+      <select class="year-select" aria-label="Choose your year level"><option value="1">Year 1+</option><option value="2">Year 2+</option><option value="3">Year 3+</option><option value="4">Year 4+</option><option value="5">Year 5</option></select>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div style="background:linear-gradient(135deg,var(--tab-grammar),#0a5650);padding:var(--space-xl) var(--space-2xl);color:white;position:relative;overflow:hidden">
+    <div style="max-width:1000px;margin:0 auto;position:relative">
+      <div class="year-badge" style="background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.3)">
+        <span class="year-dot" style="background:white"></span>
+        Private to this device/browser only
+      </div>
+      <h1 style="font-family:var(--font-arabic);font-size:2.1rem;color:white;direction:rtl;line-height:1.4;margin-bottom:4px">لَوْحَةُ وَلِيِّ الأَمْر</h1>
+      <p style="font-size:1rem;font-weight:300;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--space-md)">Parent / Teacher Dashboard</p>
+      <p style="font-size:.92rem;color:rgba(255,255,255,0.9);max-width:680px;line-height:1.75">
+        A single view of every lesson completed and every exam score, read directly from this browser's saved progress. Nothing is sent anywhere — it lives only on this device, so back it up below if you care about keeping it.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:1000px;margin:0 auto;padding:var(--space-xl)">
+
+    <div class="pd-actions">
+      <button class="print-btn" onclick="window.print()">🖨️ Print Report</button>
+      <button class="print-btn" onclick="exportProgress()">⬇️ Export Backup (.json)</button>
+      <button class="print-btn" onclick="document.getElementById('import-file').click()">⬆️ Import Backup</button>
+      <input type="file" id="import-file" accept="application/json" style="display:none" onchange="importProgress(event)">
+      <button class="print-btn" style="color:#c0392b;border-color:#c0392b" onclick="resetProgress()">🗑️ Clear All Progress</button>
+    </div>
+
+    <div style="background:var(--brand-wash);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:var(--radius-md);padding:var(--space-lg);margin-bottom:var(--space-xl)">
+      <p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:var(--space-sm)">Why "export backup" matters</p>
+      <p style="font-size:.86rem;color:var(--ink-mid);line-height:1.7">
+        Progress is saved only in this browser's local storage — clearing browser data, switching devices, or reinstalling will erase it permanently with no way to recover it. Click <strong>Export Backup</strong> after significant progress (e.g. monthly) and keep the downloaded file somewhere safe; <strong>Import Backup</strong> restores it on any device.
+      </p>
+    </div>
+
+    <div class="pd-stat-grid" id="stat-grid"></div>
+
+    <div class="pd-section">
+      <div style="display:flex;align-items:baseline;gap:var(--space-md);margin-bottom:var(--space-md)">
+        <p style="font-family:var(--font-arabic);font-size:1.2rem;color:var(--brand-deep);direction:rtl;font-weight:700">حَسَبَ المَادَّة</p>
+        <p style="font-size:.85rem;font-weight:600;color:var(--ink-mid)">Completed Lessons by Subject</p>
+      </div>
+      <div id="subject-breakdown"></div>
+    </div>
+
+    <div class="pd-section">
+      <div style="display:flex;align-items:baseline;gap:var(--space-md);margin-bottom:var(--space-md)">
+        <p style="font-family:var(--font-arabic);font-size:1.2rem;color:var(--brand-deep);direction:rtl;font-weight:700">نَتَائِجُ الاِخْتِبَارَات</p>
+        <p style="font-size:.85rem;font-weight:600;color:var(--ink-mid)">Exam &amp; Quiz Scores</p>
+      </div>
+      <div style="overflow-x:auto" id="scores-table-wrap"></div>
+    </div>
+
+    <div class="pd-section">
+      <div style="display:flex;align-items:baseline;gap:var(--space-md);margin-bottom:var(--space-md)">
+        <p style="font-family:var(--font-arabic);font-size:1.2rem;color:var(--brand-deep);direction:rtl;font-weight:700">كُلُّ الدُّرُوس المُكْتَمِلَة</p>
+        <p style="font-size:.85rem;font-weight:600;color:var(--ink-mid)">All Completed Lessons</p>
+      </div>
+      <div style="overflow-x:auto" id="lessons-table-wrap"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p class="site-footer-ar" style="font-size:1.05rem;color:rgba(255,255,255,.8);margin-top:0">دار الهجرة — المدرسة السلفية التأسيسية للعلوم الشرعية</p>
+  <p>Parent / teacher progress dashboard — private, on this device</p>
+  <p class="site-footer-ar">لأغراض التعليم فقط — هذا الموقع لا يُفتي. للفتاوى، يُرجع إلى العلماء الموثوقين.</p>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script>
+'use strict';
+
+const SUBJECT_MAP = [
+  { test: id => id.startsWith('ar-vocab-exam'), label: 'Arabic — Lugha Exams' },
+  { test: id => id.startsWith('ar-vocab'), label: 'Arabic — Lugha (Bayna Yadayk)' },
+  { test: id => id.startsWith('ar-qiraah'), label: 'Arabic — Qirāʼah (Reading)' },
+  { test: id => id.startsWith('sf-exam'), label: 'Arabic — Ṣarf Exams' },
+  { test: id => id.startsWith('sf-'), label: 'Arabic — Ṣarf (Morphology)' },
+  { test: id => id.startsWith('nh-exam'), label: 'Arabic — Naḥw Exams' },
+  { test: id => id.startsWith('nh-'), label: 'Arabic — Naḥw (Grammar)' },
+  { test: id => id.startsWith('qn-'), label: 'Arabic — Qaṭr al-Nadā' },
+  { test: id => id.startsWith('hd-'), label: 'Hadeeth' },
+  { test: id => id.startsWith('qr-'), label: 'Qurʼān' },
+  { test: id => id.startsWith('sr-'), label: 'Seerah' },
+  { test: id => id.startsWith('fq'), label: 'Fiqh' },
+  { test: id => id.startsWith('aq') || id.startsWith('u') && /^u\d/.test(id), label: 'Aqeedah' },
+  { test: id => id.startsWith('is1') || id.startsWith('is'), label: 'Islam 101' },
+];
+
+function labelFor(id) {
+  const hit = SUBJECT_MAP.find(s => s.test(id));
+  return hit ? hit.label : 'Other';
+}
+
+function niceLessonName(id) {
+  return id.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function gradeClass(pct) {
+  if (pct >= 90) return 'a';
+  if (pct >= 75) return 'b';
+  if (pct >= 60) return 'c';
+  return 'd';
+}
+
+function fmtDate(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  } catch (e) { return iso || '—'; }
+}
+
+function readState() {
+  let progress = {}, scores = {};
+  try { progress = JSON.parse(localStorage.getItem('mdrs_progress') || '{}'); } catch (e) {}
+  try { scores = JSON.parse(localStorage.getItem('mdrs_scores') || '{}'); } catch (e) {}
+  return { progress, scores };
+}
+
+function render() {
+  const { progress, scores } = readState();
+  const lessonIds = Object.keys(progress);
+  const scoreIds = Object.keys(scores);
+
+  // ── Stat cards ──
+  const scoreVals = scoreIds.map(id => scores[id].pct).filter(p => typeof p === 'number');
+  const avgPct = scoreVals.length ? Math.round(scoreVals.reduce((a, b) => a + b, 0) / scoreVals.length) : null;
+  const allDates = [...lessonIds.map(id => progress[id]?.date), ...scoreIds.map(id => scores[id]?.date)].filter(Boolean).sort();
+  const lastActive = allDates.length ? fmtDate(allDates[allDates.length - 1]) : '—';
+
+  document.getElementById('stat-grid').innerHTML = `
+    <div class="pd-stat"><div class="pd-stat-num">${lessonIds.length}</div><div class="pd-stat-label">Lessons Completed</div></div>
+    <div class="pd-stat"><div class="pd-stat-num">${scoreIds.length}</div><div class="pd-stat-label">Exams / Quizzes Taken</div></div>
+    <div class="pd-stat"><div class="pd-stat-num">${avgPct !== null ? avgPct + '%' : '—'}</div><div class="pd-stat-label">Average Score</div></div>
+    <div class="pd-stat"><div class="pd-stat-num" style="font-size:1.2rem">${lastActive}</div><div class="pd-stat-label">Last Activity</div></div>
+  `;
+
+  // ── Subject breakdown ──
+  const bySubject = {};
+  lessonIds.forEach(id => {
+    const label = labelFor(id);
+    bySubject[label] = (bySubject[label] || 0) + 1;
+  });
+  const maxCount = Math.max(1, ...Object.values(bySubject));
+  const subjectEntries = Object.entries(bySubject).sort((a, b) => b[1] - a[1]);
+  const subjectHTML = subjectEntries.length
+    ? subjectEntries.map(([label, count]) => `
+        <div class="pd-subject-bar">
+          <span class="pd-subject-name">${label}</span>
+          <span class="pd-subject-track"><span class="pd-subject-fill" style="width:${(count / maxCount) * 100}%"></span></span>
+          <span class="pd-subject-count">${count}</span>
+        </div>`).join('')
+    : '<div class="pd-empty">No lessons completed yet on this device.</div>';
+  document.getElementById('subject-breakdown').innerHTML = subjectHTML;
+
+  // ── Scores table ──
+  const scoreRows = scoreIds
+    .map(id => ({ id, ...scores[id] }))
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  document.getElementById('scores-table-wrap').innerHTML = scoreRows.length ? `
+    <table class="pd-table">
+      <thead><tr><th>Exam / Quiz</th><th>Score</th><th>%</th><th>Date</th></tr></thead>
+      <tbody>
+        ${scoreRows.map(r => `
+          <tr>
+            <td>${niceLessonName(r.id)}<br><span style="font-size:.72rem;color:var(--ink-faint)">${labelFor(r.id)}</span></td>
+            <td>${r.score ?? '—'} / ${r.total ?? '—'}</td>
+            <td><span class="pd-pct ${gradeClass(r.pct || 0)}">${r.pct ?? '—'}%</span></td>
+            <td>${fmtDate(r.date)}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>` : '<div class="pd-empty">No exam or quiz scores recorded yet on this device.</div>';
+
+  // ── Lessons table ──
+  const lessonRows = lessonIds
+    .map(id => ({ id, ...progress[id] }))
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  document.getElementById('lessons-table-wrap').innerHTML = lessonRows.length ? `
+    <table class="pd-table">
+      <thead><tr><th>Lesson</th><th>Subject</th><th>Completed</th></tr></thead>
+      <tbody>
+        ${lessonRows.map(r => `
+          <tr>
+            <td>${niceLessonName(r.id)}</td>
+            <td>${labelFor(r.id)}</td>
+            <td>${fmtDate(r.date)}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>` : '<div class="pd-empty">No lessons marked complete yet on this device.</div>';
+}
+
+function exportProgress() {
+  const data = {
+    mdrs_year: localStorage.getItem('mdrs_year'),
+    mdrs_progress: localStorage.getItem('mdrs_progress'),
+    mdrs_scores: localStorage.getItem('mdrs_scores'),
+    exported: new Date().toISOString(),
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const stamp = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `dar-al-hijrah-progress-${stamp}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importProgress(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (!data.mdrs_progress && !data.mdrs_scores) {
+        alert('This file does not look like a Dār al-Hijrah progress backup.');
+        return;
+      }
+      const ok = confirm('Importing will REPLACE all progress currently saved on this device. Continue?');
+      if (!ok) return;
+      if (data.mdrs_year) localStorage.setItem('mdrs_year', data.mdrs_year);
+      if (data.mdrs_progress) localStorage.setItem('mdrs_progress', data.mdrs_progress);
+      if (data.mdrs_scores) localStorage.setItem('mdrs_scores', data.mdrs_scores);
+      render();
+      alert('Progress imported successfully.');
+    } catch (e) {
+      alert('Could not read that file — make sure it is an unmodified export from this dashboard.');
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+function resetProgress() {
+  const ok = confirm('This will permanently erase ALL completed-lesson and exam-score data on this device. Export a backup first if you want to keep it. Continue?');
+  if (!ok) return;
+  localStorage.removeItem('mdrs_progress');
+  localStorage.removeItem('mdrs_scores');
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
