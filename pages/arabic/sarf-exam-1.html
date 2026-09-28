@@ -106,7 +106,7 @@
   </div>
 
   <div style="background:var(--ivory);border:1px solid var(--ivory-dark);border-radius:0 0 var(--radius-xl) var(--radius-xl);padding:var(--space-md) var(--space-xl);margin-bottom:var(--space-xl)">
-    <p style="font-size:.82rem;color:var(--ink-mid);line-height:1.7"><strong>Instructions:</strong> Answer all questions. This exam seals the complete Year-1 ṣarf arc — Ṣarf 1–8: the root and الميزان الصرفي, the three tenses through their full tables, فعل الأمر, the doors of المزيد, and اسم الفاعل واسم المفعول. Every rule and every word here was taught in those lessons. Bismillāh.</p>
+    <p style="font-size:.82rem;color:var(--ink-mid);line-height:1.7"><strong>Instructions:</strong> Answer all questions. This exam seals the complete Year-1 ṣarf arc — Ṣarf 1–8: the root and الميزان الصرفي, the three tenses through their full tables, فعل الأمر, the doors of المزيد, and اسْمُ الفَاعِلِ وَاسْمُ المَفْعُول. Every rule and every word here was taught in those lessons. Bismillāh.</p>
   </div>
 
   <form id="exam-form" novalidate>
@@ -130,7 +130,7 @@
 
     <div class="exam-q" id="eq8" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 8</p><p class="exam-q-text"><span class="exam-q-ar">يَكْتُبَانِ</span> The dual ending in the مضارع is ـَانِ — as in يَكْتُبَانِ, “they two (m.) write.”</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="8" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="8" data-v="false">False ✗</button></div></div>
 
-    <div class="exam-q" id="eq9" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 9</p><p class="exam-q-text">الفعل المزيد is the verb whose letters are all root letters, with nothing added.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="9" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="9" data-v="false">False ✗</button></div></div>
+    <div class="exam-q" id="eq9" data-type="tf" data-answer="false" data-marks="1"><p class="exam-q-num">Question 9</p><p class="exam-q-text">الفِعْلُ المَزِيد is the verb whose letters are all root letters, with nothing added.</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="9" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="9" data-v="false">False ✗</button></div></div>
 
     <div class="exam-q" id="eq10" data-type="tf" data-answer="true" data-marks="1"><p class="exam-q-num">Question 10</p><p class="exam-q-text"><span class="exam-q-ar">مُعَلِّم · مُعَلَّم</span> One ḥarakah separates مُعَلِّم from مُعَلَّم: the kasrah before the last letter makes the doer (the teacher), and the fatḥah makes the done-to (the one taught).</p><div class="exam-tf-btns"><button type="button" class="exam-tf-btn" data-q="10" data-v="true">True ✓</button><button type="button" class="exam-tf-btn" data-q="10" data-v="false">False ✗</button></div></div>
 
@@ -207,7 +207,7 @@
     <div id="score-circle" class="result-score-circle grade-A"><span class="score-num" id="score-num">—</span><span class="score-total">out of 35</span></div>
     <p style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:var(--space-sm)" id="grade-text"></p>
     <p style="font-size:.9rem;color:var(--ink-mid);line-height:1.7;margin-bottom:var(--space-xl)" id="grade-message"></p>
-    <p style="font-size:.85rem;color:var(--ink-mid);line-height:1.7;margin-bottom:var(--space-xl)">This examination seals the Year-1 ṣarf arc — from the root and الميزان الصرفي to اسم الفاعل واسم المفعول, the foundation is complete. الحمد لله.</p>
+    <p style="font-size:.85rem;color:var(--ink-mid);line-height:1.7;margin-bottom:var(--space-xl)">This examination seals the Year-1 ṣarf arc — from the root and الميزان الصرفي to اسْمُ الفَاعِلِ وَاسْمُ المَفْعُول, the foundation is complete. الحمد لله.</p>
     <div style="display:flex;justify-content:center;gap:var(--space-md);flex-wrap:wrap">
       <button class="btn-secondary" onclick="window.location.href='index.html'">← Back to Arabic Hub</button>
       <button class="btn-primary" onclick="window.location.href='sarf-09-damair.html'">Year 2 begins · الصرف ٩ →</button>
@@ -341,10 +341,10 @@ function submitExam(force) {
   let gradeClass, gradeLetter, gradeMsg;
   if (pct >= 90) {
     gradeClass = 'grade-A'; gradeLetter = 'Excellent — ممتاز';
-    gradeMsg = 'Masha\'Allah! Outstanding. The whole Year-1 ṣarf arc is firmly yours — the root and الميزان الصرفي, the three tenses through their fourteen forms, the doors of المزيد, and اسم الفاعل واسم المفعول. Return to the Arabic Hub and carry on.';
+    gradeMsg = 'Masha\'Allah! Outstanding. The whole Year-1 ṣarf arc is firmly yours — the root and الميزان الصرفي, the three tenses through their fourteen forms, the doors of المزيد, and اسْمُ الفَاعِلِ وَاسْمُ المَفْعُول. Return to the Arabic Hub and carry on.';
   } else if (pct >= 75) {
     gradeClass = 'grade-B'; gradeLetter = 'Good — جيد جداً';
-    gradeMsg = 'Well done — the foundation is solid. Look above at which sections cost you marks and revisit the matching lesson: Ṣarf 2 and Ṣarf 5 for الماضي, Ṣarf 3 and Ṣarf 6 for المضارع, Ṣarf 7 for the doors of المزيد, and Ṣarf 8 for اسم الفاعل واسم المفعول.';
+    gradeMsg = 'Well done — the foundation is solid. Look above at which sections cost you marks and revisit the matching lesson: Ṣarf 2 and Ṣarf 5 for الماضي, Ṣarf 3 and Ṣarf 6 for المضارع, Ṣarf 7 for the doors of المزيد, and Ṣarf 8 for اسْمُ الفَاعِلِ وَاسْمُ المَفْعُول.';
   } else if (pct >= 60) {
     gradeClass = 'grade-C'; gradeLetter = 'Pass — مقبول';
     gradeMsg = 'You have passed, but the tables are not yet automatic. Recite the fourteen forms of الماضي (Ṣarf 5) and المضارع (Ṣarf 6) aloud each day, re-read the three doors in Ṣarf 7, and re-do the مُـ rule in Ṣarf 8 before moving on.';
