@@ -80,14 +80,30 @@ function initNavDropdown() {
       }
     });
   });
+  // Chapter submenu: the caret toggles it, so the parent link still navigates
+  document.querySelectorAll('.nav-dropdown li.dd-sub .dd-sub-caret').forEach(caret => {
+    caret.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const li = caret.closest('li.dd-sub');
+      if (!li) return;
+      const wasOpen = li.classList.contains('sub-open');
+      document.querySelectorAll('li.dd-sub.sub-open').forEach(o => o.classList.remove('sub-open'));
+      if (!wasOpen) li.classList.add('sub-open');
+    });
+  });
   document.addEventListener('click', (e) => {
     document.querySelectorAll('.nav-item.has-dropdown.open').forEach(item => {
       if (!item.contains(e.target)) item.classList.remove('open');
+    });
+    document.querySelectorAll('li.dd-sub.sub-open').forEach(li => {
+      if (!li.contains(e.target)) li.classList.remove('sub-open');
     });
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.nav-item.has-dropdown.open').forEach(o => o.classList.remove('open'));
+      document.querySelectorAll('li.dd-sub.sub-open').forEach(o => o.classList.remove('sub-open'));
     }
   });
 }
