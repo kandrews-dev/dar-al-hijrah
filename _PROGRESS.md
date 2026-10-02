@@ -46,6 +46,13 @@ quoting it on a lesson page.
 | شرح العقيدة الواسطية — Ṣāliḥ al-Fawzān | `sharh-wasitiyyah-fawzan.pdf` | `sharh-wasitiyyah-fawzan.md` | 208 |
 | شرح العقيدة الواسطية — Ibn ʿUthaymīn | `sharh-wasitiyyah-uthaymin.pdf` | `sharh-wasitiyyah-uthaymin.md` | 662 |
 
+OCR fidelity is not equal: al-Fawzān's extract is the clean one (208/208 pages, 1 empty, and his
+matn / `الشرح:` / `المفردات:` structure intact) and should be the primary text source.
+Ibn ʿUthaymīn's print is fully vowelled, which Tesseract garbles — 662/662 pages captured but
+noisy, so use it to *locate* a passage by stem and then render the page and read it before
+quoting. Search these extracts by single stems, not multi-word phrases: OCR inserts stray spaces,
+so `القدر` finds 152 hits where `مراتب القدر` finds none.
+
 Already present from earlier: `sharh-qawaid-arba-fawzan.pdf`, `sharh-ajurrumiyyah-uthaymin.pdf`,
 `sharh-arbaeen-nawawi-uthaymin.pdf`, `sharh-nawaqid-al-islam-ibn-baz.pdf`, `qatr-al-nada.pdf`,
 `tafsir-sadi-juz28-30-part1/2.pdf`.
