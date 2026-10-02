@@ -1,12 +1,12 @@
 # Dār al-Hijrah — Build Progress
 
-_Updated 2026-08-31. Single source of truth — update with each batch._
+_Updated 2026-10-02. Single source of truth — update with each batch._
 _Live at **https://kandrews-dev.github.io/dar-al-hijrah/** — auto-deploys ~1 min after each push; hard-refresh (Ctrl+F5) to see changes._
 
 | Tab | % | Status | What's done | What remains |
 |---|---:|---|---|---|
 | **Fiqh** | 100% | ✅ Complete | U1 Ṭahārah · U2 Ṣalāh · U3 Zakāh/Ṣawm/Ḥajj — all lessons + all exams | — (could deepen later: marriage, business, janāʾiz) |
-| **Aqeedah** | 100% · all 7 units complete | ✅ Fully done | U1 Tawhid/Shirk · U2 Names · U3 Six Articles · U4 Wāsiṭiyyah · U5 Qawāʿid al-Arbaʿ · U6 Nawāqid · **U7 Essential Creed** (الولاء والبراء، البدعة، اليوم الآخر، الإيمان، الصحابة، الحكم بما أنزل الله) — **all wired, chained, with all 7 unit exams.** | — (Aqeedah is finished.) |
+| **Aqeedah** | 7 units · 32 lessons · 7 exams | 🟢 **U5 REBUILT TO MATN DEPTH (2026-10-02)** | U1 Tawhid/Shirk · U2 Names · U3 Six Articles · U4 Names & Attributes (topical) · **U5 al-Qawāʿid al-Arbaʿ — rebuilt from one page into 5 lessons + hub + 13-question exam**, the matn now given in the author's own fully-vowelled Arabic section by section, each followed by the sharḥ of Ṣāliḥ ibn ʿAbd al-ʿAzīz Āl al-Shaykh and al-Fawzān in our own words. Restored what the old single page dropped: the opening duʿāʾ and عُنْوَانُ السَّعَادَةِ · الحَنِيفِيَّة مِلَّة إِبْرَاهِيم · the العِبَادَة/الطَّهَارَة analogy · الشَّبَكَة · **the proof against stone- and tree-worship (al-Najm 53:19–20) which was missing although the page promised a proof for each of the five categories** · the ḥadīth of ذَاتِ أَنْوَاطٍ (al-Tirmidhī, ṣaḥīḥ per al-Albānī) · the three conditions of the affirmed shafāʿah · a Further-reading section (rule 2). Matn wording checked against the OCR of the user's Āl al-Shaykh print (أَيْنَمَا, not حَيْثُمَا). · U6 Nawāqid · U7 Essential Creed — all wired, chained, with all 7 unit exams. | **al-ʿAqīdah al-Wāsiṭiyyah is not actually taught anywhere.** The U4 pages cover asmāʾ/ṣifāt topically and name the Wāsiṭiyyah *only inside `generateAIQuiz('…')` argument strings*, which are non-functional on a static site — so no student sees it. Next: build it from the matn in Ibn Taymiyyah's own order, per the user's decision (2026-10-02), using the now-stored shurūḥ of al-Fawzān (208pp) and Ibn ʿUthaymīn (662pp). Also outstanding: U6 Nawāqiḍ is still 1 page for 10 nullifiers. |
 | **Islam 101** | 100% · all 4 units complete | ✅ Fully done | **U1** Three Fundamental Principles · **U2** The Five Pillars · **U3** Manners & Character · **U4** The Kalimah Deep — **all wired, chained, with 4 unit exams** | — (Islam 101 finished.) |
 | **Seerah** | 100% · all 8 stages complete | ✅ Fully done | **All 8 stages complete:** Arabia & the Noble Birth · The Call in Makkah · Trials & the Night Journey · The Hijrah · Permission to Fight & Badr · Uḥud · the Trench & Ḥudaybiyah (incl. Bayʿat al-Riḍwān) · Victory & Farewell (Fatḥ Makkah, Ḥajjat al-Wadāʿ, his passing ﷺ) — all with reading, vocab, quizzes, chained 1→8. **2026-08: split the old single "battles" lesson (Badr+Uḥud+Khandaq+Ḥudaybiyah compressed together) into 3 full-depth lessons** — real numbers, key figures (Khālid ibn al-Walīd's flanking maneuver, Banū Qurayẓah), and Bayʿat al-Riḍwān (48:18) which was previously missing entirely. | — (Sīrah core finished. Could deepen later: 4 Khulafāʾ bios · Top Ṣaḥābah · Tābiʿūn · Scholars via Siyar Aʿlām al-Nubalāʾ.) |
 | **Arabic** | 70% | 🟢 **BOOK 3 FULLY REBUILT FROM REAL SOURCE (2026-08-22)** — all 16 units (Vocab 25–40) traced to the actual *Bayna Yadayk* Book 3 textbook, replacing off-curriculum content the site previously shipped. Real content includes: المعجزة الخالدة (Qurʾānic miracles) · يوم في حياة ناشئ (sunnah morning routine) · أقليتنا في العالم (Muslim minorities) · السنة النبوية · الأطفال والقراءة (Iqraʼ 96:1) · هجرة العقول (broken plurals, real emigration stats) · طاب نومكم (Āyat al-Kursī, sleep hadith) · نوادر وظرف (classical anecdotes) · المساواة الحقة (equality, Makhzūmiyyah hadith) · الرفق بالحيوان (4 verified animal-welfare hadith) · الأمثال العربية (Sinimmār, Ḥunayn, ʿUrqūb + hypocrite-signs hadith) · الخلافات الزوجية (family conflict, 3 hadith) · العلاقة بين الآباء والأبناء (Luqmān 31:13/17-19, Ismāʿīl 37:102-107, Kaʿbah 2:127-129) · الماء أصل الحياة (21:30, 20:53, 24:45) · وصية أب · من يوميات وليد (Anas ibn Mālik). `vocab-exam-4` fully rebuilt to match; `vocab-exam-5` still tests old placeholder content — **pending rebuild**. **DICTIONARY SECTION LAUNCHED (2026-08-25)** — new `dictionary-index.html` fusing IMSIU's Level-3 vocabulary glossary into the site: **77 words live** (حرف الألف, parts 1–2) of ~2,567 in that one glossary (~3%); IMSIU Level 4 and the Ṣarf/Naḥw glossaries not yet started. Tesseract OCR now installed and wired in (user-local Arabic language data) as a research aid, though entries are still hand-verified via direct source reading — raw OCR proved unreliable on the glossary's dense multi-column layout. **SITE-WIDE ARABIC DROPDOWN (2026-08-27)** — header "Arabic" tab now opens a menu linking straight to Book 1/2/3, Naḥw, Ṣarf, Qirāʼah, and the Dictionary from any of the ~250 pages. **Standing gap: تَعْبِير (expression) boxes per CLAUDE.md rule 7 have not been built anywhere yet** — next priority per user direction (2026-08-28). **YEAR 1 COMPLETE** (2026-07-23) · **YEAR 2 RUNNING** (2026-07-24): Qirāʼah Track 6 — **Readings 1–2** (يوم في حياة مسلم story · في السوق dialogue + market duʿāʼ; `ar-qiraah01/02`, chained) · **Ṣarf L9–L12** (الضمائر المتصلة · المصدر · بقية الأبواب — ten doors complete · الصحيح والمعتل — قُلْ mystery resolved; `sf-l9`–`sf-l12`, chained from Ṣarf Exam) · **Naḥw U6 Drills 1–2** (تدريب الإعراب; drill 2 adds شبه الجملة + مبني/في محل pronoun iʿrāb; `nh-l13`/`nh-l14`, chained from Naḥw Exam) · **Ṣarf L13 اسم المكان واسم الآلة** (`sf-l13` — مَسْجِد/مِفْتَاح/مِيزَان explained, المَوَازِين of the Last Day cross-linked) · **Ṣarf Exam 2 (L9–L13)** (`sf-exam2`, chained from L13 — **Year-2 ṣarf SEALED: 13 lessons + 2 exams**) · **Reading 3 رحلة إلى مكة** (`ar-qiraah03` — past-tense narrative, ḥajj month, بَلَّغَنَا three-track word) · **Naḥw Drill 3 إعراب القرآن** (`nh-l15` — basmalah/Fātiḥah/Ikhlāṣ parsed; ضمير منفصل ومستتر introduced) · **QAṬR AL-NADĀ OPENED** (`qatr-01-kalima.html` `qn-l1` — Ibn Hishām's علامات; roadmap Year-3 milestone, grammar-index placeholder flipped live) · **BOOK 3 LUGHA BEGUN — Vocab 25–27** (`ar-vocab25/26/27`: الصحة والطب clinic + duʿāʼ for the sick · التعليم والجامعة + ج م ع family · الإعلام والأخبار + al-Ḥujurāt 49:6 verify-rule; Book-3 format: 10-word tables, mini-passages, 5-question quizzes; chained Exam 3 → 25 → 26 → 27) · **Book-3 wave 2 DONE — Vocab 28–30 + Exam 4** (`ar-vocab28/29/30`, `ar-vocab-exam4`: التقنية ر-س-ل family · البيئة planting hadith · المال 2:275 + honest-merchant hadith; chained 27→28→29→30→Exam 4) · **Book-3 wave 3 DONE — Vocab 31–33** (`ar-vocab31/32/33`: المهن الشرعية footer-line payoff + manqūṣ قاضٍ/مفتٍ · الحج والعمرة full talbiyah + Reading-3 sequel passage · الضيافة فَلْيُكْرِمْ hadith; chained Exam 4 → 31 → 32 → 33) · **BOOK 3 FINAL WAVE DONE (2026-07-27) — LUGHA SPINE COMPLETE: 36 lessons + 5 exams.** Vocab 34 الأخلاق (Tirmidhī أَحَاسِنَكُمْ أَخْلَاقًا hadith) · 35 العالم الإسلامي (21:92 one-ummah āyah) · 36 طلب العلم capstone (Muslim path-to-Paradise hadith; second-person closing passage; 🎉 sealing box) · **Vocab Exam 5** (`ar-vocab-exam5`, 31–36, results → hub). Full chain 25→…→33→34→35→36→Exam 5. ~350 words across Books 1–3, nothing skipped (user directive). · **Qaṭr al-Nadā L2 المعرب والمبني DONE (2026-07-29)** (`qn-l2` `qatr-02-murab-mabni.html` — muʿrab/mabnī divide, four building-vowels, «مبني على في محل» formula; chained qn-l1 → qn-l2; 27:40 + 1:5 proof-texts verified) · **Reading 4 مَجْلِسُ الْعِلْمِ DONE (2026-07-29)** (`ar-qiraah04` `qiraah-04-majlis.html` — mixed tenses + embedded dialogue, Friday jumuʿah → after-maghrib ḥalqah; Muslim study-circle hadith letter-perfect; harvests Vocab 31/36; chained qiraah-03 → 04) | **Next:** **PENDING USER DIRECTIVE (2026-07-27): site-wide independent translation audit** — every hadith/āyah English rendering re-verified against the Arabic, no reliance on imported translations | **All three tracks built, chained 1→N, and examined:** Lugha **Vocab 1–24** + **Exams 1/2/3** (`ar-vocab-exam1/2/3`; full forward chain 1→13→Exam1→14→18→Exam2→19→24→Exam3) · **Naḥw L1–L12 + Exam** (`nh-exam1`, chained from L12) · **Ṣarf L1–L8 + Exam** (`sf-exam1`, chained from L8; roots→الميزان→14-form past/present→أمر→doors II–IV→اسم الفاعل/المفعول) · Exam engines (all 12): real half-mark partials, diacritic-insensitive matching, timeout force-submit · roadmap.html Year-1 line marked complete | **Year 2 (per roadmap):** Lugha BYY Book 2 units continue (Vocab 25+) · Naḥw: Qaṭr al-Nadā track opens · Ṣarf: remaining doors + المصدر |
@@ -33,6 +33,43 @@ _Live at **https://kandrews-dev.github.io/dar-al-hijrah/** — auto-deploys ~1 m
 4. **All builds happen in Claude Code** — chat for visual mockups only.
 
 ## Next-up priorities (user-set order)
+## Stored mutūn sources (2026-10-02)
+
+Scanned PDFs are in `assets/pdfs/`, each with a Tesseract OCR text extract beside it in
+`assets/md/` (one `## page N` heading per source page, so a later session can grep the matn
+and the sharḥ without re-reading the PDF). OCR is machine-read — verify wording before
+quoting it on a lesson page.
+
+| Text | PDF | OCR extract | Pages |
+|---|---|---|---:|
+| شرح القواعد الأربع — Ṣāliḥ ibn ʿAbd al-ʿAzīz Āl al-Shaykh | `sharh-qawaid-arba-al-shaykh.pdf` | `sharh-qawaid-arba-al-shaykh.md` | 52 |
+| شرح العقيدة الواسطية — Ṣāliḥ al-Fawzān | `sharh-wasitiyyah-fawzan.pdf` | `sharh-wasitiyyah-fawzan.md` | 208 |
+| شرح العقيدة الواسطية — Ibn ʿUthaymīn | `sharh-wasitiyyah-uthaymin.pdf` | `sharh-wasitiyyah-uthaymin.md` | 662 |
+
+Already present from earlier: `sharh-qawaid-arba-fawzan.pdf`, `sharh-ajurrumiyyah-uthaymin.pdf`,
+`sharh-arbaeen-nawawi-uthaymin.pdf`, `sharh-nawaqid-al-islam-ibn-baz.pdf`, `qatr-al-nada.pdf`,
+`tafsir-sadi-juz28-30-part1/2.pdf`.
+
+Helper scripts at the repo root: `_ocrpdf.py <stem>` OCRs a scanned PDF to `assets/md/`;
+`_verifyayat.py` checks every quoted āyah on the site against the Uthmani muṣḥaf.
+
+## Audit results (2026-10-02)
+
+- **Qurʾān citations: 249 verified, 0 errors** site-wide, by `_verifyayat.py`. The checker
+  self-tests against five known-good citations and refuses to run if they fail — needed,
+  because three earlier versions of it reported 80/125/65 phantom "errors" that were all
+  Uthmani-vs-imlāʾī orthography differences (dagger alif, alif-maqṣūra, ٱلصَّلَوٰة with wāw,
+  and Uthmani word-joining).
+- **Hadith: 76 blocks, 0 without a named collector.** Two non-Ṣaḥīḥayn hadith still lack a
+  named grading and need one: the الرِّيَاء hadith in `l2-shirk-types.html` and
+  «مَا شَاءَ اللهُ وَشَاءَ فُلَانٌ» in `l3-shirk-evidence.html` (both Musnad Aḥmad).
+- **Ḥarakāt (rule 1a) — the real outstanding debt: 4,039 of 9,609 Arabic words (42%) in the
+  ʿaqīdah + Islam-101 lesson bodies are not fully vowelled.** The earlier ḥarakāt pass fixed
+  only *titles*. Worst: `aqeedah/index.html` 91%, `islam101/index.html` 86%,
+  `u4-l3-anwaa-tawhid` 69%, the unit exams 60–83%. The five new U5 lessons are 1–4%.
+  The shared nav labels (دار الهجرة، أساسيات، القرآن، الحديث، السيرة) are unvowelled on all
+  399 pages.
+
 1. ~~Aqeedah · Islam 101 deepening~~ — done.
 2. ~~**Quran** — last 4 juzʾ~~ — capped: Juz 28/29/30 ✅ done; **Juz 27 intentionally left unbuilt** (user: last-4-juz is enough for now).
 3. ~~**Seerah** — build past 30%~~ — **done to 100%** (all 6 stages).
