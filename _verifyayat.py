@@ -3,8 +3,10 @@
 
     python _verifyayat.py
 
-Reads each <div class="ayah-block">: the Arabic in .ayah-arabic must actually
-occur at the surah:ayah cited in .ayah-source. Comparison is on the consonantal
+Two passes. (1) Each <div class="ayah-block">: the Arabic in .ayah-arabic must
+actually occur at the surah:ayah cited in .ayah-source. (2) Inline citations in
+prose: a <span dir="rtl" lang="ar"> immediately followed by a (Surah n:m) or
+(Surah n:m-k) reference, which lesson text uses constantly and pass 1 cannot see. Comparison is on the consonantal
 skeleton (diacritics and alif-carriers dropped, alif-maqsura unified with ya',
 the Uthmani waw-spellings of al-salah/al-zakah/al-hayah folded in) so that the
 imla'i orthography used on the pages compares equal to the Uthmani text, while a
@@ -211,8 +213,45 @@ for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob
             probs.append((f, 'TEXT-REF %d%%' % round(score * 100), src,
                           ' '.join(w for w in aw if w not in pw)[:90]))
 
+
+# ---- second pass: inline citations in prose ----
+# e.g.  <span dir="rtl" lang="ar">ARABIC</span> ... (al-Zumar 39:62)
+SPAN = re.compile(r'<span dir="rtl" lang="ar">([^<]{12,400})</span>(.{0,260}?)'
+                  r'\(([^()]{2,40}?)(\d{1,3}):(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?\)', re.S)
+iok = 0
+for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob('*.html')):
+    h = io.open(f, encoding='utf-8').read()
+    for m in SPAN.finditer(h):
+        arabic, gap, name, s_, a_ = m.group(1), m.group(2), m.group(3), int(m.group(4)), int(m.group(5))
+        a2 = int(m.group(6)) if m.group(6) else a_
+        if re.search(r'[ء-ي]', gap) and len(re.findall(r'[ء-ي]', gap)) > 25:
+            continue                      # another Arabic span intervenes; pairing unsafe
+        sn = NUM.get(key(name.strip(' .·')))
+        if sn is None or sn != s_:
+            continue                      # unresolved or not a surah name: skip, pass 1 owns refs
+        pool = ' '.join(skel(TEXT.get((s_, i), '')) for i in range(a_, a2 + 1))
+        if not pool:
+            probs.append((f, 'NO SUCH AYAH (inline)', '%s %d:%d' % (name, s_, a_), '')); continue
+        a = skel(arabic)
+        if len(a) < 8:
+            continue
+        nsp = lambda z: z.replace(' ', '')
+        if nsp(a) in nsp(pool):
+            iok += 1
+        else:
+            dwy = lambda z: re.sub(u'[وي]', '', z)
+            pw = set(w for w in pool.split() if len(w) > 1)
+            aw = [w for w in a.split() if len(w) > 1]
+            sc = (sum(1 for w in aw if w in pw) / float(len(aw))) if aw else 0
+            if sc >= 0.8 or dwy(nsp(a)) in dwy(nsp(pool)):
+                iok += 1
+            else:
+                probs.append((f, 'INLINE TEXT-REF %d%%' % round(sc * 100),
+                              '%s %d:%d' % (name.strip(), s_, a_), a[:85]))
+
 print("=== AYAH VERIFICATION (whole site) ===")
-print("VERIFIED: %d   PROBLEMS: %d   UNPARSED: %d\n" % (ok, len(probs), len(unres)))
+print("VERIFIED: %d in ayah-blocks + %d inline   PROBLEMS: %d   UNPARSED: %d\n"
+      % (ok, iok, len(probs), len(unres)))
 for p in probs:
     print("  [%s] %s\n     ref : %s\n     text: %s\n" % (p[1], p[0], p[2], p[3]))
 print("--- unparsed (%d) ---" % len(unres))
