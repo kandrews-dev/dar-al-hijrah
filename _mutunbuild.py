@@ -14,9 +14,29 @@ import io, re, os
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 AQ = os.path.join(BASE, 'pages', 'aqeedah')
-SRC = io.open(os.path.join(AQ, 'u5-qawaid-arba.html'), encoding='utf-8').read()
-PRE = SRC[:SRC.index('<main>')]
-POST = SRC[SRC.index('</main>'):]
+I101 = os.path.join(BASE, 'pages', 'islam101')
+
+# The page whose header/nav is spliced into newly created lessons, so they carry
+# the current nav. Only shell() uses it; the block builders below are standalone,
+# so inserting into existing pages needs no source at all.
+SRC = PRE = POST = None
+MAIN = '<main>'
+
+
+def set_source(path):
+    """Repoint the nav source, e.g. set_source(os.path.join(I101, 'u1-l0-intro.html'))."""
+    global SRC, PRE, POST, MAIN
+    SRC = io.open(path, encoding='utf-8').read()
+    m = re.search(r'<main\b[^>]*>', SRC)   # aqeedah uses <main>, islam101 <main class="...">
+    if not m:
+        raise ValueError('no <main> in %s' % path)
+    MAIN = m.group(0)
+    PRE = SRC[:m.start()]
+    POST = SRC[SRC.index('</main>'):]
+    return SRC
+
+
+set_source(os.path.join(AQ, 'u5-qawaid-arba.html'))
 
 FOOT = (u"al-Qawāʿid al-Arbaʿ of Imam Muḥammad ibn ʿAbd al-Wahhāb · "
         u"sharḥ of Ṣāliḥ ibn ʿAbd al-ʿAzīz Āl al-Shaykh "

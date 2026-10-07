@@ -45,6 +45,11 @@ quoting it on a lesson page.
 | شرح القواعد الأربع — Ṣāliḥ ibn ʿAbd al-ʿAzīz Āl al-Shaykh | `sharh-qawaid-arba-al-shaykh.pdf` | `sharh-qawaid-arba-al-shaykh.md` | 52 |
 | شرح العقيدة الواسطية — Ṣāliḥ al-Fawzān | `sharh-wasitiyyah-fawzan.pdf` | `sharh-wasitiyyah-fawzan.md` | 208 |
 | شرح العقيدة الواسطية — Ibn ʿUthaymīn | `sharh-wasitiyyah-uthaymin.pdf` | `sharh-wasitiyyah-uthaymin.md` | 662 |
+| شرح ثلاثة الأصول — Ibn ʿUthaymīn | *(git-ignored — 74MB)* | `sharh-thalathat-al-usul-uthaymin.md` | 162 |
+
+The *Thalāthat al-Uṣūl* PDF is **git-ignored**: at 74MB it is six times the next largest and nothing on the site serves it, so only its OCR extract is committed. The source stays in the user's `Arabic Pdf's` folder and is copied into `assets/pdfs/` (ignored) when it needs re-OCR.
+
+**A trap worth recording:** `pypdf.extract_text()` returning a few thousand characters does **not** mean a PDF has a usable text layer. The Ibn ʿUthaymīn *Thalāthat al-Uṣūl* print returns ~1,200 chars per page of mojibake from a broken legacy 8-bit Arabic encoding (`"jj) 3 lu <3 * n i l U j J »"`) and **0 Arabic characters**. Always count characters in the Arabic Unicode range (`[ء-ي]`), not raw length, before concluding a PDF can be read without OCR.
 
 OCR fidelity is not equal: al-Fawzān's extract is the clean one (208/208 pages, 1 empty, and his
 matn / `الشرح:` / `المفردات:` structure intact) and should be the primary text source.
