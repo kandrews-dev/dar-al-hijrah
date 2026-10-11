@@ -216,7 +216,11 @@ for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob
 
 # ---- second pass: inline citations in prose ----
 # e.g.  <span dir="rtl" lang="ar">ARABIC</span> ... (al-Zumar 39:62)
-SPAN = re.compile(r'<span dir="rtl" lang="ar">([^<]{12,400})</span>(.{0,260}?)'
+# the gap must not contain another Arabic span, or a span pairs with a later
+# item's citation and swallows the correct pair (seen on was-l05: a philosophers'
+# term paired with Al 'Imran 3:181, consuming the real quote inside the match).
+SPAN = re.compile(r'<span dir="rtl" lang="ar">([^<]{12,400})</span>'
+                  r'((?:(?!<span dir="rtl" lang="ar">).){0,260}?)'
                   r'\(([^()]{2,40}?)(\d{1,3}):(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?\)', re.S)
 iok = 0
 for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob('*.html')):
