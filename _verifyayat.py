@@ -117,7 +117,7 @@ def key(s):
                  (u'ṭ', 't'), (u'ẓ', 'z'), (u'ḏ', 'd'), (u'ṯ', 't'), (u'ʿ', ''), (u'ʾ', ''),
                  (u'ʼ', ''), (u'’', ''), ("'", ''), ('-', ''), (' ', ''), ('.', ''), (u'·', '')]:
         s = s.replace(a, b)
-    return re.sub(r'^(al|ash|ar|at|ad|as|az)', '', s)
+    return re.sub(r'^(al|ash|ath|adh|an|ar|az|at|ad|as)', '', s)
 
 
 NUM = {}
@@ -169,6 +169,31 @@ ARN = {u'\u0627\u0644\u0641\u0627\u062A\u062D\u0629': 1, u'\u0627\u0644\u0628\u0
     u'\u0627\u0644\u0645\u062C\u0627\u062F\u0644\u0629': 58, u'\u0627\u0644\u0635\u0641': 61,
     u'\u0627\u0644\u062C\u0645\u0639\u0629': 62, u'\u0627\u0644\u0645\u0646\u0627\u0641\u0642\u0648\u0646': 63}
 
+
+def bare_ar(t):
+    """Arabic letters only: drop every mark, so al-Qadr and al-QaDR compare equal."""
+    out = []
+    for c in t:
+        o = ord(c)
+        if (0x610 <= o <= 0x61A or 0x64B <= o <= 0x65F or 0x6D6 <= o <= 0x6ED
+                or o == 0x670 or o == 0x640):
+            continue
+        out.append(c)
+    return ''.join(out)
+
+
+# Every surah name, taken from the mushaf itself rather than typed out. The
+# hand-written ARN above is kept and merged in, so nothing it resolved breaks.
+ARN_N = {}
+for _s in Q:
+    _nm = bare_ar(_s['name'])
+    _nm = re.sub(u'^\u0633\u0648\u0631\u0629\\s*', '', _nm)
+    if len(_nm) > 1:
+        ARN_N.setdefault(_nm, _s['number'])
+for _k, _v in ARN.items():
+    ARN_N.setdefault(bare_ar(_k), _v)
+ARN = ARN_N
+
 cit = re.compile(r'(\d{1,3})\s*:\s*(\d{1,3})(?:\s*[-\u2013\u2014]\s*(\d{1,3}))?')
 NP = re.compile(u'([A-Za-z\u0100\u012A\u016A\u1E24\u1E62\u1E0C\u1E6C\u1E92\u02BF\u02BE]'
                 u'[A-Za-z\u0101\u012B\u016B\u1E25\u1E63\u1E0D\u1E6D\u1E93\u0100\u012A\u016A'
@@ -199,15 +224,17 @@ for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob
         if mn:
             shown = mn.group(1).strip(); sn = NUM.get(key(shown))
         if sn is None:
+            pre = bare_ar(src[:mc.start()])
+            whole = bare_ar(src)
             best = -1
             for an, n in sorted(ARN.items(), key=lambda kv: -len(kv[0])):
-                i = src.rfind(an, 0, mc.start())
+                i = pre.rfind(an)
                 if i > best:
                     best, sn, shown = i, n, an
             if best < 0:
                 sn = None
                 for an, n in sorted(ARN.items(), key=lambda kv: -len(kv[0])):
-                    if an in src:
+                    if an in whole:
                         sn, shown = n, an; break
         if sn is None:
             unres.append((f, src, 'unresolved name "%s"' % shown)); continue
