@@ -67,6 +67,23 @@ def skel(t):
     return r
 
 
+def degem(z):
+    """Collapse runs of one letter to a single letter.
+
+    The Uthmani mushaf writes a geminate after the article as ONE letter plus
+    shadda -- bi-l-layl as ba, alif-wasla, lam+shadda, ya, lam -- while imla'i
+    writes TWO lams. skel() strips the shadda, so the Uthmani side loses the
+    doubling while the imla'i side keeps it, and the two no longer compare
+    equal. Collapsing runs on BOTH sides fixes that. The fold is symmetric, so
+    it can only lose discrimination, never invent a match.
+    """
+    out = []
+    for c in z:
+        if not out or out[-1] != c:
+            out.append(c)
+    return ''.join(out)
+
+
 # ---- self-test: known-correct citations MUST verify, else the tool is wrong ----
 T = [
     (54, 49, u'\u0625\u0650\u0646\u0651\u064E\u0627 \u0643\u064F\u0644\u0651\u064E \u0634\u064E\u064A\u0652\u0621\u064D \u062E\u064E\u0644\u064E\u0642\u0652\u0646\u064E\u0627\u0647\u064F \u0628\u0650\u0642\u064E\u062F\u064E\u0631\u064D'),
@@ -74,9 +91,16 @@ T = [
     (42, 11, u'\u0644\u064E\u064A\u0652\u0633\u064E \u0643\u064E\u0645\u0650\u062B\u0652\u0644\u0650\u0647\u0650 \u0634\u064E\u064A\u0652\u0621\u064C'),
     (16, 36, u'\u0648\u064E\u0627\u062C\u0652\u062A\u064E\u0646\u0650\u0628\u064F\u0648\u0627 \u0627\u0644\u0637\u0651\u064E\u0627\u063A\u064F\u0648\u062A\u064E'),
     (31, 13, u'\u0644\u064E\u0627 \u062A\u064F\u0634\u0652\u0631\u0650\u0643\u0652 \u0628\u0650\u0627\u0644\u0644\u0651\u064E\u0647\u0650'),
+    # geminate-after-article class: Uthmani writes one lam + shadda, imla'i
+    # two lams -- AND an alif maqsura for the long -a. This exact phrase once
+    # produced a false alarm. Regression guard for the composed fold.
+    (6, 60, u'وَهُوَ الَّذِي يَتَوَفَّاكُمْ بِاللَّيْلِ'),
 ]
 _n = lambda z: skel(z).replace(' ', '')
-fail = [x for x in T if _n(x[2]) not in _n(TEXT[(x[0], x[1])])]
+_dy = lambda z: degem(z).replace(u'ي', '')
+fail = [x for x in T if _n(x[2]) not in _n(TEXT[(x[0], x[1])])
+        and degem(_n(x[2])) not in degem(_n(TEXT[(x[0], x[1])]))
+        and _dy(_n(x[2])) not in _dy(_n(TEXT[(x[0], x[1])]))]
 if fail:
     print("SELF-TEST FAILED - the tool is wrong, not the site:")
     for s, a, q in fail:
@@ -153,6 +177,7 @@ blocks = re.compile(r'<div class="ayah-block".*?(?=<div class="ayah-block"|</mai
 gar = re.compile(r'class="ayah-arabic"[^>]*>(.*?)</p>', re.S)
 gsr = re.compile(r'class="ayah-source"[^>]*>(.*?)</p>', re.S)
 
+warns = []  # passed only via the lenient overlap score
 ok = 0
 probs = []
 unres = []
@@ -207,7 +232,13 @@ for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob
         pw2 = set(w for w in pool2.split() if len(w) > 1)
         aw2 = [w for w in ar2.split() if len(w) > 1]
         score2 = (sum(1 for w in aw2 if w in pw2) / float(len(aw2))) if aw2 else 1.0
-        if nsp(ar) in nsp(pool) or score >= 0.80 or nsp(ar2) in nsp(pool2) or score2 >= 0.85:
+        exact = (nsp(ar) in nsp(pool) or nsp(ar2) in nsp(pool2)
+                 or degem(nsp(ar)) in degem(nsp(pool))
+                 or degem(nsp(ar2)) in degem(nsp(pool2)))
+        if not exact and (score >= 0.80 or score2 >= 0.85):
+            warns.append((f, src, round(score * 100),
+                          ' '.join(w for w in aw if w not in pw)[:70]))
+        if exact or score >= 0.80 or score2 >= 0.85:
             ok += 1
         else:
             probs.append((f, 'TEXT-REF %d%%' % round(score * 100), src,
@@ -247,7 +278,14 @@ for f in sorted(glob.glob('pages/**/*.html', recursive=True)) + sorted(glob.glob
             pw = set(w for w in pool.split() if len(w) > 1)
             aw = [w for w in a.split() if len(w) > 1]
             sc = (sum(1 for w in aw if w in pw) / float(len(aw))) if aw else 0
-            if sc >= 0.8 or dwy(nsp(a)) in dwy(nsp(pool)):
+            iexact = (dwy(nsp(a)) in dwy(nsp(pool))
+                      or degem(nsp(a)) in degem(nsp(pool))
+                      or dwy(degem(nsp(a))) in dwy(degem(nsp(pool))))
+            if not iexact and sc >= 0.8:
+                warns.append((f, '%s %d:%d' % (name.strip(), s_, a_),
+                              round(sc * 100),
+                              ' '.join(w for w in aw if w not in pw)[:70]))
+            if iexact or sc >= 0.8:
                 iok += 1
             else:
                 probs.append((f, 'INLINE TEXT-REF %d%%' % round(sc * 100),
@@ -258,6 +296,16 @@ print("VERIFIED: %d in ayah-blocks + %d inline   PROBLEMS: %d   UNPARSED: %d\n"
       % (ok, iok, len(probs), len(unres)))
 for p in probs:
     print("  [%s] %s\n     ref : %s\n     text: %s\n" % (p[1], p[0], p[2], p[3]))
+if warns:
+    print("")
+    print("--- %d citation(s) passed ONLY on word overlap, not an exact match."
+          % len(warns))
+    print("    Each needs an eye: a single wrong word in a long ayah scores ~90%.")
+    for w in sorted(warns, key=lambda x: x[2]):
+        print("  %3d%%  %-38s %s" % (w[2], w[1][:38], w[0]))
+        if w[3].strip():
+            print("        unmatched: %s" % w[3])
+
 print("--- unparsed (%d) ---" % len(unres))
 for f, s, r in unres:
     print("  %s: %s   (%s)" % (f, s, r))
