@@ -14,6 +14,9 @@ h = io.open(F, encoding='utf-8').read()
 LESSONS = [
     ('nq-l01-shirk-al-ibadah.html', '١',
      'الشِّرْكُ فِي العِبَادَة', 'Shirk in Worship'),
+    ('nq-l02-dhabh-wa-tarik-al-salah.html', '١',
+     'الذَّبْحُ وَتَارِكُ الصَّلَاة',
+     'Slaughter, and the One Who Leaves the Prayer'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
