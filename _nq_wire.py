@@ -17,6 +17,8 @@ LESSONS = [
     ('nq-l02-dhabh-wa-tarik-al-salah.html', '١',
      'الذَّبْحُ وَتَارِكُ الصَّلَاة',
      'Slaughter, and the One Who Leaves the Prayer'),
+    ('nq-l03-al-wasait.html', '٢',
+     'اتِّخَاذُ الوَسَائِط', 'Taking Intermediaries'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
