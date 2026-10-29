@@ -4,12 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-**دار الهجرة — Dār al-Hijrah** (Salafi Foundational School of Islamic Sciences). A pure static site (HTML/CSS/JS, no build step, no framework, no backend). All files live under `C:\Users\abdul\Downloads\Madrasah-Site\`.
+**دار الهجرة — Dār al-Hijrah** (Salafi Foundational School of Islamic Sciences). A pure static site (HTML/CSS/JS, no build step, no framework, no backend). All files live under `C:\Users\abdul\dar-al-hijrah\`.
+
+**Do not keep this repo in `Downloads` or inside a cloud-synced folder.** `Downloads` was cleared
+twice by external cleanup, taking the whole working tree both times; OneDrive/Drive sync corrupts
+`.git`. Everything tracked came back from the remote untouched, which is why **all build tooling
+(`_*.py`) lives inside the repo** — the one script that once lived outside it was the
+only thing ever lost.
 
 ## Dev server
 
 ```powershell
-cd C:\Users\abdul\Downloads\Madrasah-Site
+cd C:\Users\abdul\dar-al-hijrah
 python -m http.server 8123
 # then open http://localhost:8123
 ```
@@ -19,7 +25,7 @@ python -m http.server 8123
 After adding or renaming any HTML page, run:
 
 ```powershell
-python C:\Users\abdul\Downloads\_searchindex.py
+python _searchindex.py        # run from the repo root; --check proves a rebuild faithful
 ```
 
 This re-scans all HTML files and injects the `MDRS_SEARCH` array into `js/main.js` at the `// %%INDEX%%` marker. Skipping this step leaves the search stale.

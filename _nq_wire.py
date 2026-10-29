@@ -19,6 +19,9 @@ LESSONS = [
      'Slaughter, and the One Who Leaves the Prayer'),
     ('nq-l03-al-wasait.html', '٢',
      'اتِّخَاذُ الوَسَائِط', 'Taking Intermediaries'),
+    ('nq-l04-takfir-al-mushrikin.html', '٣',
+     'عَدَمُ تَكْفِيرِ المُشْرِكِين',
+     'Not Declaring the Mushrikīn Disbelievers'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
