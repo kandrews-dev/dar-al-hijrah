@@ -25,6 +25,9 @@ LESSONS = [
     ('nq-l05-tafdil-ghayr-huda-al-nabi.html', '٤',
      'تَفْضِيلُ غَيْرِ هُدَى النَّبِيِّ ﷺ',
      'Preferring Other Than His Guidance · part 1'),
+    ('nq-l06-tafsil-al-hukm.html', '٤',
+     'التَّفْصِيل',
+     'The Distinction · part 2'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
