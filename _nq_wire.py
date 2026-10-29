@@ -22,6 +22,9 @@ LESSONS = [
     ('nq-l04-takfir-al-mushrikin.html', '٣',
      'عَدَمُ تَكْفِيرِ المُشْرِكِين',
      'Not Declaring the Mushrikīn Disbelievers'),
+    ('nq-l05-tafdil-ghayr-huda-al-nabi.html', '٤',
+     'تَفْضِيلُ غَيْرِ هُدَى النَّبِيِّ ﷺ',
+     'Preferring Other Than His Guidance · part 1'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
