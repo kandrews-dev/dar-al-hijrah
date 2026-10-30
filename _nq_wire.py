@@ -28,6 +28,15 @@ LESSONS = [
     ('nq-l06-tafsil-al-hukm.html', '٤',
      'التَّفْصِيل',
      'The Distinction · part 2'),
+    ('nq-l07-mudtarr-wa-tashri.html', '٤',
+     'المُضْطَرُّ '
+     'وَالتَّشْرِيع',
+     'Necessity and Legislation · part 3'),
+    ('nq-l08-bughd-ma-jaa-bihi.html', '٥',
+     'بُغْضُ شَيْءٍ '
+     'مِمَّا جَاءَ '
+     'بِهِ ﷺ',
+     'Hating Something of What He Brought'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
