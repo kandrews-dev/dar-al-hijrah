@@ -37,6 +37,13 @@ LESSONS = [
      'مِمَّا جَاءَ '
      'بِهِ ﷺ',
      'Hating Something of What He Brought'),
+    ('nq-l09-al-istihza.html', '٦',
+     'الاسْتِهْزَاء',
+     'Mockery · part 1'),
+    ('nq-l10-masail-al-istihza.html', '٦',
+     'مَسَائِلُ '
+     'الاسْتِهْزَاء',
+     'The Cases · part 2'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
