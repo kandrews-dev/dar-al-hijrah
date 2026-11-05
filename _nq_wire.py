@@ -44,6 +44,14 @@ LESSONS = [
      'مَسَائِلُ '
      'الاسْتِهْزَاء',
      'The Cases · part 2'),
+    ('nq-l11-haqiqat-al-sihr.html', '٧',
+     'حَقِيقَةُ '
+     'السِّحْر',
+     'What Magic Is · part 1'),
+    ('nq-l12-hukm-al-sahir.html', '٧',
+     'حُكْمُ '
+     'السَّاحِر',
+     'The Ruling on the Magician · part 2'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
