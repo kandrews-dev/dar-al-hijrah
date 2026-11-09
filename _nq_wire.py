@@ -52,6 +52,9 @@ LESSONS = [
      'حُكْمُ '
      'السَّاحِر',
      'The Ruling on the Magician · part 2'),
+    ('nq-l13-al-nushrah-wa-al-ilaj.html', '٧',
+     'العِلَاجُ وَالنُّشْرَة',
+     'The Harm and the Remedy · part 3'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
