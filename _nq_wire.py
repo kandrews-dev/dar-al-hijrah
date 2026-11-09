@@ -58,6 +58,9 @@ LESSONS = [
     ('nq-l14-al-muwalah-wa-al-tawalli.html', '٨',
      'المُوَالَاةُ وَالتَّوَلِّي',
      'Allying and Siding-With · part 1'),
+    ('nq-l15-al-istianah-wa-al-jasus.html', '٨',
+     'الاسْتِعَانَةُ وَالجَاسُوس',
+     'Seeking Help, and the Spy · part 2'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'

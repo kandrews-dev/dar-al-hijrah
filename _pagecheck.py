@@ -19,7 +19,7 @@ Four checks, and each one has cost a real mistake before:
 
 Exit code is non-zero if any page has a fault.
 """
-import io, re, sys
+import io, os, re, sys
 from html.parser import HTMLParser
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -120,7 +120,12 @@ def check(path):
     if tfq and tfb != tfq * 2:
         faults.append('T/F buttons: %d for %d questions (expected %d)'
                       % (tfb, tfq, tfq * 2))
-    if '<!-- SHARH-PROVENANCE -->' not in h:
+    # The provenance marker is required of a sharḥ-DEPTH lesson, which is what
+    # the citation standard governs. Overview and hub pages teach from no
+    # particular folio range and must not be failed for lacking one; a lesson
+    # page is identified by its `<prefix>-lNN-` filename.
+    if re.search(r'[a-z0-9]+-l\d{2}-', os.path.basename(path)) and \
+            '<!-- SHARH-PROVENANCE -->' not in h:
         faults.append('no sharḥ-folio provenance marker')
 
     print('%s — %d bytes' % (path, len(h.encode('utf-8'))))
