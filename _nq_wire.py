@@ -55,6 +55,9 @@ LESSONS = [
     ('nq-l13-al-nushrah-wa-al-ilaj.html', '٧',
      'العِلَاجُ وَالنُّشْرَة',
      'The Harm and the Remedy · part 3'),
+    ('nq-l14-al-muwalah-wa-al-tawalli.html', '٨',
+     'المُوَالَاةُ وَالتَّوَلِّي',
+     'Allying and Siding-With · part 1'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
