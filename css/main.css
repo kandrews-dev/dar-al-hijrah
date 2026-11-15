@@ -30,6 +30,12 @@
   --on-brand:    #ffffff;
   --brand-grad:  linear-gradient(120deg,#7C4DC0,#B07FD4,#0AA6C2);
 
+  /* ═══ Accent — the "crux / pay attention" highlight, independent of hue.
+     Used by the mutūn accent callout boxes (var(--accent) / var(--accent-wash));
+     these were previously undefined and rendered transparent. ═══ */
+  --accent:       #B07A16;   /* warm gold */
+  --accent-wash:  #FBF2DA;   /* gold wash */
+
   /* ═══ Subject (tab) colours — FIXED across every theme (wayfinding) ═══ */
   --tab-islam101: #0BA678;   /* emerald */
   --tab-quran:    #0AA6C2;   /* cyan */
@@ -39,6 +45,7 @@
   --tab-aqeedah:  #C13B5B;   /* crimson */
   --tab-resources:#2F9BD6;   /* sky */
   --tab-grammar:  #0E9488;   /* teal */
+  --tab-adab:     #0BA678;   /* emerald — adab/akhlāq accent (was undefined) */
 
   /* Year-level accents */
   --year1: #0BA678;
@@ -471,7 +478,7 @@ body {
 }
 
 .sidebar-section {
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--ivory-dark);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -614,7 +621,7 @@ body {
 
 /* ── Lesson Card ─────────────────────────────────────────────── */
 .lesson-card {
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--ivory-dark);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-lg);
@@ -832,7 +839,7 @@ body {
 
 .def-body {
   padding: var(--space-md) var(--space-lg);
-  background: white;
+  background: var(--surface);
 }
 
 .def-arabic-meaning {
@@ -859,7 +866,7 @@ body {
 }
 
 .vocab-card {
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--ivory-dark);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -1066,7 +1073,7 @@ body {
 
 /* ── Exercise Sections ───────────────────────────────────────── */
 .exercise-block {
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--ivory-dark);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-lg);
@@ -1185,7 +1192,7 @@ body {
   transition: all var(--duration) var(--ease);
   font-family: var(--font-english);
 }
-.mcq-option:hover { border-color: var(--teal-light); background: white; }
+.mcq-option:hover { border-color: var(--teal-light); background: var(--surface); }
 .mcq-option.selected { border-color: var(--teal-mid); background: #e8f4f0; }
 .mcq-option.correct { border-color: #68c980; background: #d4f0dc; color: #1a5e30; font-weight: 500; }
 .mcq-option.wrong { border-color: #e08080; background: #f8d7d7; color: #7a1c1c; }
@@ -1281,7 +1288,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: white;
+  background: var(--surface);
   color: var(--teal-deep);
   border: 1px solid var(--teal-light);
   border-radius: var(--radius-md);
@@ -1476,7 +1483,7 @@ body {
 }
 
 .subject-card {
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--ivory-dark);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -1844,3 +1851,58 @@ body {
   .print-sheet-unit-row td { background: #eee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .print-sheet-table tr:nth-child(even) { background: #f7f7f7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DARK MODE  ·  driven by :root[data-mode="dark"] (set early, in <head>).
+   Keeps the active hue's accent (--brand/--brand-soft); darkens the canvas.
+   --brand-deep is overloaded (heading text AND dark surfaces), so it is
+   remapped to the light accent for TEXT, and the seven surfaces that relied
+   on it being dark are re-darkened explicitly below.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root[data-mode="dark"] {
+  --bg:#0F0B16; --surface:#17121F; --surface-2:#1E1829;
+  --line:#2B2340; --line-strong:#3A2F52;
+  --ink:#F2ECFA; --ink-mid:#C7BDD8; --ink-light:#9D90B0; --ink-faint:#6F6485;
+  --hero-1:#1A1326; --hero-2:#141B2E; --hero-3:#241627;
+  --brand-wash:#1D1630;
+  --accent:#E0B457; --accent-wash:#2A2010;   /* gold crux-box, dark */
+  --brand-deep: var(--brand-soft);   /* also remaps --teal-deep (its alias) for text */
+  --gold-pale:#241a10;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.45);
+  --shadow-md:0 8px 26px rgba(0,0,0,.55);
+  --shadow-lg:0 14px 40px rgba(0,0,0,.60);
+}
+/* re-darken the surfaces that used --brand-deep as a dark background */
+:root[data-mode="dark"] .btn-primary,
+:root[data-mode="dark"] .exercise-header,
+:root[data-mode="dark"] .grammar-table th,
+:root[data-mode="dark"] .def-term { background: var(--brand); color:#fff; }
+:root[data-mode="dark"] .site-footer { background:#120D1C; color:rgba(255,255,255,.55); }
+:root[data-mode="dark"] .site-footer a { color:var(--brand-soft); }
+:root[data-mode="dark"] .tab-hero { background:linear-gradient(135deg,#271C40,#17121F); }
+:root[data-mode="dark"] .memorize-block { background:linear-gradient(135deg,#271C40,#120D1C); }
+:root[data-mode="dark"] .site-header { box-shadow:0 1px 14px rgba(0,0,0,.5); }
+/* decorative blocks with hardcoded light gradients */
+:root[data-mode="dark"] .ayah-block { background:linear-gradient(135deg,#132019,#121A26); border-color:var(--line); }
+:root[data-mode="dark"] .hadith-block { background:linear-gradient(135deg,#1F1B12,#1A1726); border-color:var(--line); }
+/* quiz feedback — dark variants */
+:root[data-mode="dark"] .tf-btn.correct,
+:root[data-mode="dark"] .mcq-option.correct,
+:root[data-mode="dark"] .fitb-blank.correct { background:#143021; border-color:#3F8F5A; color:#9BE0AD; }
+:root[data-mode="dark"] .tf-btn.incorrect,
+:root[data-mode="dark"] .mcq-option.wrong,
+:root[data-mode="dark"] .fitb-blank.incorrect { background:#371818; border-color:#A05656; color:#F0A5A5; }
+:root[data-mode="dark"] .mcq-option:hover { background:var(--surface-2); }
+/* catch inline background:white across the ~432 generated boxes without editing them */
+:root[data-mode="dark"] [style*="background:white"],
+:root[data-mode="dark"] [style*="background: white"] { background:var(--surface)!important; }
+/* inline pills/badges that use the (now-lightened) deep token as a solid
+   background with white text — re-darken them to the mid accent */
+:root[data-mode="dark"] [style*="background:var(--teal-deep)"],
+:root[data-mode="dark"] [style*="background:var(--brand-deep)"] { background:var(--brand)!important; }
+/* theme-dock mode toggle */
+#mode-toggle { margin-top:6px; width:100%; border:1px solid var(--line-strong); background:var(--surface);
+  color:var(--ink-mid); border-radius:var(--radius-sm); padding:5px 8px; cursor:pointer;
+  font-size:.74rem; font-weight:600; letter-spacing:.04em; display:flex; align-items:center;
+  justify-content:center; gap:6px; transition:background var(--duration) var(--ease); }
+#mode-toggle:hover { background:var(--surface-2); }

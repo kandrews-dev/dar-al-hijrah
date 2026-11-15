@@ -471,6 +471,7 @@ function initThemeSwitcher() {
     themes.map(([t, c]) =>
       `<button class="theme-sw${t === current ? ' on' : ''}" data-theme-name="${t}" title="${t}" aria-label="${t} theme" style="background:${c}"></button>`
     ).join('') +
+    '<button id="mode-toggle" aria-label="Toggle dark mode"></button>' +
     '</div>';
   document.body.appendChild(dock);
   dock.querySelector('.theme-handle').addEventListener('click', () => dock.classList.toggle('collapsed'));
@@ -481,6 +482,19 @@ function initThemeSwitcher() {
       localStorage.setItem('mdrs_theme', t);
       dock.querySelectorAll('.theme-sw').forEach(s => s.classList.toggle('on', s === sw));
     });
+  });
+  // dark / light mode toggle — independent of the colour hue
+  const modeBtn = dock.querySelector('#mode-toggle');
+  const paintMode = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    modeBtn.textContent = dark ? '☀︎  Light mode' : '\u{1F319}  Dark mode';
+  };
+  paintMode();
+  modeBtn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.mode = next;
+    localStorage.setItem('mdrs_mode', next);
+    paintMode();
   });
 }
 
