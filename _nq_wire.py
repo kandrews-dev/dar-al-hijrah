@@ -61,6 +61,9 @@ LESSONS = [
     ('nq-l15-al-istianah-wa-al-jasus.html', '٨',
      'الاسْتِعَانَةُ وَالجَاسُوس',
      'Seeking Help, and the Spy · part 2'),
+    ('nq-l16-al-khuruj-an-al-shariah.html', '٩',
+     'الخُرُوجُ عَنِ الشَّرِيعَة',
+     'Claiming to Stand Outside the Sharīʿah'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
