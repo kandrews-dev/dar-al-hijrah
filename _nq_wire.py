@@ -67,6 +67,18 @@ LESSONS = [
     ('nq-l17-al-irad-an-al-din.html', '١٠',
      'الإِعْرَاضُ عَنِ الدِّين',
      'Turning Away from the Religion'),
+    ('nq-l18-mawani-al-ikrah.html', '—',
+     'مَوَانِعُ التَّكْفِير · الإِكْرَاه',
+     'The Barriers · Coercion'),
+    ('nq-l19-mani-al-jahl.html', '—',
+     'مَانِعُ الجَهْل',
+     'The Barriers · Ignorance'),
+    ('nq-l20-mani-al-khata-wa-al-tawil.html', '—',
+     'الخَطَأ وَالتَّأْوِيل وَالخَاتِمَة',
+     'The Barriers · Error, Interpretation & the Seal'),
+    ('nawaqid-murajaah.html', '✓',
+     'مُرَاجَعَةُ المَتْن',
+     'Review — what you should now know'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
