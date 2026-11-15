@@ -1064,6 +1064,7 @@ body {
    modes, overriding the dark curriculum-year color above. */
 .year-badge[style*="rgba(255,255,255"] {
   color: #fff;
+  font-weight: 700;
 }
 .vocab-en {
   font-size: 0.9rem;
