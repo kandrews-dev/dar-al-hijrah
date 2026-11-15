@@ -64,6 +64,9 @@ LESSONS = [
     ('nq-l16-al-khuruj-an-al-shariah.html', '٩',
      'الخُرُوجُ عَنِ الشَّرِيعَة',
      'Claiming to Stand Outside the Sharīʿah'),
+    ('nq-l17-al-irad-an-al-din.html', '١٠',
+     'الإِعْرَاضُ عَنِ الدِّين',
+     'Turning Away from the Religion'),
 ]
 
 MARK = '<!-- NQ-DEPTH-TRACK -->'
