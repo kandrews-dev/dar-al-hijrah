@@ -1059,6 +1059,12 @@ body {
   border-color: var(--brand);
   color: #fff;
 }
+/* Hero-banner badges (e.g. "Start here · The foundations") sit on a dark
+   gradient with a translucent white fill — keep their text white in all
+   modes, overriding the dark curriculum-year color above. */
+.year-badge[style*="rgba(255,255,255"] {
+  color: #fff;
+}
 .vocab-en {
   font-size: 0.9rem;
   color: var(--ink-mid);
