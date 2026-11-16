@@ -1892,6 +1892,12 @@ body {
 /* decorative blocks with hardcoded light gradients */
 :root[data-mode="dark"] .ayah-block { background:linear-gradient(135deg,#132019,#121A26); border-color:var(--line); }
 :root[data-mode="dark"] .hadith-block { background:linear-gradient(135deg,#1F1B12,#1A1726); border-color:var(--line); }
+/* resting T/F buttons: give them a real surface + bright text in dark mode
+   (base rule uses --ivory = --bg, which reads as a greyed-out near-black pill) */
+:root[data-mode="dark"] .tf-btn {
+  background: var(--surface-2); border-color: var(--line-strong); color: var(--ink);
+}
+:root[data-mode="dark"] .tf-btn:hover { background: var(--line); }
 /* quiz feedback — dark variants */
 :root[data-mode="dark"] .tf-btn.correct,
 :root[data-mode="dark"] .mcq-option.correct,
@@ -1907,6 +1913,40 @@ body {
    background with white text — re-darken them to the mid accent */
 :root[data-mode="dark"] [style*="background:var(--teal-deep)"],
 :root[data-mode="dark"] [style*="background:var(--brand-deep)"] { background:var(--brand)!important; }
+/* ── inline hardcoded palette that predates the token system ──────────────
+   Pale callout backgrounds (hex tints the `white` rule above misses) must
+   darken, or token-based text (which lightens) goes light-on-light; and the
+   hand-written dark text colors must lighten, or they go dark-on-dark.
+   Saturated solid badge backgrounds (#c0392b, #2a7a4b, #ffcc00 …) are left
+   as-is — white text reads on them in both modes. */
+:root[data-mode="dark"] [style*="background:#e8f4ee"],
+:root[data-mode="dark"] [style*="background:#e8f4f4"],
+:root[data-mode="dark"] [style*="background:#e8f4f0"],
+:root[data-mode="dark"] [style*="background:#f4fbf6"],
+:root[data-mode="dark"] [style*="background:#eef7f0"],
+:root[data-mode="dark"] [style*="background:#f0f8f8"] { background:#14241c!important; }
+:root[data-mode="dark"] [style*="background:#fdf4f4"],
+:root[data-mode="dark"] [style*="background:#f8eaea"],
+:root[data-mode="dark"] [style*="background:#fdf0f0"],
+:root[data-mode="dark"] [style*="background:#fdf8f8"],
+:root[data-mode="dark"] [style*="background:#fbf0f0"],
+:root[data-mode="dark"] [style*="background:#fdf6ec"] { background:#271619!important; }
+:root[data-mode="dark"] [style*="background:#fffbf0"],
+:root[data-mode="dark"] [style*="background:#fff8e6"],
+:root[data-mode="dark"] [style*="background:#fff7e6"] { background:#241d10!important; }
+:root[data-mode="dark"] [style*="background:#f0f4ff"] { background:#141b2b!important; }
+:root[data-mode="dark"] [style*="background:#ffffff"] { background:var(--surface)!important; }
+:root[data-mode="dark"] [style*="color:#2a7a4b"],
+:root[data-mode="dark"] [style*="color:#0d6e5a"] { color:#83d6a1!important; }
+:root[data-mode="dark"] [style*="color:#8c3a3a"],
+:root[data-mode="dark"] [style*="color:#c0392b"],
+:root[data-mode="dark"] [style*="color:#a14a4a"],
+:root[data-mode="dark"] [style*="color:#5a2020"] { color:#ef9f9f!important; }
+:root[data-mode="dark"] [style*="color:#8c3a6a"] { color:#e6a6d4!important; }
+:root[data-mode="dark"] [style*="color:#7c2d12"] { color:#dca884!important; }
+:root[data-mode="dark"] [style*="color:#1a5a8c"],
+:root[data-mode="dark"] [style*="color:#1a2a4a"] { color:#88b4e4!important; }
+:root[data-mode="dark"] [style*="color:#8a6d1a"] { color:#d9c074!important; }
 /* theme-dock mode toggle */
 #mode-toggle { margin-top:6px; width:100%; border:1px solid var(--line-strong); background:var(--surface);
   color:var(--ink-mid); border-radius:var(--radius-sm); padding:5px 8px; cursor:pointer;
