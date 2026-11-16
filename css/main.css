@@ -1947,6 +1947,28 @@ body {
 :root[data-mode="dark"] [style*="color:#1a5a8c"],
 :root[data-mode="dark"] [style*="color:#1a2a4a"] { color:#88b4e4!important; }
 :root[data-mode="dark"] [style*="color:#8a6d1a"] { color:#d9c074!important; }
+/* ── exam framework: each exam page's own <style> block hardcodes light
+   surfaces (.exam-q{background:white} etc.) that the inline catch-alls can't
+   reach. These overrides outrank the page's single-class rules. ── */
+:root[data-mode="dark"] .exam-q { background:var(--surface); border-color:var(--line); }
+:root[data-mode="dark"] .exam-mcq-opt,
+:root[data-mode="dark"] .exam-tf-btn,
+:root[data-mode="dark"] .exam-fitb { background:var(--surface-2); border-color:var(--line-strong); color:var(--ink-mid); }
+:root[data-mode="dark"] .exam-mcq-opt:hover,
+:root[data-mode="dark"] .exam-tf-btn:hover { background:var(--line); border-color:var(--teal-mid); }
+:root[data-mode="dark"] .exam-mcq-opt.selected { background:#13241c; border-color:#3f8f5a; }
+:root[data-mode="dark"] .exam-tf-btn.selected-t { background:#143021; border-color:#3f8f5a; color:#9be0ad; }
+:root[data-mode="dark"] .exam-tf-btn.selected-f { background:#371818; border-color:#a05656; color:#f0a5a5; }
+:root[data-mode="dark"] .exam-fitb { color:var(--ink); }
+:root[data-mode="dark"] .exam-fitb:focus { background:var(--surface); }
+:root[data-mode="dark"] .exam-q.correct { background:#122018; border-color:#3f8f5a; }
+:root[data-mode="dark"] .exam-q.incorrect { background:#241314; border-color:#a05656; }
+:root[data-mode="dark"] .exam-q.partial { background:#241d10; border-color:var(--gold-warm); }
+:root[data-mode="dark"] #results-panel { background:var(--surface); }
+:root[data-mode="dark"] .exam-submit-bar { background:var(--surface); border-top-color:var(--line); }
+:root[data-mode="dark"] .mark-explanation { background:rgba(255,255,255,.05); }
+:root[data-mode="dark"] .grade-A { color:#83d6a1; }
+:root[data-mode="dark"] .grade-D { color:#ef9f9f; }
 /* theme-dock mode toggle */
 #mode-toggle { margin-top:6px; width:100%; border:1px solid var(--line-strong); background:var(--surface);
   color:var(--ink-mid); border-radius:var(--radius-sm); padding:5px 8px; cursor:pointer;

@@ -13,6 +13,9 @@
   .step-list li::before{counter-increment:gstep;content:counter(gstep);position:absolute;left:var(--space-md);top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--tab-fiqh);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
   .step-list .st-ar{font-family:var(--font-arabic);font-size:1.05rem;color:var(--teal-deep);direction:rtl;font-weight:700}
   .step-list .st-en{font-size:.84rem;color:var(--ink-mid);line-height:1.6}
+
+/* __darkpass__ */
+:root[data-mode="dark"] .step-list li{background:var(--surface)!important}
 </style>
 </head>
 <body>
